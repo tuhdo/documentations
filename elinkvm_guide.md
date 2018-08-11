@@ -4,31 +4,31 @@
 
 # Hướng dẫn sử dụng eLinkKVM 
 
-## ElinkKVM
+## Giới thiệu
 
 
 
-## Các giao tiếp của thiết bị 
+## eLinkKVM và các cổng giao tiếp 
 
-![eLinkKVM](D:\Project\bitbucket\elinkkvm_guide\Resource\eLinkKVM_Overview.jpeg)
+![eLinkKVM](Resource\eLinkKVM_Overview2.png)
 
-Thiết bị bao gồm các cổng kết nối dưới đây: 
+Thiết bị eLinkKVM bao gồm các cổng giao tiếp dưới đây: 
 
 **Mặt trước** 
 
-- UBS type B Cấp nguồn cho thiết bị và đồng thời làm kênh giao tiếp cho công nghệ elinkKVM 
-- Power : Nguồn thứ cấp cho thiết bị. Có thể không cần 
+- USB type B cấp nguồn cho thiết bị và đồng thời làm kênh giao tiếp và điều khiển giữa eLinkKVM và Server
+- Power : Nguồn thứ cấp cho thiết bị được sử dụng trong trường hợp nguồn từ cổng USB B không đủ, hoặc trong trường hợp muốn giữ kết nối khi Server ở trạng thái tắt nguồn.
 - VGA IN : VGA đầu ra của Host - VGA đầu vào thiết bị 
-- RS232 : Cổng giao tiếp kết nối serial ( COM port ). Cổng này sẽ được nối với cổng serial của server 
+- RS232 : Cổng giao tiếp kết nối serial ( COM port ). Cổng này sẽ được nối với cổng serial của Server 
 
 **Mặt sau** 
 
-* 2 cổng Ethernet 
-  * Master: .... 
-  * Slave: .... 
+* 2 cổng Ethernet cho phép linh hoạt trong việc kết nối
+  * Master:  có thể cấu hình làm DHCP server, DHCP client hoặc IP tĩnh
+  * Slave: có thể cầu hình làm DHCP Client hoặc IP tĩnh
 * SD card: Giao tiếp để người dùng có thể cắm thêm thẻ micro sd để tăng dung lượng lưu trữ 
 * Led trạng thái 1,2,3: Thông báo trạng thái của thiết bị bằng cách hiển thị màu led 
-* USB A:  Cổng cắm các thiết bị usb mở rộng cho eLinkKVM 
+* USB A:  Cổng cắm các thiết bị usb mở rộng cho eLinkKVM như USB 3G/4G, USB Mass Storage...
 
 ## Giới thiệu phần mềm điều khiển từ xa eLinkViewer
 
@@ -50,17 +50,23 @@ Thiết bị bao gồm các cổng kết nối dưới đây:
 
 ![Connection option UI](https://drive.google.com/a/elinkgate.com/uc?id=1RqCDvR-cw-CcmGMrVCuZFZn-O6kXr6SJ)
 
-* **Local Account** 
 
-  ![Login UI - Local account ](https://drive.google.com/a/elinkgate.com/uc?id=1TgNk-qYV2ITAd9XqZ6yzV2J3URya3QFL)
 
-  Người dùng có thể tạo một tài khoản cá nhân để lưu trữ các thông tin của các eLinkKVM. Thông tin tài khoản này sẽ được bảo mật và lưu trữ cục bộ tại chính PC chạy phần mềm ELinkViewer
+**Scan**: Scan các thiết bị eLinkKVM trên mạng nội bộ
 
-* **Online account** 
+
+
+* **Local Account** (not yet supported)
+
+![Login UI - Local account ](https://drive.google.com/a/elinkgate.com/uc?id=1TgNk-qYV2ITAd9XqZ6yzV2J3URya3QFL)
+
+Người dùng có thể tạo một tài khoản cá nhân để lưu trữ các thông tin của các eLinkKVM. Thông tin tài khoản này sẽ được bảo mật và lưu trữ cục bộ tại chính PC chạy phần mềm eLinkViewer. 
+
+* **Online account** (not yet supported)
 
 ![Login UI ](https://drive.google.com/a/elinkgate.com/uc?id=1Is5PUf2P7s50cSrh3iAeDoZ8KzRwqmys)
 
-Đối với mục **Online Account** (Beta - not support yet). ELinkViewer cho phép người dùng tạo 1 cloud account để lưu trữ các thông tin đăng nhập và các eLinkKVM đã được kết nối. 
+Đối với mục **Online Account** (Beta - not support yet). eLinkViewer cho phép người dùng tạo 1 cloud account để lưu trữ các thông tin đăng nhập và thông tin các thiết bị eLinkKVM cần kết nối. 
 
 
 
@@ -249,9 +255,34 @@ eLinkViewer hỗ trợ quick toogle booster mode với 1 mode hiện đang cấu
 
 Anh cần thêm mục nào vào thì cứ dùng cú pháp 
 
+
+
+### Todo <Thêm phần cầu hình eLinkKVM bằng cách bấm nút Setup và sửa file configure>
+
 ```
+### TODO <Thêm phần cấu eLinkKVM bằng cách bấm nút Setup và sửa file config> 
+```
+```
+### TODO <Thêm phần Firmware Upgrade> 
+```
+```
+### Todo <Thêm phần scan eLinkKVM>
+```
+
+```
+### TODO <Chuyển phần Quick Booster Setting từ quick guide qua> 
+```
+```
+### TODO <Thêm phần sử dụng script và các hàm> 
+```
+
+
+```
+
 ​```
 ### TODO <Nội dung cần thêm> 
 ​```
 ```
+
+
 
