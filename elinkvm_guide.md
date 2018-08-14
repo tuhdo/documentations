@@ -237,8 +237,6 @@ eLinkViewer cho phép việc truyền dữ liệu từ local đến eLinkKVM th�
 
 ### Điều khiển từ xa sử dụng booster mode 
 
-
-
 ![Booster mode remote control](https://drive.google.com/a/elinkgate.com/uc?id=1yJGy1_O6FCYe0uyvxdja5eGSYl8vvWfC)
 
 ### Điều khiển từ xa sử dụng VGA mode 
@@ -251,38 +249,267 @@ eLinkViewer hỗ trợ quick toogle booster mode với 1 mode hiện đang cấu
 
 ![BoosterToogle](https://drive.google.com/a/elinkgate.com/uc?id=1eICc_jsFSHaxtbGZoFrZM1yNJwmxYS1J)
 
-### TODO 
+### Cấu hình button Quick Booster Mode 
 
-Anh cần thêm mục nào vào thì cứ dùng cú pháp 
-
-
-
-### Todo <Thêm phần cầu hình eLinkKVM bằng cách bấm nút Setup và sửa file configure>
-
-```
-### TODO <Thêm phần cấu eLinkKVM bằng cách bấm nút Setup và sửa file config> 
-```
-```
-### TODO <Thêm phần Firmware Upgrade> 
-```
-```
-### Todo <Thêm phần scan eLinkKVM>
-```
-
-```
-### TODO <Chuyển phần Quick Booster Setting từ quick guide qua> 
-```
-```
-### TODO <Thêm phần sử dụng script và các hàm> 
-```
+Để thuận tiện cho việc chuyển đổi nhanh giữa booster mode và các mode khác. eLinkViewer cho phép người dùng cấu hình cho nút nhấn Quick Toogle Booster Mode. Nút nhấn này cho phép người dùng có thể chuyển đổi nhanh giữa booster mode và 1 mode đã được cấu hình trước                                                                                           ![ToogleButtonConfig](https://drive.google.com/a/elinkgate.com/uc?id=1BtRGCSRGPBNN-vy86_nDGfr4qM823pgH)               
 
 
+Vậy để cấu hình cho Quick Toogle Booster mode cần thực hiện các thao tác sau:                                         
+
+1. Click vào nút nhấn eLink Configuration                                                                             
+2. Trên cửa sổ eLink Configuration, Trong mục Quick Booster Mode Setting, click vào Video list box để chọn Video sẽ sử dụng
+3. Tương tự, click chọn Mode Key                                                                                  
+4. Tiếp đến, click chọn Mode Mouse 
+5. nhấn chọn Base để xác nhận các thông tin cấu hình. Cấu hình này sẽ được cấu hình khi click vào nút Quick Toogle Booster Mode
+6. Nhấn OK để lưu lại các cấu hình cài đặt                                                                          
+7. Click nút OK để xác nhận cấu hình                                                                                 
+
+### Cấu hình bằng tay thông qua file configuration 
+
+eLinkKVM có hỗ trợ việc cấu hình thông qua text file. Các thao tác thực hiện như sau: 
+
+![ConfigureFileConfig](https://drive.google.com/a/elinkgate.com/uc?id=1iKrSG4coRPMnUkbcNSEplJtHuewuhxkD)
+
+1. Bấm nút Enter Configuration trên eLinkKVM. Firmware trên eLinkKVM sẽ cấu hình thiết bị thành 1 ổ USB Mass Storage 
+2. Vào ổ đĩa `ELINKCONF` 
+3. Trong ổ đĩa `ELINKCONF` sẽ có 1 file configure bước 3, dùng chương trình text editor để mở file configure 
+4. Cấu hình eLinkKVM với cú phát như trên. Lưu file lại và reset eLinkKVM để chạy cấu hình mới. 
+
+![gifConfigureFile](https://drive.google.com/a/elinkgate.com/uc?id=1Bkt9flkzvf36T-5rNGA_HJH9VIdlZom1)
+
+### Upgrade firmware cho eLinkKVM
+
+![firmware upgrade](https://drive.google.com/a/elinkgate.com/uc?id=1UH_-a08spJ2ufRyOcmENWefrBHTXXSit)
+
+### Scan eLinkKVM trong mạng nội bộ 
+
+eLinkViewer khi chạy trong mạng nội bộ cho phép scan các eLinkKVM đang có trong mạng 
+
+![ScaneLinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1JCnvvzjPa8L-eCFzl6kNBceS22OjBTGq)
+
+### eLink python script API 
+
+#### vnc.info
+
+Get Vnc Info 
+
+```
+TODO example 
 ```
 
-​```
-### TODO <Nội dung cần thêm> 
-​```
+#### vnc.close             			
+
+Close VNC session
+
+```
+TODO example
 ```
 
+#### vnc.sendString        			
 
+Send String
+
+```python
+	
+```
+
+#### vnc.sendKey           			
+
+Send String
+
+```
+
+```
+
+#### vnc.sendMouse         			
+
+Send Mouse
+
+```
+
+```
+
+#### vnc.sendKeyEx         			
+
+Send Combined Key
+
+```
+
+```
+
+#### vnc.getEvent          			
+
+Get Event
+
+```
+
+```
+
+#### vnc.clrEvent
+
+Clear Event
+
+```
+
+```
+
+#### vnc.setUsbMode        			
+
+Set USB Mode
+
+```
+
+```
+
+#### vnc.setVncMode   
+
+Set VNC Mode
+
+```
+
+```
+
+#### vnc.setKeyMode        			
+
+Set Keyboard Mode
+
+```
+
+```
+
+#### vnc.setMouseMode      			
+
+Set Mouse Mode
+
+```
+
+```
+
+#### vnc.lockKeyboard      			
+
+Lock Keyboard Option
+
+````
+
+````
+
+#### vnc.lockMouse         			
+
+Lock Mouse Option
+
+````
+
+````
+
+#### vnc.setVncIdle        			
+
+Set Vnc idle time
+
+```
+
+```
+
+#### vnc.setKeyIdle        			
+
+Set Usb Key Idle
+
+````
+
+````
+
+#### vnc.matchScreen       			
+
+Match Vnc Screen
+
+```
+
+```
+
+#### vnc.ipmiConnect
+
+ipmi connect
+
+```
+
+```
+
+#### vnc.ipmiPower         			
+
+ipmi power
+
+```
+
+```
+
+#### vnc.ipmiReset
+
+ipmi reset
+
+````
+
+````
+
+#### vnc.ipmiStatus        			
+
+ipmi status
+
+```
+
+```
+
+#### vnc.ipmiSolEnable
+
+ipmi sol enable
+
+```
+
+```
+
+#### vnc.remoteFileList    			
+
+list remote file
+
+```
+
+```
+
+#### vnc.remoteFileDelete  			
+
+delete remote file
+
+```
+
+```
+
+#### vnc.remoteFileRename  			
+
+rename remote file
+
+```
+
+```
+
+#### vnc.remoteFileUpload  			
+
+upload remote file
+
+```
+
+```
+
+#### vnc.remoteFileDownload			
+
+download remote file
+
+```
+
+```
+
+#### vnc.remoteFileCopy    			
+
+copy remote file
+
+```
+
+```
 

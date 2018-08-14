@@ -125,8 +125,6 @@ Thiết bị eLinkKVM cung cấp tính năng nhận tín hiệu video từ cổn
 6. Chọn chế độ VGA trong Video mode
 7. Click nút OK để xác nhận các cấu hình 
 
-
-
 #### Điều khiển `Server` dùng Booster mode 
 
 Ngoài chế độ VGA Mode, eLinkKVM còn có khả năng hỗ trợ booster mode. Đây là chế độ cho phép thiết bị ghi thông tin màn hình của `Server` thông qua việc sử dụng một phần mềm agent chạy trên `Server` và agnet sẽ gửi thông tin màn hình cho eLinkKVM thông qua giao thức USB.
