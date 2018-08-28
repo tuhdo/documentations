@@ -7,10 +7,9 @@
 ## Giới thiệu
 
 
-
 ## eLinkKVM và các cổng giao tiếp 
 
-![eLinkKVM](Resource\eLinkKVM_Overview2.png)
+![eLinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1Inpd1l5-inhGNrO2rQHngclQskfswmQ4)
 
 Thiết bị eLinkKVM bao gồm các cổng giao tiếp dưới đây: 
 
@@ -93,25 +92,20 @@ Các bước để cấu hình địa chỉ IP cho thiết bị eLinkKVM
    Sau đó cấu hình **Internet Protocol Version 4** như sau 
 
    ![Ethernetconfigure](https://drive.google.com/a/elinkgate.com/uc?id=1PcuZEkauX3GhBpVFTJkWjPxHQSoPUDGZ)
-
    ![EtherConfiguration](https://drive.google.com/a/elinkgate.com/uc?id=1bB02ODJ5dBMrX3R-2wmmpRe1KreA1jAo)
-
-   
 
 4. Sử dụng eLinkViewer và kết nối tới địa chỉ `*10.0.0.1*`
 
    ![MasterConnect](https://drive.google.com/a/elinkgate.com/uc?id=1pDbmgGfgn38E0m4jOBbdHlOZreElEKPa)
-
+   
 5. Giao diện cấu hình eLinkKVM 
 
    ![eLinkKVM configure](https://drive.google.com/a/elinkgate.com/uc?id=11q7Rh8irV4Vz6LvYXo-ygD0ZcJjJ8Y89)
 
-   Giao diện cấu hình eLinkKVM+
-
+**Giao diện cấu hình eLinkKVM**
    ![eLinkKVM configure ui](https://drive.google.com/a/elinkgate.com/uc?id=1cysTb7rS4BjjY-7PkymnbuA9-GhlAfqa)
 
-
-
+___
 ## Kết nối tới eLinkKVM
 
 ### Giao diện kết nối 
@@ -286,230 +280,3 @@ eLinkKVM có hỗ trợ việc cấu hình thông qua text file. Các thao tác 
 eLinkViewer khi chạy trong mạng nội bộ cho phép scan các eLinkKVM đang có trong mạng 
 
 ![ScaneLinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1JCnvvzjPa8L-eCFzl6kNBceS22OjBTGq)
-
-### eLink python script API 
-
-#### vnc.info
-
-Get Vnc Info 
-
-```
-TODO example 
-```
-
-#### vnc.close             			
-
-Close VNC session
-
-```
-TODO example
-```
-
-#### vnc.sendString        			
-
-Send String
-
-```python
-	
-```
-
-#### vnc.sendKey           			
-
-Send String
-
-```
-
-```
-
-#### vnc.sendMouse         			
-
-Send Mouse
-
-```
-
-```
-
-#### vnc.sendKeyEx         			
-
-Send Combined Key
-
-```
-
-```
-
-#### vnc.getEvent          			
-
-Get Event
-
-```
-
-```
-
-#### vnc.clrEvent
-
-Clear Event
-
-```
-
-```
-
-#### vnc.setUsbMode        			
-
-Set USB Mode
-
-```
-
-```
-
-#### vnc.setVncMode   
-
-Set VNC Mode
-
-```
-
-```
-
-#### vnc.setKeyMode        			
-
-Set Keyboard Mode
-
-```
-
-```
-
-#### vnc.setMouseMode      			
-
-Set Mouse Mode
-
-```
-
-```
-
-#### vnc.lockKeyboard      			
-
-Lock Keyboard Option
-
-````
-
-````
-
-#### vnc.lockMouse         			
-
-Lock Mouse Option
-
-````
-
-````
-
-#### vnc.setVncIdle        			
-
-Set Vnc idle time
-
-```
-
-```
-
-#### vnc.setKeyIdle        			
-
-Set Usb Key Idle
-
-````
-
-````
-
-#### vnc.matchScreen       			
-
-Match Vnc Screen
-
-```
-
-```
-
-#### vnc.ipmiConnect
-
-ipmi connect
-
-```
-
-```
-
-#### vnc.ipmiPower         			
-
-ipmi power
-
-```
-
-```
-
-#### vnc.ipmiReset
-
-ipmi reset
-
-````
-
-````
-
-#### vnc.ipmiStatus        			
-
-ipmi status
-
-```
-
-```
-
-#### vnc.ipmiSolEnable
-
-ipmi sol enable
-
-```
-
-```
-
-#### vnc.remoteFileList    			
-
-list remote file
-
-```
-
-```
-
-#### vnc.remoteFileDelete  			
-
-delete remote file
-
-```
-
-```
-
-#### vnc.remoteFileRename  			
-
-rename remote file
-
-```
-
-```
-
-#### vnc.remoteFileUpload  			
-
-upload remote file
-
-```
-
-```
-
-#### vnc.remoteFileDownload			
-
-download remote file
-
-```
-
-```
-
-#### vnc.remoteFileCopy    			
-
-copy remote file
-
-```
-
-```
-
