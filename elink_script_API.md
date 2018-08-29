@@ -1,19 +1,55 @@
 ## eLink python script API 
-### eLink API 
-#### elink.newConnection("<eLinkKVM_IP>")
+
+[TOC]
+
+### **eLink** 
+#### elink.newConnection
 Create a new connection to eLinkKVM. The function will return eLink object. Ví dụ: 
 ```python
 ## connect to eLinkKVM với địa chỉ IP "10.42.02"
 eLinkObj = elink.newConnection("10.42.0.2)
 ```
-#### Các phương thức là eLink object 
+#### elink.getConnection 
+lấy các connection mà viewer đang kết nối tới 
+```
+gConnection = eLink.getConnection()
+
+```
+```python
+elink.newConnection("10.42.0.3")
+groupConn = elink.getConnection()
+print("group obj {} - type {}".format(groupConn,type(groupConn)))
+info = groupConn[0].info()
+print("firmware version \t{}\neLinkKVM Name \t{}".format(info[0],info[1]))
+print("firmware version \t{}\neLinkKVM Name \t{}".format(groupConn[0].info()[0],groupConn[0].info()[1]))
+```
+
+
+
 
 #### eLinkObj.info()
+
 Lấy thông tin của eLinkObj
+```python 
+def testGetInfo():
+    eLinkObj = elink.newConnection("10.42.0.3")
+    info = eLinkObj.info()
+    print("eLinkObj.info return {}".format(info))
 ```
-Update later
+python std output: 
+
+```bash
+eLinkObj.info return ['01.00.01.02', 'eVirtualFriend', 'R', 1366, 768]
+# <'01.00.01.02'>     :firmware version 
+# <'eVirtualFriend'   :eLinkKVM name
+# <'R'>  			  :Protocol
+# <1366, 768> 		  :Width-Height of current screen 
 ```
+
+
+
 #### eLinkObj.close
+
 Close eLinkObj session
 
 ```python
@@ -32,7 +68,7 @@ Gửi chuổi key string
 eLinkObj.sendString("hello world")	
 ```
 
-#### eLinkObj.sendKey("<key>,mode)
+#### eLinkObj.sendKey
 Gửi key <Key> tới server với các mode khác nhau.
 ```python
 # eLinkKVM send key <LeftShift> lên server 
@@ -162,8 +198,9 @@ vnc.setUsbMode("USB_MODE_KEY|USB_MODE_VNC_HID|USB_MODE_MOUSE_ABS",0,["A:\win10.h
 ```
 
 #### eLinkObj.setVncMode   
-##TODO Review the naming => change to eLinkObj.setOutputMode()
-
+```
+TODO Review the naming => change to eLinkObj.setOutputMode()
+```
 Set eLinkObj Mode
 
 ```python
@@ -295,7 +332,7 @@ h = int(matchingData[3])
 print("Found {} in screen at x:{} y:{} width:{} height:{}".format("test1.png",x,y,w,h)
 ```
 
-#### eLinkObj.ipmiConnect(<ipAddr>,<UsrName><Pass>) 
+#### eLinkObj.ipmiConnect
 ```python
 #TODO 
 #consider for IPMI methods
@@ -321,7 +358,10 @@ Kết nối tới IPMI server
 #Kết nối tới IPMI 10.42.0.100
 #User name: "ADMIN" 
 #Password: "ADMIN" 
-vnc.ipmiConnect("10.42.0.100", "ADMIN", "ADMIN")
+eLinkObj.ipmiConnect("10.42.0.100", "ADMIN", "ADMIN")
+#Kết nối tới IPMI thông qua eLinkKVM
+eLinkObj.ipmiConnect("elink-ipmi", "ADMIN", "ADMIN")
+
 ```
 
 #### eLinkObj.ipmiPower         			
@@ -332,7 +372,7 @@ Dùng IPMI để power on server
 eLinkObj.ipmiPower()
 ```
 
-#### eLinkObj.ipmiReset(resetOpt)
+#### eLinkObj.ipmiReset
 
 dùng IPMI để reset server 
 
@@ -345,8 +385,18 @@ eLinkObj.ipmiReset(1) #reset server to bios setup
 
 ipmi status
 
+```python
+eLinkObj = elink.newConnection("10.42.0.3")
+eLinkObj.ipmiConnect("10.42.0.100", "ADMIN", "ADMIN")
+status_ret = eLinkObj.ipmiStatus()
+print("{}".format(status_ret))
 ```
 
+```bash
+#1/0 IPMI connected/disconnected
+#1/0 Server power status ON/OFF
+#'status' String Status
+[1, 0, 'Ipmi is connected'] 
 ```
 
 #### eLinkObj.ipmiSolEnable
@@ -354,15 +404,15 @@ ipmi status
 ipmi sol enable
 
 ```
-
+Not support Yet
 ```
 
 #### eLinkObj.remoteFileList    			
 
 Get file list content in eLinkKVM
-**TODO**
 
 ```python
+TODO
 fileMnger = eLinkObj.FileManager() # return fileMnger Object (contains some methods of remote file manager 
 listFile = eLinkObj.remoteFileList("/A") 
 listFile = eLinkObj.remoteFileList("/B")
@@ -371,7 +421,7 @@ listFile = fileMnger.listFiles("A") #list all files contain in disk A
 listFile = fileMnger.listFiles("B") #list all files contain in disk B 
 ```
 
-
+Example: 
 
 ```python
 eLinkObj = elink.newConnection("10.42.0.3")
@@ -387,8 +437,8 @@ file list [['A:', 1, 0]]
 file list [['ver1.0_release_patch3.epg', 0, 1806264], ['floppy.hdd', 0, 1474560], ['floppy.hddx', 0, 33], ['Win2012.hdd2', 0, 457044992]]
 ```
 eLinkObj.remoteFileList trả về List object chứa các thông tin của các file/directory bao gồm 
-``` 
-Files/Directory entry = {
+``` C
+struct entry = {
     filename: str 
     type : int (0/file, 1/directory)
     size :int (in bytes) (0 if entry is directory)
@@ -414,9 +464,13 @@ Deleting remote '\A:\/ver1.0_release_patch3.epg' file
 file list [['floppy.hdd', 0, 1474560], ['floppy.hddx', 0, 33], ['Win2012.hdd2', 0, 457044992]]
 ```
 
-#### eLinkObj.remoteFileRename (<source>,<des>)
+#### eLinkObj.remoteFileRename 
 
-rename remote file 
+Rename remote file 
+
+```python
+eLinkObj.remoteFileRename (<source>,<des>)
+```
 
 ```python
 eLinkObj = elink.newConnection("10.42.0.3")
@@ -486,4 +540,14 @@ eLinkObj.remoteFileCopy("/A:/floppy.hddx","/A:/copy_floppy.hddx")
 listFile = eLinkObj.remoteFileList("/A")
 print("Copy file list {}".format(listFile))
 ```
+
+### Capture screen 
+
+Các bước thực hiện để record screen bao gồm: 
+
+1. Click Pause button `||` trên thanh tools bar 
+2. nhấn và giữ phím "LCtrl" kết hợp với việc nhấp chuột và kéo vùng screen cần nhận diện 
+3. eLinkViewer sẽ khởi tạo 1 file ảnh tmp_<xx>.png ở thư mục chạy eLinkViewer 
+
+![capture screen](https://lh3.googleusercontent.com/-s-0ObAxnfuY/W4YQ251OwTI/AAAAAAAAAIU/YhrmlqYxlLEcRC2EDZIdUf0t01VS6xzvgCHMYCw/s0/2018-08-29_10-19-49.gif)
 
