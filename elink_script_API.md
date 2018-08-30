@@ -2,7 +2,47 @@
 
 [TOC]
 
+### How to run python script 
+
+#### Run script as default with command line 
+
+```shell
+elinkviewer.exe -cons=<relative/absolute path to your script> 
+# relative path from elinkviewer.exe 
+```
+
+Example: 
+
+```
+# Run script elinkviewer
+elinkviewer.exe -cons=hello-world.py 
+```
+
+![run script default](https://lh3.googleusercontent.com/-9-pVwhQCHXc/W4d5w9vN0JI/AAAAAAAAAKM/nF08A8hiWccySopF5AcQZPdyIpl_DXT3gCHMYCw/s0/2018-08-30_11-58-16.gif)
+
+#### Run script by console window in eLinkViewer
+
+Connect vào eLinkKVM -> Click button Python Console in Tools Bar
+
+![Runbyelinkviewer](https://lh3.googleusercontent.com/-MIGlneMqxcg/W4ej1UB9KeI/AAAAAAAAALA/hEcGVFI2EM8tiFaHvoDoqmyQx-OIcM-AgCHMYCw/s0/2018-08-30_14-58-09.gif)
+
+
+
+#### Run Script by console 
+
+```
+elinkviewer -cons=
+```
+
+```python
+elink.exec("hello-world\hello-world.py") # hello-world\hello-world.py relative from current directory of eLinkViewer.exe 
+elink.exec("E:\project\elink-tutorial\hello-world\hello-world.py") # run script hello-world with absolute path 
+```
+
+
+
 ### **eLink** 
+
 #### elink.newConnection
 Create a new connection to eLinkKVM. The function will return eLink object. Ví dụ: 
 ```python
@@ -10,7 +50,7 @@ Create a new connection to eLinkKVM. The function will return eLink object. Ví 
 eLinkObj = elink.newConnection("10.42.0.2)
 ```
 #### elink.getConnection 
-lấy các connection mà viewer đang kết nối tới 
+Get all connections exist 
 ```
 gConnection = eLink.getConnection()
 
@@ -29,7 +69,7 @@ print("firmware version \t{}\neLinkKVM Name \t{}".format(groupConn[0].info()[0],
 
 #### eLinkObj.info()
 
-Lấy thông tin của eLinkObj
+get eLink connection info 
 ```python 
 def testGetInfo():
     eLinkObj = elink.newConnection("10.42.0.3")
@@ -42,7 +82,7 @@ python std output:
 eLinkObj.info return ['01.00.01.02', 'eVirtualFriend', 'R', 1366, 768]
 # <'01.00.01.02'>     :firmware version 
 # <'eVirtualFriend'   :eLinkKVM name
-# <'R'>  			  :Protocol
+# <'RFB 3.03'>		  :Protocol
 # <1366, 768> 		  :Width-Height of current screen 
 ```
 
@@ -53,7 +93,7 @@ eLinkObj.info return ['01.00.01.02', 'eVirtualFriend', 'R', 1366, 768]
 Close eLinkObj session
 
 ```python
-## connect to eLinkKVM với địa chỉ IP "10.42.02"
+## connect to eLinkKVM with Ip address "10.42.02"
 eLinkObj = elink.newConnection("10.42.0.2)
 ## close connection
 elinkObj.close()
@@ -61,24 +101,24 @@ elinkObj.close()
 
 #### eLinkObj.sendString        			
 
-Gửi chuổi key string 
+Send key string 
 
 ```python
-#eLinkKVM sẽ gửi chuỗi key "hello world" tới Server
+#eLinkKVM sends string hello world to server 
 eLinkObj.sendString("hello world")	
 ```
 
 #### eLinkObj.sendKey
-Gửi key <Key> tới server với các mode khác nhau.
+Send Key to Server
 ```python
 # eLinkKVM send key <LeftShift> lên server 
-eLinkObj.sendKey("LeftShift") # nhấn LeftShift và nhả phím 
-eLinkObj.sendKey("LeftShift",1) # nhấn và giữ LeftShift 
-eLinkObj.sendKey("LeftShift",0) # nhả phím LeftShift 
+eLinkObj.sendKey("LeftShift") # Press LeftShift và release
+eLinkObj.sendKey("LeftShift",1) # Press and hold LeftShift
+eLinkObj.sendKey("LeftShift",0) # Release Left Shift 
 ```
 
 #### eLinkObj.sendMouse         			
-Điều khiển Mouse bằng hàm sendMouse(<mode>,x,y)
+Send mouse action to server 
 ```python
 eLinkObj.sendMouse(0, 100, 100)  # move mouse to 100,100
 eLinkObj.sendMouse("RDOWN", 100, 100)  # right mouse down at 100,100
@@ -97,7 +137,9 @@ eLinkObj.sendCombinedKey(["LeftCtrl", "LeftShift", "Del"])
 
 #### eLinkObj.getEvent          			
 
-Phương thức này sẽ lấy dữ liệu event từ eLinkKVM. Dưới đây là các event Id và ví dụ cho phương thức getEvent
+Get events receive from eLinkKVM. 
+
+Event Id 
 
 ```python 
 EVT_USB_EXT_RESET = 1
@@ -128,27 +170,29 @@ EVT_KEY_ON_POWER_DONE = 26
 EVT_DISK_ON_POWER_DONE = 27
 ```
 
+Example: 
+
 ```python
 # below is process to check if event 5 existed => Press key F12
 while True:
-    e = vnc.getEvent() #get event object 
-    d = e.getData("test") # get data file in event obj
+    e = eLinkObj.getEvent() #get event object 
     if e.getIdCode() == 5: #check event 5 (EVT_USB_KEY_SET_PROTOCOL) is existed
-		vnc.sendKey("F12") # send key F12 to server 
+		eLinkObj.sendKey("F12") # send key F12 to server 
     break
 ```
 
 #### eLinkObj.clrEvent
-Server khởi động gồm nhiều phase bao gồm Pre-Boot phase và OS phase. Ứng với mỗi phase server sẽ khởi động lại eLinkKVM, như vậy tương ứng eLinkKVM sẽ có nhiều event được lặp lại. Vậy nên cần thiết để có một hàm để clear event queue
+
+When starting Server which will though many phase including: Pre-Boot phase And OS phase. With each phase, Server will re-Initial eLinkKVM , then eLinkKVM will issue many duplicate events. So, need to have aa clean event method to clean up current queue event.
 
 ```python
 # Clear all existed event in queue and waiting for new event 5
-vnc.clrEvent()
+eLinkObj.clrEvent()
 # below is process for waiting event 5 existed => Press key F12
 while True:
-    e = vnc.getEvent() #get event object 
+    e = eLinkObj.getEvent() #get event object 
     if e.getIdCode() == 5: #check event 5 (EVT_USB_KEY_SET_PROTOCOL) is existed
-		vnc.sendKey("F12") # send key F12 to server 
+		eLinkObj.sendKey("F12") # send key F12 to server 
     break
 
 ```
@@ -175,25 +219,25 @@ USB_MODE_MOUSE_ABS  = 0x0040
 ```
 
 ```python
-vnc.setUsbMode(0,0) # reset UsbMode.
+eLinkObj.setUsbMode(0,0) # reset UsbMode.
 # Set eLinkKVM into an multiple usb device: including
 # - Usb Key board 
 # - Activate USB_MODE_VNC_HID to speed up Booster mode
 # - Activate USB Mass storage mode which will mount image <win10.hdd2> 
-vnc.setUsbMode("USB_MODE_KEY|USB_MODE_VNC_HID",0,["A:\win10.hdd2"]) 
-vnc.setUsbMode(0x09,0,["A:\win10.hdd2"])
+eLinkObj.setUsbMode("USB_MODE_KEY|USB_MODE_VNC_HID",0,["A:\win10.hdd2"]) 
+eLinkObj.setUsbMode(0x09,0,["A:\win10.hdd2"])
 #only set USB_MODE_MSC (Usb mass storage)  
 #mount <win10.hdd2> 
 #mount <ubuntu.hdd2> 
-vnc.setUsbMode(0,0,["A:\win10.hdd2"."A:\ubuntu.hdd2])
+eLinkObj.setUsbMode(0,0,["A:\win10.hdd2"."A:\ubuntu.hdd2])
 # Keep Usb KeyBoard and USB_MODE_VNC_HID (Booster)
 # Unmount <win10.hdd2> 
-vnc.setUsbMode("USB_MODE_KEY|USB_MODE_VNC_HID",0)
+eLinkObj.setUsbMode("USB_MODE_KEY|USB_MODE_VNC_HID",0)
 #USB Keyboard 
-#Usb mode hid vnc (bootster) 
+#Usb mode hid eLinkObj (bootster) 
 #Usb mouse absolute 
 #Usb mass storage - mount <win10.hdd2> 
-vnc.setUsbMode("USB_MODE_KEY|USB_MODE_VNC_HID|USB_MODE_MOUSE_ABS",0,["A:\win10.hdd2"]
+eLinkObj.setUsbMode("USB_MODE_KEY|USB_MODE_VNC_HID|USB_MODE_MOUSE_ABS",0,["A:\win10.hdd2"]
 
 ```
 
@@ -217,9 +261,9 @@ VNC_MODE_IPMI   = 0x04,
 ```
 
 ```
-vnc.setVncMode("MODE_VNC_BOOSTER") #Set Booster mode
-vnc.setVncMode("MODE_VNC_SERIAL") #Set Serial mode
-vnc.setVncMode("MODE_VNC_RGB") #Set RGB mode
+eLinkObj.setVncMode("MODE_VNC_BOOSTER") #Set Booster mode
+eLinkObj.setVncMode("MODE_VNC_SERIAL") #Set Serial mode
+eLinkObj.setVncMode("MODE_VNC_RGB") #Set RGB mode
 ```
 
 
@@ -241,7 +285,7 @@ eLinkObj.setKeyMode(2)
 ```
 
 #### eLinkObj.setMouseMode      			
-Sử dụng phương thức này để cấu hình lại chế độ cho mouse. Các chế độ cho mouse bao gồm 
+Set Mouse mode. Mouse mode including: 
 ```python
 # Cấu hình Mouse sử dụng HID USB 
 POINT_INTF_HID      = 1,
@@ -250,6 +294,8 @@ POINT_INTF_VNC      = 2,
 #Cấu Hinh Mouse sử dụng mode USB HID Absolute 
 POINT_INTF_HID_ABS  = 3,
 ```
+
+Example: 
 
 ```python
 # Cấu hình Mouse sử dụng HID USB 
@@ -287,7 +333,7 @@ TODO Consider to
 eLinkObj.setBoosterScreenIdle(time:int)
 ```
 
-Cấu hình eLinkKVM sẽ gửi 1 idle timeout event sau 1 khoản <time> màn hình không thay đổi
+Configure eLinkKVM send Screen Idle event when Screen unchanged in specific time (Idle time) 
 
 ```python
 elinkObj.setVncIdle(200) # 200 ms timeout for idle event 
@@ -295,29 +341,40 @@ elinkObj.setVncIdle(200) # 200 ms timeout for idle event
 
 #### eLinkObj.setKeyIdle        			
 
-Cấu hình tốc độ gửi key. 
+Set key idle between 2 key 
 
 ````python
 eLinkObj.setKeyIdle(200) # 200ms delay between 2 keys send
+# Each character in string "hello world" will be send with delay time is 200ms 
+eLinkObj.sendString("hello world") #
 ````
 
 #### eLinkObj.matchScreen       			
-Kiểm tra độ tương đồng của test.png trên screen hiện tại và trả về dữ liệu bao gồm toạ độ, chiều cao, chiều dài và điểm số tương đồng. 
-Ví dụ: Nhận diện screen dựa trên img sẵn có
+Polling current screen and recognizing reference input image whether or not exist in the screen. Return None or MachingObj which content coordinate and size of maching zone. 
+Matching Object data
+```python
+machingObj =[[x,y,w,h],[matching_score]] 
+# rectangle = machingObj[0] #  Get Maching rectangle (x,y,w,h) , (x,y) coordinate calculate from top left (0,0) of screen
+# rectangle_x = rectangle[0] # x coordinate 
+# rectangle_y =  rectangle[1] # y coordinate 
+# rectangle_w =  rectangle[3] # Width of match zone
+# rectangle_h =  rectangle[4] # Height of match zone
+# matching_score = machingObj[1]  # Matching score 
+```
+
+Example:  Recognizing test1.png in current screen with score >= 0.9 (0 - 1), attention period 500ms 
 
 ```python
 matchData = eLinkObj.matchScreen("test1.png",score=0.9,attentionPeriod = 500)
-# matchData[0]: [x,y,w,h] theo thứ tự là toạ độ (x,y) và (width,heigh) trong đó x,y tính từ góc trái, phía trên của screen. 
-# matchData[1]: (Score) điểm số tương đồng. Nếu score không lớn hơn score định trước(0.9) thì matchData[0] = None
 ```
-dưới đây là 1 hàm waitImage(...). Hàm này thực hiện việc nhận dạng liên tục screen hiện tại với ảnh tham chiếu <img>, sử dụng score để lọc đi các khung hình ko có sự tương đồng. Hàm này thực việc vòng lặp. Chỉ thoát khi có sự tương đồng với điểm số lớn hoặc bằng điểm số đã định nghĩa trước.
+Implementation of function `waitImage` 
 
 ```python 
 
-def waitImage(vnc, img, score=0.9, attentionPeriod=3000):
+def waitImage(eLinkObj, img, score=0.9, attentionPeriod=3000):
     print("wait for " + repr(img))
     while True:
-        loc = vnc.matchScreen(img, score, attentionPeriod)
+        loc = eLinkObj.matchScreen(img, score, attentionPeriod)
         if loc[0] != None:
             break
         sleep(2)
@@ -348,18 +405,18 @@ ipmiObj.activateSol() #activate IPMI SOL
 
 Kết nối tới IPMI server 
 
-`ipAddr`: Ip address v4 của server 
+`ipAddr`: Server Ip address
 
 `UsrName`: Username IPMI 
 
 `Pass`: Password IPMI
 
 ```python
-#Kết nối tới IPMI 10.42.0.100
+#Connect to IPMI direct 10.42.0.100
 #User name: "ADMIN" 
 #Password: "ADMIN" 
 eLinkObj.ipmiConnect("10.42.0.100", "ADMIN", "ADMIN")
-#Kết nối tới IPMI thông qua eLinkKVM
+#Kết nối tới IPMI through eLinkKVM
 eLinkObj.ipmiConnect("elink-ipmi", "ADMIN", "ADMIN")
 
 ```
@@ -436,12 +493,16 @@ python stdou return
 file list [['A:', 1, 0]]
 file list [['ver1.0_release_patch3.epg', 0, 1806264], ['floppy.hdd', 0, 1474560], ['floppy.hddx', 0, 33], ['Win2012.hdd2', 0, 457044992]]
 ```
-eLinkObj.remoteFileList trả về List object chứa các thông tin của các file/directory bao gồm 
+eLinkObj.remoteFileList return List object content info of each directory/file entry 
+
+Data structure for each entry 
+
 ``` C
 struct entry = {
     filename: str 
     type : int (0/file, 1/directory)
     size :int (in bytes) (0 if entry is directory)
+    md5 : str //TODO if entry is file (type=1) the field will contain MD5 of file 
 }
 ```
 
@@ -543,11 +604,11 @@ print("Copy file list {}".format(listFile))
 
 ### Capture screen 
 
-Các bước thực hiện để record screen bao gồm: 
+Step by step to capture reference image
 
-1. Click Pause button `||` trên thanh tools bar 
-2. nhấn và giữ phím "LCtrl" kết hợp với việc nhấp chuột và kéo vùng screen cần nhận diện 
-3. eLinkViewer sẽ khởi tạo 1 file ảnh tmp_<xx>.png ở thư mục chạy eLinkViewer 
+1. Click Pause button `||`  in toolbar 
+2. Press and hold"LCtrl" combine with click and drag mouse on screen zone 
+3. eLinkViewer will create an template image `tmp_<xx>.png` in eLinkViewer folder. Using the image as reference input image for recognizing. 
 
 ![capture screen](https://lh3.googleusercontent.com/-s-0ObAxnfuY/W4YQ251OwTI/AAAAAAAAAIU/YhrmlqYxlLEcRC2EDZIdUf0t01VS6xzvgCHMYCw/s0/2018-08-29_10-19-49.gif)
 
