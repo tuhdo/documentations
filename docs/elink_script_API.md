@@ -1,10 +1,10 @@
-## eLink python script API 
+# eLink python script API 
 
 [TOC]
 
-### How to run python script 
+## How to run python script 
 
-#### Run script as default with command line 
+### Run script as default with command line 
 
 ```shell
 elinkviewer.exe -cons=<relative/absolute path to your script> 
@@ -20,7 +20,7 @@ elinkviewer.exe -cons=hello-world.py
 
 ![run script default](https://lh3.googleusercontent.com/-9-pVwhQCHXc/W4d5w9vN0JI/AAAAAAAAAKM/nF08A8hiWccySopF5AcQZPdyIpl_DXT3gCHMYCw/s0/2018-08-30_11-58-16.gif)
 
-#### Run script by console window in eLinkViewer
+### Run script by console window in eLinkViewer
 
 Connect vào eLinkKVM -> Click button Python Console in Tools Bar
 
@@ -28,7 +28,7 @@ Connect vào eLinkKVM -> Click button Python Console in Tools Bar
 
 
 
-#### Run Script by console 
+### Run Script by console 
 
 ```
 elinkviewer -cons=
@@ -41,15 +41,16 @@ elink.exec("E:\project\elink-tutorial\hello-world\hello-world.py") # run script 
 
 
 
-### **eLink** 
+## **eLink** APIs
 
-#### elink.newConnection
+### elink.newConnection
 Create a new connection to eLinkKVM. The function will return eLink object. Ví dụ: 
+
 ```python
 ## connect to eLinkKVM với địa chỉ IP "10.42.02"
 eLinkObj = elink.newConnection("10.42.0.2)
 ```
-#### elink.getConnection 
+### elink.getConnection 
 Get all connections exist 
 ```
 gConnection = eLink.getConnection()
@@ -67,7 +68,7 @@ print("firmware version \t{}\neLinkKVM Name \t{}".format(groupConn[0].info()[0],
 
 
 
-#### eLinkObj.info()
+### eLinkObj.info()
 
 get eLink connection info 
 ```python 
@@ -88,18 +89,18 @@ eLinkObj.info return ['01.00.01.02', 'eVirtualFriend', 'R', 1366, 768]
 
 
 
-#### eLinkObj.close
+### eLinkObj.close
 
 Close eLinkObj session
 
 ```python
-## connect to eLinkKVM with Ip address "10.42.02"
+# connect to eLinkKVM with Ip address "10.42.02"
 eLinkObj = elink.newConnection("10.42.0.2)
-## close connection
+# close connection
 elinkObj.close()
 ```
 
-#### eLinkObj.sendString        			
+### eLinkObj.sendString        			
 
 Send key string 
 
@@ -108,7 +109,7 @@ Send key string
 eLinkObj.sendString("hello world")	
 ```
 
-#### eLinkObj.sendKey
+### eLinkObj.sendKey
 Send Key to Server
 ```python
 # eLinkKVM send key <LeftShift> lên server 
@@ -117,7 +118,7 @@ eLinkObj.sendKey("LeftShift",1) # Press and hold LeftShift
 eLinkObj.sendKey("LeftShift",0) # Release Left Shift 
 ```
 
-#### eLinkObj.sendMouse         			
+### eLinkObj.sendMouse         			
 Send mouse action to server 
 ```python
 eLinkObj.sendMouse(0, 100, 100)  # move mouse to 100,100
@@ -126,7 +127,7 @@ eLinkObj.sendMouse("RDOWN|CLICK", 100, 100)  # right mouse click at 100,100	(or 
 eLinkObj.sendMouse("RDOWN|DCLICK", 100, 100)  # right mouse double click at 100,100 (or 0x80)
 ```
 
-#### eLinkObj.sendKeyEx         			
+### eLinkObj.sendKeyEx         			
 
 Send Combined Key
 
@@ -135,7 +136,7 @@ eLinkObj.sendCombinedKey(["LeftCtrl", "LeftShift", "Del"])
 # send a combination key <LeftCtrl + LeftShift + Del>
 ```
 
-#### eLinkObj.getEvent          			
+### eLinkObj.getEvent          			
 
 Get events receive from eLinkKVM. 
 
@@ -181,7 +182,7 @@ while True:
     break
 ```
 
-#### eLinkObj.clrEvent
+### eLinkObj.clrEvent
 
 When starting Server which will though many phase including: Pre-Boot phase And OS phase. With each phase, Server will re-Initial eLinkKVM , then eLinkKVM will issue many duplicate events. So, need to have aa clean event method to clean up current queue event.
 
@@ -197,7 +198,7 @@ while True:
 
 ```
 
-#### eLinkObj.setUsbMode        			
+### eLinkObj.setUsbMode        			
 
 Set USB Mode
 
@@ -241,7 +242,7 @@ eLinkObj.setUsbMode("USB_MODE_KEY|USB_MODE_VNC_HID|USB_MODE_MOUSE_ABS",0,["A:\wi
 
 ```
 
-#### eLinkObj.setVncMode   
+### eLinkObj.setVncMode   
 ```
 TODO Review the naming => change to eLinkObj.setOutputMode()
 ```
@@ -267,7 +268,7 @@ eLinkObj.setVncMode("MODE_VNC_RGB") #Set RGB mode
 ```
 
 
-#### eLinkObj.setKeyMode        			
+### eLinkObj.setKeyMode        			
 
 Set Keyboard Mode
 
@@ -284,7 +285,7 @@ eLinkObj.setKeyMode("KEY_INTF_VNC")
 eLinkObj.setKeyMode(2)
 ```
 
-#### eLinkObj.setMouseMode      			
+### eLinkObj.setMouseMode      			
 Set Mouse mode. Mouse mode including: 
 ```python
 # Cấu hình Mouse sử dụng HID USB 
@@ -309,7 +310,7 @@ eLinkObj.setMouseMode("POINT_INTF_HID_ABS")
 eLinkObj.setMouseMode(3)
 ```
 
-#### eLinkObj.lockKeyboard     			
+### eLinkObj.lockKeyboard     			
 
 Lock Keyboard Option
 
@@ -317,7 +318,7 @@ Lock Keyboard Option
 Not support yet
 ````
 
-#### eLinkObj.lockMouse         			
+### eLinkObj.lockMouse         			
 
 Lock Mouse Option
 
@@ -325,7 +326,7 @@ Lock Mouse Option
 Not support yet
 ````
 
-#### eLinkObj.setVncIdle 
+### eLinkObj.setVncIdle 
 
 TODO Consider to 
 
@@ -339,7 +340,7 @@ Configure eLinkKVM send Screen Idle event when Screen unchanged in specific time
 elinkObj.setVncIdle(200) # 200 ms timeout for idle event 
 ```
 
-#### eLinkObj.setKeyIdle        			
+### eLinkObj.setKeyIdle        			
 
 Set key idle between 2 key 
 
@@ -349,7 +350,7 @@ eLinkObj.setKeyIdle(200) # 200ms delay between 2 keys send
 eLinkObj.sendString("hello world") #
 ````
 
-#### eLinkObj.matchScreen       			
+### eLinkObj.matchScreen       			
 Polling current screen and recognizing reference input image whether or not exist in the screen. Return None or MachingObj which content coordinate and size of maching zone. 
 Matching Object data
 ```python
@@ -389,7 +390,7 @@ h = int(matchingData[3])
 print("Found {} in screen at x:{} y:{} width:{} height:{}".format("test1.png",x,y,w,h)
 ```
 
-#### eLinkObj.ipmiConnect
+### eLinkObj.ipmiConnect
 ```python
 #TODO 
 #consider for IPMI methods
@@ -421,7 +422,7 @@ eLinkObj.ipmiConnect("elink-ipmi", "ADMIN", "ADMIN")
 
 ```
 
-#### eLinkObj.ipmiPower         			
+### eLinkObj.ipmiPower         			
 
 Dùng IPMI để power on server
 
@@ -429,7 +430,7 @@ Dùng IPMI để power on server
 eLinkObj.ipmiPower()
 ```
 
-#### eLinkObj.ipmiReset
+### eLinkObj.ipmiReset
 
 dùng IPMI để reset server 
 
@@ -438,7 +439,7 @@ eLinkObj.ipmiReset(0) #reset server
 eLinkObj.ipmiReset(1) #reset server to bios setup 
 ````
 
-#### eLinkObj.ipmiStatus        			
+### eLinkObj.ipmiStatus        			
 
 ipmi status
 
@@ -456,7 +457,7 @@ print("{}".format(status_ret))
 [1, 0, 'Ipmi is connected'] 
 ```
 
-#### eLinkObj.ipmiSolEnable
+### eLinkObj.ipmiSolEnable
 
 ipmi sol enable
 
@@ -464,7 +465,7 @@ ipmi sol enable
 Not support Yet
 ```
 
-#### eLinkObj.remoteFileList    			
+### eLinkObj.remoteFileList    			
 
 Get file list content in eLinkKVM
 
@@ -507,7 +508,7 @@ struct entry = {
 ```
 
 
-#### eLinkObj.remoteFileDelete  			
+### eLinkObj.remoteFileDelete  			
 
 delete remote file
 ```python
@@ -525,7 +526,7 @@ Deleting remote '\A:\/ver1.0_release_patch3.epg' file
 file list [['floppy.hdd', 0, 1474560], ['floppy.hddx', 0, 33], ['Win2012.hdd2', 0, 457044992]]
 ```
 
-#### eLinkObj.remoteFileRename 
+### eLinkObj.remoteFileRename 
 
 Rename remote file 
 
@@ -558,7 +559,7 @@ redo rename file list [['floppy.hddx', 0, 33], ['floppy.hdd', 0, 1474560], ['Win
 
 
 
-#### eLinkObj.remoteFileUpload  			
+### eLinkObj.remoteFileUpload  			
 
 upload remote file
 
@@ -580,7 +581,7 @@ upload file list [['winpe_format.py', 0, 3620], ['floppy.hddx', 0, 33], ['floppy
 ```
 
 
-#### eLinkObj.remoteFileDownload			
+### eLinkObj.remoteFileDownload			
 
 download remote file
 
@@ -588,7 +589,7 @@ download remote file
 Not support yet
 ```
 
-#### eLinkObj.remoteFileCopy    			
+### eLinkObj.remoteFileCopy    			
 
 copy remote file
 
@@ -602,7 +603,7 @@ listFile = eLinkObj.remoteFileList("/A")
 print("Copy file list {}".format(listFile))
 ```
 
-### Capture screen 
+## Capture screen 
 
 Step by step to capture reference image
 
