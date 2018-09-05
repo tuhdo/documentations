@@ -243,9 +243,8 @@ eLinkObj.setUsbMode("USB_MODE_KEY|USB_MODE_VNC_HID|USB_MODE_MOUSE_ABS",0,["A:\wi
 ```
 
 ### eLinkObj.setVncMode   
-```
-TODO Review the naming => change to eLinkObj.setOutputMode()
-```
+
+
 Set eLinkObj Mode
 
 ```python
@@ -328,12 +327,6 @@ Not support yet
 
 ### eLinkObj.setVncIdle 
 
-TODO Consider to 
-
-```python
-eLinkObj.setBoosterScreenIdle(time:int)
-```
-
 Configure eLinkKVM send Screen Idle event when Screen unchanged in specific time (Idle time) 
 
 ```python
@@ -391,18 +384,6 @@ print("Found {} in screen at x:{} y:{} width:{} height:{}".format("test1.png",x,
 ```
 
 ### eLinkObj.ipmiConnect
-```python
-#TODO 
-#consider for IPMI methods
-ipmiObj = eLinkObj.ipmiConnect(<IpAddr>,<Usrname>,<Pass>) 
-ipmiObj.power()
-ipmiObj.reset() 
-ipmiObj.reset(mode="USB") #reset to USB boot 
-ipmiObj.reset(mode="BIOS") #reset to Biso setup
-ipmiObj.activateSol() #activate IPMI SOL
-
-```
-
 
 Kết nối tới IPMI server 
 
@@ -469,16 +450,6 @@ Not support Yet
 
 Get file list content in eLinkKVM
 
-```python
-TODO
-fileMnger = eLinkObj.FileManager() # return fileMnger Object (contains some methods of remote file manager 
-listFile = eLinkObj.remoteFileList("/A") 
-listFile = eLinkObj.remoteFileList("/B")
-# change to 
-listFile = fileMnger.listFiles("A") #list all files contain in disk A 
-listFile = fileMnger.listFiles("B") #list all files contain in disk B 
-```
-
 Example: 
 
 ```python
@@ -503,7 +474,6 @@ struct entry = {
     filename: str 
     type : int (0/file, 1/directory)
     size :int (in bytes) (0 if entry is directory)
-    md5 : str //TODO if entry is file (type=1) the field will contain MD5 of file 
 }
 ```
 
