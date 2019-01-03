@@ -6,6 +6,58 @@
 
 ## Introduction
 
+A KVM switch (an abbreviation stands for "Keyboard, Video and Mouse")
+is a hardware device that enables a user to control multiple computers
+from one or more[1] sets of keyboards, video monitors, and mice.
+
+The eLinkKVM is a device that provides over-the-internet
+functionality, or "over-IP** in short, to KVM switches that do not have
+built in internetwork functionality. Operators can monitor and access
+their computers from remote locations using a standard Internet
+browser with a remote control software. An eLinkKVM device connects to
+a local area network or directly to a personal computer (PC) using a
+standard ethernet cable, then uses a USB cable and a video display
+cables to connect to a server and complete control it with Keyboard,
+Video and Mouse functionliaty from the eLinkKVM device.
+
+Because the eLinkKVM uses the Internet as its data communication
+medium, the server it is connected to can be accessed from any
+authorized computer across the Internet, regardless of physical
+location.
+
+A user at a remote location connect to the eLinkKVM via its IP
+address. Once a connection has been established and authorization
+granted, the remote computer can exchange keyboard, video and mouse
+signals with the remote server (of which the eLinkKVM is attached to**,
+just as if they were physically present and working on the equipment
+directly.
+
+## Features
+
+| Feature | Description                                             |
+|---------|---------------------------------------------------------|
+| Over-IP | Allows a KVM switch to remote control over the internet |
+
+## System Requirements
+
+### Servers
+    
+Servers are the computers connected to the control cables (USB for
+input and VGA for output). The following equipment must be installed
+on these servers:
+
+ - A VGA port
+ - Type-A USB port.
+
+### Cables
+
+### Video
+
+### Operating Ssytems
+
+- Windows 7, 8, 10.
+- Windows Server 2012.
+
 
 ## eLinkKVM and I/O ports
 
