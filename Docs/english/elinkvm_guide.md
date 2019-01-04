@@ -36,47 +36,54 @@ directly.
 
 #### Hardware ####
 
-| Type       | Description                                                                   |
-|------------|--------------------------------------------------------------------|
-| Networks   | 2 Ethernet  ports (10/100Mbps)                                     |
-|            |                                                                    |
-| Storage    | Internal Flash Storage (8GB)                                       |
-|            |                                                                    |
-| Interfaces | Micro SD-CARD (extend up to 64GB)                                  |
-|            | RS232 interface                                                    |
-|            | USB Host interface to extend to USB 3G/4G, USB Wifi, USB Storage   |
-|            |                                                                    |
-| Video      | VGA Port, Video Full HD Resolution                                 |
-|            | VGA Text mode: 640x350, 640x480, 720x400                           |
-|            |                                                                    |
-|            | VGA Graphic mode: 640x480, 800x600, 1024x768, 1152x864, 1280x1024, |
-|            | 1440x900,1680x1050,1600x1200,1920 x1080                            |
+| Type                        | Description                                                                          |
+|-----------------------------|--------------------------------------------------------------------------------------|
+| Networks                    | 2 Ethernet  ports (10/100Mbps)                                                       |
+| Storage                     | Internal Flash Storage (8GB) that can be accessed by eLinkViewer software            |
+| Interfaces                  | Micro SD-CARD (extend up to 64GB)                                                    |
+|                             | RS232 interface                                                                      |
+|                             | USB Host interface to extend to USB 3G/4G, USB Wifi, USB Storage                     |
+| Video                       | VGA Port, Video Full HD Resolution                                                   |
+|                             | VGA Text mode: 640x350, 640x480, 720x400                                             |
+|                             | VGA Graphic mode: 640x480, 800x600, 1024x768, 1152x864, 1280x1024,                   |
+|                             | 1440x900,1680x1050,1600x1200,1920 x1080                                              |
+| Remote Access Features      | Support  VNC Protocol                                                                |
+|                             | Emulation the USB Relative Mouse and Absolute Mouse                                  |
+|                             | Emulation the USB Keyboard                                                           |
+|                             | Capture Full HD resolution with **Hardware Mode**                                    |
+|                             | Capture all resolutions with 100% screen quality using the patented **Booster Mode** |
+| Connections                 | Direct Connect Through TCP/IP                                                        |
+|                             | Extension through USB 3G/4G                                                          |
+|                             | Coming the Cloud Service to connect behind Firewall                                  |
+| Securities                  | Secure by SSL                                                                        |
+|                             | Multiple Login Accounts (Up to 8 users)                                              |
+| Remote Server Power Control | Remote Reset/On/Off  Server through an IPMI GUI Interface from eLinkViewer           |
+|                             | Control the External PDU through RS232                                               |
+| Virtual Media               | Disk images (.iso, .raw, .hdd, .hdd2** can be mounted as a USB 2.0 devices on        |
+|                             | on a remote computer for easy software installation and system updates               |
 
-#### Software ####
-
-| Type                        | Description                                                                                              |
-|-----------------------------|-----------------------------------------------------------------------------------------------|
-| Remote Access Features      | Support  VNC Protocol                                                                         |
-|                             | Emulation the USB Relative Mouse and Absolute Mouse                                           |
-|                             | Emulation the USB Keyboard                                                                    |
-|                             | Capture Full HD resolution with Hardware Mode  and All resolutions with patented Booster Mode |
-| Connections                 | Direct Connect Through TCP/IP                                                                 |
-|                             | Extension through USB 3G/4G                                                                   |
-|                             | Coming the Cloud Service to connect behind Firewall                                           |
-| Securities                  | Secure by SSL                                                                                 |
-|                             | Multiple Login Accounts (Up to 8 users)                                                       |
-| Remote Server Power Control | Remote Reset/On/Off  Server through IPMI Interface                                            |
-|                             | Control the External PDU through RS232                                                        |
 
 #### eLinkViewer ####
+
+**eLinkViewer*** is an application specifically made to view remote
+screen content captured by an eLinkKVM device as well as interact with
+a remote computer. 
+
+**eLinkViewer** also provides functionalities to manage an eLinkKVM device.
     
-| Type       | Description                                                                      |
-|------------|----------------------------------------------------------------------------------|
-| General    | Support multiple VNC Server and eLinkKVM                                         |
-|            | Remote protocol using VNC and extension commands for eLinkKVM                    |
-| Automation | Support image recognization and Python scripting allow automation the activities |
-| IPMI       | Support IPMI protocol to control server                                          |
-| Platform   | Support Window and Comming MacOS, Linux                                          |
+| Type                   | Description                                                                      |
+|------------------------|----------------------------------------------------------------------------------|
+| General                | Support multiple VNC Server and eLinkKVM                                         |
+|                        | Remote protocol using VNC and extension commands for eLinkKVM                    |
+|                        | Support video scaling and full screen                                            |
+| Automation             | Support image recognization and Python scripting allow automation the activities |
+| IPMI                   | Support IPMI protocol to control server with GUI                                 |
+| Platform               | Currently support Windows                                                        |
+| Bandwidth Optimization | Provide video quality settings to maximze remote performance for the available   |
+|                        | network bandwith                                                                 |
+| Screen scaling         | Viewer screen can be scaled to any resolution independent from remote computer's |
+|                        | resolution or even enter a full-screen mode. In full-screen mode, the viewer     |
+|                        | screen scales according to the remote computer's resolution.                                                                                 |
 
 
 ### eLinkKVM components ###
