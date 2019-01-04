@@ -36,6 +36,8 @@ directly.
 
 ### Hardware
 
+| Type       | Description                                                                   |
+|------------|--------------------------------------------------------------------|
 | Networks   | 2 Ethernet  ports (10/100Mbps)                                     |
 |            |                                                                    |
 | Storage    | Internal Flash Storage (8GB)                                       |
@@ -52,6 +54,8 @@ directly.
 
 ### Software
 
+| Type                        | Description                                                                                              |
+|-----------------------------|-----------------------------------------------------------------------------------------------|
 | Remote Access Features      | Support  VNC Protocol                                                                         |
 |                             | Emulation the USB Relative Mouse and Absolute Mouse                                           |
 |                             | Emulation the USB Keyboard                                                                    |
@@ -65,8 +69,9 @@ directly.
 |                             | Control the External PDU through RS232                                                        |
 
 ### eLinkViewer
-
-
+    
+| Type       | Description                                                                      |
+|------------|----------------------------------------------------------------------------------|
 | General    | Support multiple VNC Server and eLinkKVM                                         |
 |            | Remote protocol using VNC and extension commands for eLinkKVM                    |
 | Automation | Support image recognization and Python scripting allow automation the activities |
