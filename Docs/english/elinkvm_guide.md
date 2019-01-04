@@ -6,6 +6,93 @@
 
 ## Introduction
 
+A KVM switch (an abbreviation stands for "Keyboard, Video and Mouse")
+is a hardware device that enables a user to control multiple computers
+from one or more[1] sets of keyboards, video monitors, and mice.
+
+The eLinkKVM is a device that provides over-the-internet
+functionality, or "over-IP** in short, to KVM switches that do not have
+built in internetwork functionality. Operators can monitor and access
+their computers from remote locations using a standard Internet
+browser with a remote control software. An eLinkKVM device connects to
+a local area network or directly to a personal computer (PC) using a
+standard ethernet cable, then uses a USB cable and a video display
+cables to connect to a server and complete control it with Keyboard,
+Video and Mouse functionliaty from the eLinkKVM device.
+
+Because the eLinkKVM uses the Internet as its data communication
+medium, the server it is connected to can be accessed from any
+authorized computer across the Internet, regardless of physical
+location.
+
+A user at a remote location connect to the eLinkKVM via its IP
+address. Once a connection has been established and authorization
+granted, the remote computer can exchange keyboard, video and mouse
+signals with the remote server (of which the eLinkKVM is attached to**,
+just as if they were physically present and working on the equipment
+directly.
+
+## Features
+
+### Hardware
+
+| Networks   | 2 Ethernet  ports (10/100Mbps)                                     |
+|            |                                                                    |
+| Storage    | Internal Flash Storage (8GB)                                       |
+|            |                                                                    |
+| Interfaces | Micro SD-CARD (extend up to 64GB)                                  |
+|            | RS232 interface                                                    |
+|            | USB Host interface to extend to USB 3G/4G, USB Wifi, USB Storage   |
+|            |                                                                    |
+| Video      | VGA Port, Video Full HD Resolution                                 |
+|            | VGA Text mode: 640x350, 640x480, 720x400                           |
+|            |                                                                    |
+|            | VGA Graphic mode: 640x480, 800x600, 1024x768, 1152x864, 1280x1024, |
+|            | 1440x900,1680x1050,1600x1200,1920 x1080                            |
+
+### Software
+
+| Remote Access Features      | Support  VNC Protocol                                                                         |
+|                             | Emulation the USB Relative Mouse and Absolute Mouse                                           |
+|                             | Emulation the USB Keyboard                                                                    |
+|                             | Capture Full HD resolution with Hardware Mode  and All resolutions with patented Booster Mode |
+| Connections                 | Direct Connect Through TCP/IP                                                                 |
+|                             | Extension through USB 3G/4G                                                                   |
+|                             | Coming the Cloud Service to connect behind Firewall                                           |
+| Securities                  | Secure by SSL                                                                                 |
+|                             | Multiple Login Accounts (Up to 8 users)                                                       |
+| Remote Server Power Control | Remote Reset/On/Off  Server through IPMI Interface                                            |
+|                             | Control the External PDU through RS232                                                        |
+
+### eLinkViewer
+
+
+| General    | Support multiple VNC Server and eLinkKVM                                         |
+|            | Remote protocol using VNC and extension commands for eLinkKVM                    |
+| Automation | Support image recognization and Python scripting allow automation the activities |
+| IPMI       | Support IPMI protocol to control server                                          |
+| Platform   | Support Window and Comming MacOS, Linux                                          |
+
+## System Requirements
+
+### Servers
+    
+Servers are the computers connected to the control cables (USB for
+input and VGA for output). The following equipment must be installed
+on these servers:
+
+ - A VGA port
+ - Type-A USB port.
+
+### Cables
+
+### Video
+
+### Operating Ssytems
+
+- Windows 7, 8, 10.
+- Windows Server 2012.
+
 
 ## eLinkKVM and I/O ports
 
