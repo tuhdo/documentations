@@ -4,21 +4,21 @@
 
 # eLinkKVM Guide
 
-## Introduction
+## Chapter 1: Introduction
 
 A KVM switch (an abbreviation stands for "Keyboard, Video and Mouse")
 is a hardware device that enables a user to control multiple computers
 from one or more[1] sets of keyboards, video monitors, and mice.
 
 The eLinkKVM is a device that provides over-the-internet
-functionality, or "over-IP** in short, to KVM switches that do not have
-built in internetwork functionality. Operators can monitor and access
-their computers from remote locations using a standard Internet
-browser with a remote control software. An eLinkKVM device connects to
-a local area network or directly to a personal computer (PC) using a
-standard ethernet cable, then uses a USB cable and a video display
-cables to connect to a server and complete control it with Keyboard,
-Video and Mouse functionliaty from the eLinkKVM device.
+functionality, or "over-IP" in short, to KVM switches that do not
+have built in internetwork functionality. Operators can monitor and
+access their computers from remote locations using a remote control
+software. An eLinkKVM device connects to a local area network or
+directly to a personal computer (PC) using a standard ethernet cable,
+then uses a USB cable and a video display cables to connect to a
+server and complete control it with Keyboard, Video and Mouse
+functionliaty from the eLinkKVM device.
 
 Because the eLinkKVM uses the Internet as its data communication
 medium, the server it is connected to can be accessed from any
@@ -32,10 +32,12 @@ signals with the remote server (of which the eLinkKVM is attached to**,
 just as if they were physically present and working on the equipment
 directly.
 
-## Features
+### Features ###
 
-### Hardware
+#### Hardware ####
 
+| Type       | Description                                                                   |
+|------------|--------------------------------------------------------------------|
 | Networks   | 2 Ethernet  ports (10/100Mbps)                                     |
 |            |                                                                    |
 | Storage    | Internal Flash Storage (8GB)                                       |
@@ -50,8 +52,10 @@ directly.
 |            | VGA Graphic mode: 640x480, 800x600, 1024x768, 1152x864, 1280x1024, |
 |            | 1440x900,1680x1050,1600x1200,1920 x1080                            |
 
-### Software
+#### Software ####
 
+| Type                        | Description                                                                                              |
+|-----------------------------|-----------------------------------------------------------------------------------------------|
 | Remote Access Features      | Support  VNC Protocol                                                                         |
 |                             | Emulation the USB Relative Mouse and Absolute Mouse                                           |
 |                             | Emulation the USB Keyboard                                                                    |
@@ -64,18 +68,19 @@ directly.
 | Remote Server Power Control | Remote Reset/On/Off  Server through IPMI Interface                                            |
 |                             | Control the External PDU through RS232                                                        |
 
-### eLinkViewer
-
-
+#### eLinkViewer ####
+    
+| Type       | Description                                                                      |
+|------------|----------------------------------------------------------------------------------|
 | General    | Support multiple VNC Server and eLinkKVM                                         |
 |            | Remote protocol using VNC and extension commands for eLinkKVM                    |
 | Automation | Support image recognization and Python scripting allow automation the activities |
 | IPMI       | Support IPMI protocol to control server                                          |
 | Platform   | Support Window and Comming MacOS, Linux                                          |
 
-## System Requirements
+### System Requirements ###
 
-### Servers
+#### Servers ####
     
 Servers are the computers connected to the control cables (USB for
 input and VGA for output). The following equipment must be installed
@@ -84,35 +89,43 @@ on these servers:
  - A VGA port
  - Type-A USB port.
 
-### Cables
+#### Cables ####
 
-### Video
+#### Video ####
 
-### Operating Ssytems
+#### Operating Sytems ####
 
 - Windows 7, 8, 10.
 - Windows Server 2012.
 
-
-## eLinkKVM and I/O ports
+### eLinkKVM components ###
 
 ![eLinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1Inpd1l5-inhGNrO2rQHngclQskfswmQ4)
 
-**Front ports** 
+#### Front view #####
 
-- USB Type-B: power the device and acts as a communication channel between eLinkKVM and a server.
-- Micro USB: the secondary source for the device when the power from USB Type B port is insufficient, or keeping the connection to eLinkKVM alive when the server is power off.
-- VGA: for capturing and outputting video signal to send and receive over the internet.
-- RS232: the serial communication port (COM port). This port will be connected to the server serial port.
+| ID | Component  | Description                                                                                      |
+|----|------------|--------------------------------------------------------------------------------------------------|
+| 1  | USB Type-B | power the device and acts as a communication channel between eLinkKVM and a server               |
+| 2  | Power      | the secondary source is supplied by a micro USB cable. It is neccessary when the power           |
+|    |            | from USB Type B port is insufficient, or keeping the connection to eLinkKVM                      |
+|    |            | alive when the server is power off.                                                              |
+| 3  | VGA        | For capturing and outputting video signal to send and receive over the internet.                 |
+| 4  | RS232      | the serial communication port (COM port). This port will be connected to the server serial port. |
 
-**Rear ports** 
+#### Rear view #####
 
-- 2 Ethernet ports for connectivity:
-+ Master: can be configured as a DHCP server, a DHCP client or a static IP
-+ Slave: can be configured as a DHCP Client or a static IP
-- SD card: allows a user to expand storage capacity with an external micro SD card
-* Status Led 1,2,3: signal device statuses through different led colors
-* USB Type-A: allow to attach an external peripheral device such USB 3G/4G, USB Mass Storage, etc., to extend eLinkKVM functionality.
+| ID | Component         | Description                                                              |
+|----|-------------------|--------------------------------------------------------------------------|
+| 1  | Ethernet ports    | Master: can be configured as a DHCP server, a DHCP client or a static IP |
+|    |                   | Slave: can be configured as a DHCP Client or a static IP                 |
+|    |                   |                                                                          |
+| 2  | SD card           | allows a user to expand storage capacity with an external micro SD card  |
+| 3  | Status Leds 1,2,3 | signal device statuses through different led colors                      |
+| 4  | USB Type-A        | allow to attach an external peripheral device such as USB 3G/4G,         |
+|    |                   | USB Mass Storage, etc., to extend eLinkKVM functionality.                |
+
+## Hardware Setup
 
 ## eLinkViewer - Remote management software for eLinkKVM
 
