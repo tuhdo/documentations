@@ -78,25 +78,6 @@ directly.
 | IPMI       | Support IPMI protocol to control server                                          |
 | Platform   | Support Window and Comming MacOS, Linux                                          |
 
-### System Requirements ###
-
-#### Servers ####
-    
-Servers are the computers connected to the control cables (USB for
-input and VGA for output). The following equipment must be installed
-on these servers:
-
- - A VGA port
- - Type-A USB port.
-
-#### Cables ####
-
-#### Video ####
-
-#### Operating Sytems ####
-
-- Windows 7, 8, 10.
-- Windows Server 2012.
 
 ### eLinkKVM components ###
 
@@ -125,13 +106,108 @@ on these servers:
 | 4  | USB Type-A        | allow to attach an external peripheral device such as USB 3G/4G,         |
 |    |                   | USB Mass Storage, etc., to extend eLinkKVM functionality.                |
 
-## Hardware Setup
+### Chapter 2: Hardware Setup ###
 
-## eLinkViewer - Remote management software for eLinkKVM
+### System Requirements ###
 
-### Software interface
+#### Device and cables
 
-#### Login
+- 1 computer to be controlled
+- 1 eLinkKVM device 
+- 1 Ethernet RJ45 cable
+- 1 USB type B cable
+
+Optional:
+
+- 1 Micro USB cable connected to a 5v power source
+- 1 VGA cable
+- 1 RS232 cable
+
+#### Remote computer ####
+    
+A remote computers is a computer connected to the control cables
+(USB for input and VGA for output) that are connected to an eLinkKVM
+device. The following equipment must be available a remote computer:
+
+ - 1 VGA port
+ - 1 USB Type-A port at the minimum.
+
+#### Local computer ####
+
+A local computer is a computer that a user physically interact with to
+control a remote computer through an eLinkKVM device connected to the
+remote computer.
+   
+#### Operating Sytems ####
+
+Supported operating systems for a local computer:
+
+- Windows 7, 8, 10.
+- Windows Server 2012.
+
+Supported operating systems for a remote computer:
+
+- Windows 7, 8, 8, 10.
+- Windows Server 2012.
+
+#### eLinkKVM configuration ####
+
+![PoweringDevice](https://drive.google.com/a/elinkgate.com/uc?id=1OAJvfReUiWDwjh7OlbuqVG67y7u4K5KJ) 
+
+1. Use a USB Type-B cable to connect a remote computer and the Type-B port of an eLinkKVM device.
+2. Use a Micro USB cable to connect to a 5v power supply.
+
+A user can use one of the two methods or both to power up a device.
+
+##### Network configuration #####
+
+eLinkKVM supports two Ethernet ports for network connection:
+
+- Ethernet Master: by default, configured as a DHCP server.
+- Ethernet Slave: by default, configured as a DHCP client.
+
+To connect to an eLinkKVM device, a network connection between a local
+computer and an eLinkKVM device is required. The connection can either
+be:
+
+- *Direct connect*: An Ethernet cable connects directly between a
+  local computer and an eLinkKVM device.
+  
+- *Local Area Network*: Both the local computer and an eLinkKVM device
+  are connected to a local area network (LAN). eLinkKVM is plugged to
+  the router of the network.
+  
+- *Over the Internet*: an eLinkKVM device is provided with a static
+  address for a local computer to access it anywhere in the world.
+
+When a connection is established, its network interface must be
+configured in the operating system of the local computer. Currently,
+only Windows is supported.
+
+###### Windows ######
+
+1. Open `Control Panel` -> `All Control Panel Items` -> `Network Connections`.
+
+[TODO] Add an demo picture
+
+2. Right click on Ethernet Device of the eLinkKVM connection, select `Properties.
+
+[TODO] Add an demo picture
+
+3. Double click `Internet Protocol version 4 (TCP/IPv4)`
+
+[TODO] Add an demo picture
+
+4. Check the following options:
+
+- Ontain an IP Address automatically
+- Obtain DNS server address automatically
+
+### Chapter 3: Remote management software for eLinkKVM with eLinkViewer ###
+
+#### Software interface ####
+
+##### Login #####
 
 * **Quick Connect** 
 
@@ -162,8 +238,6 @@ For **Online Account** (Beta - not support yet), eLinkViewer allows a user store
 ## Basic usage
 
 ### Power up an eLinkKVM device
-
-Power 
 
 A USB Type-B connector from the server to an eLinkKVM device suffices to power up the device. But in some cases, it is necessary to keep the device active, while the **Server** can be turned off. This can be done by supplying another 5V power source to the micro USB port on an eLinkKVM device.
 
