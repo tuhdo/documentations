@@ -48,7 +48,7 @@ directly.
 
 #### Hardware ####
 
-| Type                        | Description                                                                          |
+| Feature                     | Description                                                                          |
 |-----------------------------|--------------------------------------------------------------------------------------|
 | Networks                    | 2 Ethernet  ports (10/100Mbps)                                                       |
 | Storage                     | Internal Flash Storage (8GB) that can be accessed by eLinkViewer software            |
@@ -59,6 +59,7 @@ directly.
 |                             | VGA Text mode: 640x350, 640x480, 720x400                                             |
 |                             | VGA Graphic mode: 640x480, 800x600, 1024x768, 1152x864, 1280x1024,                   |
 |                             | 1440x900,1680x1050,1600x1200,1920 x1080                                              |
+|                             | Secure, full BIOS-level control of remote servers over an IP network                 |
 | Remote Access Features      | Support  VNC Protocol                                                                |
 |                             | Emulation the USB Relative Mouse and Absolute Mouse                                  |
 |                             | Emulation the USB Keyboard                                                           |
@@ -73,7 +74,21 @@ directly.
 |                             | Control the External PDU through RS232                                               |
 | Virtual Media               | Disk images (.iso, .raw, .hdd, .hdd2** can be mounted as a USB 2.0 devices on        |
 |                             | on a remote computer for easy software installation and system updates               |
+| Multi-purpose USB port      | Keyboard, Mouse and Storage functionalities are integrated in a single USB port.     |
+| Compact form factor         | Making it easier to attach to existing servers                                       |
+| Batch setup                 | Multiple eLinkKVM devices can be scripted by the eLinkViewer software to get         |
+|                             | the same configuration.                                                                                     |
 
+#### Booster technology ####
+
+Booster is a patented technology that allows eLinkKVM to utilize
+computing resources from controlled computers to improve remote
+performance. This enables higher quality remote screen and more
+responsive interactions with remotely controlled computers.
+
+Booster also helps reducing the loads on eLinkKVM devices, making
+eLinkKVM devices run cooler and extend the longevity of eLinkKVM
+devices, while delivering higher performance.
 
 #### eLinkViewer ####
 
@@ -83,7 +98,7 @@ a remote computer.
 
 **eLinkViewer** also provides functionalities to manage an eLinkKVM device.
     
-| Type                   | Description                                                                      |
+| Feature                | Description                                                                      |
 |------------------------|----------------------------------------------------------------------------------|
 | General                | Support multiple VNC Server and eLinkKVM                                         |
 |                        | Remote protocol using VNC and extension commands for eLinkKVM                    |
@@ -95,8 +110,8 @@ a remote computer.
 |                        | network bandwith                                                                 |
 | Screen scaling         | Viewer screen can be scaled to any resolution independent from remote computer's |
 |                        | resolution or even enter a full-screen mode. In full-screen mode, the viewer     |
-|                        | screen scales according to the remote computer's resolution.                                                                                 |
-
+|                        | screen scales according to the remote computer's resolution.                     |
+    
 
 ### eLinkKVM components ###
 
