@@ -6,13 +6,25 @@
 
 ## Chapter 1: Introduction
 
-A KVM switch (an abbreviation stands for "Keyboard, Video and Mouse")
-is a hardware device that enables a user to control multiple computers
-from one or more[1] sets of keyboards, video monitors, and mice.
+A KVM switch (an abbreviation stands for **K**eyboard, **V**ideo and
+**M**ouse") is a hardware device that enables a user to control
+multiple computers from one or more sets of keyboards, video monitors,
+and mice. For examle, in the following diagram, the computer on the
+right is currently being controlled by the peripherals.
 
-The eLinkKVM is a device that provides over-the-internet
-functionality, or "over-IP" in short, to KVM switches that do not
-have built in internetwork functionality. Operators can monitor and
+[](../../Resource/Kvm-switch-diagram.svg)
+
+[TODO] Replace Wikipedia diagram about with our original diagram
+
+Normal KVM switches attach controlling and controlled devices directly
+to itself. In constrast, KVM over-IP switches, provides
+over-the-internet functionality. This means, instead of physically
+connected to a KVM switch through very long cables and are usually
+limited in a room, a floor or a building, the controlling devices can
+be anywhere in the world that can connect to a KVM over-IP switch and
+control the connected computers with a normal Internet connection.
+
+eLinkKVM is one of such KVM over-IP devices. Operators can monitor and
 access their computers from remote locations using a remote control
 software. An eLinkKVM device connects to a local area network or
 directly to a personal computer (PC) using a standard ethernet cable,
