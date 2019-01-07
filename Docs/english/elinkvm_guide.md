@@ -237,7 +237,34 @@ only Windows is supported.
 - Ontain an IP Address automatically
 - Obtain DNS server address automatically
 
-### Chapter 3: Remote management software for eLinkKVM with eLinkViewer ###
+### Chapter 3: Booster Mode
+
+Booster is a unique patented technology for eLinkKVM and related
+ElinkGate products. Booster includes software agents for each major OS
+platform (Windows, Linux and Mac OS) that are installed on controlled
+computers. When an eLinkKVM device is attached to a controlled
+computer, the installed software agent is activated to cooperate with
+a eLinkKVM device using a specialized proprieteray protocol. The
+software agent then utilizes the available computing resources on the
+controlled computer to greately accelerate video input and output
+processing. As a result, eLinkKVM can deliver higher performance at
+higher resolutions for an extremely economical price.
+
+To enable Booster techonlogy, a user only needs to install the
+accompanied software components on an existing operating-system
+installation. For a fresh computer that need a new operating-system
+installation, a tool called `elinkSetuptool` is provided to help
+creating install disk images with embedded Booster from existing
+installation ISO files. These disk images can be loaded on eLinkKVM
+internal storage for remote operating-system installations on new
+computers with Booster enabled through the whole installation
+process. After the installation process is done, the freshly installed
+operating system is also pre-installed with Booster software to allow
+a user to continue using Booster without any interruption.
+
+[TODO] Add a diagram for Booster mode
+
+### Chapter 4: Remote management software for eLinkKVM with eLinkViewer ###
 
 #### Software interface ####
 
@@ -484,3 +511,6 @@ eLinkKVM supports configuration with a text file. Steps:
 eLinkViewer can scan for eLinkKVM devices in a local area network (LAN).
 
 ![ScaneLinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1JCnvvzjPa8L-eCFzl6kNBceS22OjBTGq)
+
+
+### Chapter 5: elinkSetuptool ###
