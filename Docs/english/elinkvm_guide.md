@@ -12,7 +12,7 @@ multiple computers from one or more sets of keyboards, video monitors,
 and mice. For examle, in the following diagram, the computer on the
 right is currently being controlled by the peripherals.
 
-[](../../Resource/Kvm-switch-diagram.svg)
+![kvm_diagram](../../Resource/Kvm-switch-diagram.svg)
 
 [TODO] Replace Wikipedia diagram about with our original diagram
 
