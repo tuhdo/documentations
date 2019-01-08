@@ -40,15 +40,15 @@ location.
 A user at a remote location connect to the eLinkKVM via its IP
 address. Once a connection has been established and authorization
 granted, the remote computer can exchange keyboard, video and mouse
-signals with the remote server (of which the eLinkKVM is attached to**,
-just as if they were physically present and working on the equipment
-directly.
+signals with the remote server (of which the eLinkKVM is attached
+to**, just as if they were physically present and working on the
+equipment directly.
 
 ### Features ###
 
 #### Hardware ####
 
-| Type                        | Description                                                                          |
+| Feature                     | Description                                                                          |
 |-----------------------------|--------------------------------------------------------------------------------------|
 | Networks                    | 2 Ethernet  ports (10/100Mbps)                                                       |
 | Storage                     | Internal Flash Storage (8GB) that can be accessed by eLinkViewer software            |
@@ -59,6 +59,7 @@ directly.
 |                             | VGA Text mode: 640x350, 640x480, 720x400                                             |
 |                             | VGA Graphic mode: 640x480, 800x600, 1024x768, 1152x864, 1280x1024,                   |
 |                             | 1440x900,1680x1050,1600x1200,1920 x1080                                              |
+|                             | Secure, full BIOS-level control of remote servers over an IP network                 |
 | Remote Access Features      | Support  VNC Protocol                                                                |
 |                             | Emulation the USB Relative Mouse and Absolute Mouse                                  |
 |                             | Emulation the USB Keyboard                                                           |
@@ -73,7 +74,21 @@ directly.
 |                             | Control the External PDU through RS232                                               |
 | Virtual Media               | Disk images (.iso, .raw, .hdd, .hdd2** can be mounted as a USB 2.0 devices on        |
 |                             | on a remote computer for easy software installation and system updates               |
+| Multi-purpose USB port      | Keyboard, Mouse and Storage functionalities are integrated in a single USB port.     |
+| Compact form factor         | Making it easier to attach to existing servers                                       |
+| Batch setup                 | Multiple eLinkKVM devices can be scripted by the eLinkViewer software to get         |
+|                             | the same configuration.                                                                                     |
 
+#### Booster technology ####
+
+Booster is a patented technology that allows eLinkKVM to utilize
+computing resources from controlled computers to improve remote
+performance. This enables higher quality remote screen and more
+responsive interactions with remotely controlled computers.
+
+Booster also helps reducing the loads on eLinkKVM devices, making
+eLinkKVM devices run cooler and extend the longevity of eLinkKVM
+devices, while delivering higher performance.
 
 #### eLinkViewer ####
 
@@ -83,7 +98,7 @@ a remote computer.
 
 **eLinkViewer** also provides functionalities to manage an eLinkKVM device.
     
-| Type                   | Description                                                                      |
+| Feature                | Description                                                                      |
 |------------------------|----------------------------------------------------------------------------------|
 | General                | Support multiple VNC Server and eLinkKVM                                         |
 |                        | Remote protocol using VNC and extension commands for eLinkKVM                    |
@@ -95,8 +110,8 @@ a remote computer.
 |                        | network bandwith                                                                 |
 | Screen scaling         | Viewer screen can be scaled to any resolution independent from remote computer's |
 |                        | resolution or even enter a full-screen mode. In full-screen mode, the viewer     |
-|                        | screen scales according to the remote computer's resolution.                                                                                 |
-
+|                        | screen scales according to the remote computer's resolution.                     |
+    
 
 ### eLinkKVM components ###
 
@@ -222,6 +237,18 @@ only Windows is supported.
 - Ontain an IP Address automatically
 - Obtain DNS server address automatically
 
+
+
+#### Setup verification
+
+The default address for Ethernet Master port is `10.0.0.1`. To check if the hardware is setup correctly:
+
+1. On Windows, open `cmd.exe`. On Linux and Mac OS, open a terminal emulator.
+
+2. Type the following command:
+
+   `ping 10.0.0.1`
+
 ### Chapter 3: Remote management software for eLinkKVM with eLinkViewer ###
 
 #### Software interface ####
@@ -267,28 +294,46 @@ Steps to configure static IP for an eLinkKVM device:
 
 1. Power up an eLinkKVM device and wait for the device to start up completely (all LED1 , LED2, LED 3 light up).
 
-2. Use a RJ45 cable to connect a PC to the Ethernet Master port. The default IP is `*10.0.0.1***.
+2. Use a Ethernet (RJ45) cable to connect a PC to the Ethernet Master port. The default IP is `10.0.0.1`.
 
-3. Configure network interface for the PC:
-
-- Open **Network connections** -> Right Click on network interface to eLinkKVM (usually unidentified) ->  Click **Properties***.
-
-Then, configured **Internet Protocol Version 4**: 
-
-![Ethernetconfigure](https://drive.google.com/a/elinkgate.com/uc?id=1PcuZEkauX3GhBpVFTJkWjPxHQSoPUDGZ)
-![EtherConfiguration](https://drive.google.com/a/elinkgate.com/uc?id=1bB02ODJ5dBMrX3R-2wmmpRe1KreA1jAo)
-
-4. Open eLinkViewer and connect to `*10.0.0.1*`
+4. Open eLinkViewer, enter `*10.0.0.1*` and click `Connect` to connect to the eLinkKVM device:
 
 ![MasterConnect](https://drive.google.com/a/elinkgate.com/uc?id=1pDbmgGfgn38E0m4jOBbdHlOZreElEKPa)
 
-5. eLinkKVM configuration user interface:
+When connected, eLinkViewer displays its home screen with many tabs for different screens. One of the tab is `Network`. Click on `Network` tab to move to this screen:
 
 ![eLinkKVM configure](https://drive.google.com/a/elinkgate.com/uc?id=11q7Rh8irV4Vz6LvYXo-ygD0ZcJjJ8Y89)
 
-**Example**
+5. The `Network` screen displays the following fields: 
+
+- IP Address
+- Netmask
+- Gateway
+- DNS
+
+Similar to how an ethernet adapter can be configured in an operating system.
+
+**Example**:
+
+Instead of using the default IP address `10.0.0.1`, the IP address of the connected eLinkKVM can be changed to `10.0.0.2`.
+
+```
+Ip address: 10.42.0.2
+Netmask: 	255.255.255.0 
+GateWay: 	10.42.0.1 
+DNS: 		10.42.0.1
+```
+
 ![eLinkKVM configure ui](https://drive.google.com/a/elinkgate.com/uc?id=1cysTb7rS4BjjY-7PkymnbuA9-GhlAfqa)
 
+
+![eLinkKVMConfig](https://drive.google.com/a/elinkgate.com/uc?id=1H7-BtcI8SNSALvVU2VUl4YM6_94b5jJI)
+
+## Dynamic IP Configuration
+
+Dynamic IP address is acquired automatically, issued by a DHCP server. In this case, the connected eLinkKVM device must be configured as a DHCP client.
+
+[TODO] Put a screenshot showing how to select DHCP Client
 ___
 ## Connect to eLinkKVM
 
@@ -318,35 +363,35 @@ ___
 20. Disconnect
 21. Scan IPMI 
 
-### Configure eLinkKVM
+### ElinkKVM configuration
 
 ![ElinkKVMConfigurationUi](https://drive.google.com/a/elinkgate.com/uc?id=1ZAKrwEi7X0q1qR8OcmzzJ2qbD2X0WsQd)
 
-eLinkKVM configuration includes: 
+The viewer provides a dialog called `Elink Configuration` that includes the following options to configure an eLinkKVM device: 
 
-* Key:
+#### Key: ####
 
 * HID USB : use real keyboard (USB)
 * HID VNC : use software keyboard (VNC protocol)
 * Serial: use software keyboard (serial protocol)
 
-* Mouse: 
+#### Mouse: ####
 
 * HID USB : use real mouse (USB)
 * HID VNC: use software mouse (VNC protocol)
 * ABS USB: use real mouse, but sync both local and remote mouse as one mouse pointer (USB absolute hid)
 
-* Video:
+#### Video: ####
 
 * Dummy : configure network and serial connections
 * VGA: configure VGA display
-* Booster: enable remote management with Booster technology
+* Booster: enable remote management with Booster. This will be covered in later chapters. 
 * Serial: enable serial display and communication
 * IPMI:  enable Serial Over Lan (SOL) with IPMI 
 
-* File browsing and disk image mounting:
+#### File browsing and disk image mounting: ####
 
-* Path 0 to 3: File paths to disk images
+* Path 0/1/2/3: File paths to disk images
 
 * `Browse` button allows navigating to the disk images with a file explorer:
 
@@ -412,13 +457,66 @@ eLinkViewer allows data transfer from a local PC to an eLinkKVM device  with `Fi
 
 ![Exit connection ](https://drive.google.com/a/elinkgate.com/uc?id=1MC_UUz0tERNfc2TGCudEGgF-77M3aKYT)
 
+### Remote control with VGA mode 
+
+![RemoteControlVGA](https://drive.google.com/a/elinkgate.com/uc?id=1GWzc9F2mUWN8A-fbLGQ3KqBzPEhhe6D9)
+
+
+### Manual configuration with file
+
+eLinkKVM supports configuration with a text file. Steps: 
+
+![ConfigureFileConfig](https://drive.google.com/a/elinkgate.com/uc?id=1iKrSG4coRPMnUkbcNSEplJtHuewuhxkD)
+
+1. Press `Enter Configuration` button an eLinkKVM device. The firmware on the eLinkKVM device then configures itself as a storage device.
+2. Open the drive `ELINKCONF`.
+3. In `ELINKCONF` drive, there is a configuration file that can be editted by any text editor. 
+4. Edit the file following eLinkKVM configuration syntax. Store the file and reset eLinkKVM to use the new configuration.
+
+![gifConfigureFile](https://drive.google.com/a/elinkgate.com/uc?id=1Bkt9flkzvf36T-5rNGA_HJH9VIdlZom1)
+
+### Upgrade firmware for eLinkKVM
+
+![firmware upgrade](https://drive.google.com/a/elinkgate.com/uc?id=1UH_-a08spJ2ufRyOcmENWefrBHTXXSit)
+
+### Scan eLinkKVM in a local area network
+
+eLinkViewer can scan for eLinkKVM devices in a local area network (LAN).
+
+![ScaneLinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1JCnvvzjPa8L-eCFzl6kNBceS22OjBTGq)
+
+### Chapter 4: Booster Mode
+
+Booster is a unique patented technology for eLinkKVM and related
+ElinkGate products. Booster includes software agents for each major OS
+platform (Windows, Linux and Mac OS) that are installed on controlled
+computers. When an eLinkKVM device is attached to a controlled
+computer, the installed software agent is activated to cooperate with
+a eLinkKVM device using a specialized proprieteray protocol. The
+software agent then utilizes the available computing resources on the
+controlled computer to greately accelerate video input and output
+processing. As a result, eLinkKVM can deliver higher performance at
+higher resolutions for an extremely economical price.
+
+To enable Booster techonlogy, a user only needs to install the
+accompanied software components on an existing operating-system
+installation. For a fresh computer that need a new operating-system
+installation, a tool called `elinkSetuptool` is provided to help
+creating install disk images with embedded Booster from existing
+installation ISO files. These disk images can be loaded on eLinkKVM
+internal storage for remote operating-system installations on new
+computers with Booster enabled through the whole installation
+process. After the installation process is done, the freshly installed
+operating system is also pre-installed with Booster software to allow
+a user to continue using Booster without any interruption.
+
+[TODO] Add a diagram for Booster mode
+
 ### Remote control with Booster mode 
 
 ![Booster mode remote control](https://drive.google.com/a/elinkgate.com/uc?id=1yJGy1_O6FCYe0uyvxdja5eGSYl8vvWfC)
 
-### Remote control with VGA mode 
 
-![RemoteControlVGA](https://drive.google.com/a/elinkgate.com/uc?id=1GWzc9F2mUWN8A-fbLGQ3KqBzPEhhe6D9)
 
 ### Remote control with auto Booster mode 
 
@@ -446,26 +544,6 @@ Steps tto configure Auto Booster mode:
 6. Press OK to save the configuration.
 
 7. Press OK to confirm.
+  * 
 
-### Manual configuration with file
-
-eLinkKVM supports configuration with a text file. Steps: 
-
-![ConfigureFileConfig](https://drive.google.com/a/elinkgate.com/uc?id=1iKrSG4coRPMnUkbcNSEplJtHuewuhxkD)
-
-1. Press `Enter Configuration` button an eLinkKVM device. The firmware on the eLinkKVM device then configures itself as a storage device.
-2. Open the drive `ELINKCONF`.
-3. In `ELINKCONF` drive, there is a configuration file that can be editted by any text editor. 
-4. Edit the file following eLinkKVM configuration syntax. Store the file and reset eLinkKVM to use the new configuration.
-
-![gifConfigureFile](https://drive.google.com/a/elinkgate.com/uc?id=1Bkt9flkzvf36T-5rNGA_HJH9VIdlZom1)
-
-### Upgrade firmware for eLinkKVM
-
-![firmware upgrade](https://drive.google.com/a/elinkgate.com/uc?id=1UH_-a08spJ2ufRyOcmENWefrBHTXXSit)
-
-### Scan eLinkKVM in a local area network
-
-eLinkViewer can scan for eLinkKVM devices in a local area network (LAN).
-
-![ScaneLinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1JCnvvzjPa8L-eCFzl6kNBceS22OjBTGq)
+### Chapter 5: elinkSetuptool ###
