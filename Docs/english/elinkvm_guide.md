@@ -52,46 +52,56 @@ technology and make some enhance versus the old tradional KVM over IP
 and below are the main feature:
 
 - **Full Bios-level control over an IP Network**
+
   The video capture hardware (Hardware mode) is designed to decode the
   video signal up to 1920x1080 that help to monitor the screen in any
   situation.
 
 - **Featureful native client software*** 
+
   Client software is bundled with many unique features: scripting and
   image recognization, to automate manual operations. See the
   eLinkViewer chapter for more information.
         
 * **Virtual Media support with 8GB Internal Flash or 64GB with SD
   Card** 
+  
   Instead of using a separate computer as a share network
   storage to emulate the Virtual Media, eLinkKVM itself is a high
   performance shared netork storage device.
         
 * **Server Power Design**
+
   No external power supply required
 
-* Built in RS232 Serial Port that can be configured for Serial
-  Console, Remote Dial In or control external PDU
+* **RS232 Serial Port**
+
+ For Serial Console, Remote Dial In or control external PDU
 
 * **Support USB Host Interface** 
+
   Allow control USB 3G/4G, external USB storage or USB security device
   to add more functionality.
 
 * **Flexible 2 Ethernet Ports** 
+
   The Ethernet ports can be configured to work indepently to connect 2
   different networks with the master port can be configured as a DHCP
   server. Or 2 ports can be used to connect a server to a router,
   using a single server Ethernet port.
 
 * **Built-In USB Hub** 
+
   Physically emulate all USB device (Mouse, Keyboard, Storage)  with just
   one USB cables
 
 * **Scalability** 
+
   eLinkKVM can scale to control more than one computers by
   connecting the computers to eLinkSwitch.
 
 * **Low cost**
+
   Ideal for distributed IT system environments such as small branch
   offices, campuses, test labs, and server hosting environments.
 
