@@ -133,7 +133,7 @@ devices, while delivering higher performance.
 
 The following diagram shows the scope covered by Booster:
 
-![](../../Resource/BoosterDiagram.png)
+![](../../Resource/BoosterVsNormalDiagram.png)
 
 #### Hardware specification ####
 
@@ -580,15 +580,17 @@ process is done, the freshly installed operating system is also
 pre-installed with Booster software to allow a user to continue using
 Booster without any interruption.
 
-[TODO] Add a diagram for Booster mode
+![](../../Resource/BoosterModeDiagramFlow.svg)
 
 Once a Booster agent is installed on a respective operating system,
 simply click the `Booster` icon to start getting remote screen with
-Booster. Depends on the VGA cable, screen quality may improve slightly
-or significantly. Remote keyboard and mouse interactions become much
-more responsive.
+Booster. 
 
-![BoosterToogle](https://drive.google.com/a/elinkgate.com/uc?id=1eICc_jsFSHaxtbGZoFrZM1yNJwmxYS1J)
+![BoosterToogle](../../Resource/BoosterScreen.png)
+
+Screen quality may improve slightly or significantly compared to VGA
+hardwrae mode, depends on the quality of the VGA cable. Remote
+keyboard and mouse interactions become much more responsive.
 
 #### Customize Booster Mode 
 
@@ -616,9 +618,5 @@ Steps to configure Booster mode:
 7. Press OK to confirm.
 
 ![Booster mode remote control](https://drive.google.com/a/elinkgate.com/uc?id=1yJGy1_O6FCYe0uyvxdja5eGSYl8vvWfC)
-
-#### Booster Scope
-
-
 
 ### Chapter 5: elinkSetuptool ###
