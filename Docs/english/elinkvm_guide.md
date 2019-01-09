@@ -23,33 +23,33 @@
             - [Operating Sytems](#operating-sytems)
             - [eLinkKVM configuration](#elinkkvm-configuration)
         - [b. Network configuration](#b-network-configuration)
-            - [-](#-)
+            - [Windows](#windows)
         - [c. Setup verification](#c-setup-verification)
     - [Chapter 3: Remote management software for eLinkKVM with eLinkViewer](#chapter-3-remote-management-software-for-elinkkvm-with-elinkviewer)
-        - [-](#--1)
+        - [a. Basic usage](#a-basic-usage)
             - [Login](#login)
-            - [b. Network Configuration](#b-network-configuration)
-                - [i. Static IP configuration](#i-static-ip-configuration)
-                - [ii. Dynamic IP Configuration](#ii-dynamic-ip-configuration)
-            - [d. Connect to eLinkKVM](#d-connect-to-elinkkvm)
-            - [e. Basic Mouse & Keyboard Settings](#e-basic-mouse--keyboard-settings)
-                - [Key:](#key)
-                - [Mouse:](#mouse)
-                - [Video:](#video)
-                - [File browsing and disk image mounting:](#file-browsing-and-disk-image-mounting)
-            - [f. IPMI Command Center](#f-ipmi-command-center)
-            - [g. Offline Configuration](#g-offline-configuration)
-        - [Upgrade firmware for eLinkKVM](#upgrade-firmware-for-elinkkvm)
-        - [Scan eLinkKVM in a local area network](#scan-elinkkvm-in-a-local-area-network)
-            - [h. Other configurations](#h-other-configurations)
-                - [Scale in/out/100/auto](#scale-inout100auto)
-                - [Upload file to an eLinkKVM device using File Transfer](#upload-file-to-an-elinkkvm-device-using-file-transfer)
-                - [Disconnect from an eLinkKVM device](#disconnect-from-an-elinkkvm-device)
-            - [i. Switching Mode](#i-switching-mode)
-                - [Remote control with VGA mode](#remote-control-with-vga-mode)
-                - [Remote control with Booster](#remote-control-with-booster)
+        - [b. Network Configuration](#b-network-configuration)
+            - [i. Static IP configuration](#i-static-ip-configuration)
+            - [ii. Dynamic IP Configuration](#ii-dynamic-ip-configuration)
+        - [c. Connect to eLinkKVM](#c-connect-to-elinkkvm)
+        - [d. Basic Mouse & Keyboard Settings](#d-basic-mouse--keyboard-settings)
+            - [Key:](#key)
+            - [Mouse:](#mouse)
+            - [Video:](#video)
+            - [File browsing and disk image mounting:](#file-browsing-and-disk-image-mounting)
+        - [e. IPMI Command Center](#e-ipmi-command-center)
+        - [f. Offline Configuration](#f-offline-configuration)
+            - [Upgrade firmware for eLinkKVM](#upgrade-firmware-for-elinkkvm)
+            - [Scan eLinkKVM in a local area network](#scan-elinkkvm-in-a-local-area-network)
+        - [h. Other configurations](#h-other-configurations)
+            - [Scale in/out/100/auto](#scale-inout100auto)
+            - [Upload file to an eLinkKVM device using File Transfer](#upload-file-to-an-elinkkvm-device-using-file-transfer)
+            - [Disconnect from an eLinkKVM device](#disconnect-from-an-elinkkvm-device)
+        - [i. Switching Mode](#i-switching-mode)
+            - [Remote control with VGA mode](#remote-control-with-vga-mode)
+            - [Remote control with Booster](#remote-control-with-booster)
     - [Chapter 4: Booster Mode](#chapter-4-booster-mode)
-        - [-](#--2)
+        - [Customize Booster Mode](#customize-booster-mode)
     - [Chapter 5: elinkSetuptool](#chapter-5-elinksetuptool)
 
 <!-- markdown-toc end -->
@@ -365,7 +365,7 @@ When a connection is established, its network interface must be
 configured in the operating system of the local computer. Currently,
 only Windows is supported.
 
-###### Windows ######
+#### Windows ####
 
 1. Open `Control Panel` -> `All Control Panel Items` -> `Network Connections`.
 
@@ -402,9 +402,9 @@ eLinkViewer is a specialized software for remote control and
 management of an eLinkKVM device. Booster technology is only available
 with eLinkViewr.
 
-#### a. Basic usage
+### a. Basic usage ###
 
-##### Login #####
+#### Login ####
 
 To connect to an eLinkKVM device, fill the configured IP address in the textbox next to the **Server** field and click `Connect` to connect eLinkViewer to the eLinkKVM at the configured IP address:
 
@@ -418,9 +418,9 @@ To connect to an eLinkKVM device, fill the configured IP address in the textbox 
 
 [TODO] Put a scan screenshot as an example
 
-#### b. Network Configuration
+### b. Network Configuration ###
 
-##### i. Static IP configuration
+#### i. Static IP configuration ####
 
 Steps to configure static IP for an eLinkKVM device:
 
@@ -461,13 +461,13 @@ DNS: 		10.42.0.1
 
 ![eLinkKVMConfig](https://drive.google.com/a/elinkgate.com/uc?id=1H7-BtcI8SNSALvVU2VUl4YM6_94b5jJI)
 
-##### ii. Dynamic IP Configuration
+#### ii. Dynamic IP Configuration ####
 
 Dynamic IP address is acquired automatically, issued by a DHCP server. In this case, the connected eLinkKVM device must be configured as a DHCP client.
 
 [TODO] Put a screenshot showing how to select DHCP Client
-___
-#### d. Connect to eLinkKVM
+
+### c. Connect to eLinkKVM ###
 
 Connection user interface:
 
@@ -495,25 +495,25 @@ Connection user interface:
 20. Disconnect
 21. Scan IPMI 
 
-#### e. Basic Mouse & Keyboard Settings
+### d. Basic Mouse & Keyboard Settings ###
 
 ![ElinkKVMConfigurationUi](https://drive.google.com/a/elinkgate.com/uc?id=1ZAKrwEi7X0q1qR8OcmzzJ2qbD2X0WsQd)
 
 The viewer provides a dialog called `Elink Configuration` that includes the following options to configure an eLinkKVM device: 
 
-##### Key: ####
+#### Key: ####
 
 * HID USB : use real keyboard (USB)
 * HID VNC : use software keyboard (VNC protocol)
 * Serial: use software keyboard (serial protocol)
 
-##### Mouse: ####
+#### Mouse: ####
 
 * HID USB : use real mouse (USB)
 * HID VNC: use software mouse (VNC protocol)
 * ABS USB: use real mouse, but sync both local and remote mouse as one mouse pointer (USB absolute hid)
 
-##### Video: ####
+#### Video: ####
 
 * Dummy : configure network and serial connections
 * VGA: configure VGA display
@@ -521,7 +521,7 @@ The viewer provides a dialog called `Elink Configuration` that includes the foll
 * Serial: enable serial display and communication
 * IPMI:  enable Serial Over Lan (SOL) with IPMI 
 
-##### File browsing and disk image mounting: ####
+#### File browsing and disk image mounting: ####
 
 * Path 0/1/2/3: File paths to disk images
 
@@ -533,7 +533,7 @@ The viewer provides a dialog called `Elink Configuration` that includes the foll
 
 ![](https://drive.google.com/a/elinkgate.com/uc?id=13nAvrjHhx9Y94-ct4pjFXBFSQu75mYSU)
 
-#### f. IPMI Command Center 
+### e. IPMI Command Center ###
 
 IPMI Interface:
 
@@ -566,7 +566,7 @@ Use IPMI command center to scan and run IPMI commands.
 ![IPMI_Scanning](https://drive.google.com/a/elinkgate.com/uc?id=1YlFJlJNrXDe7gTgu0r_rwJqCUgGSRJ1z)
 
 
-#### g. Offline Configuration
+### f. Offline Configuration ###
 
 eLinkKVM supports configuration with a text file. Steps: 
 
@@ -579,25 +579,25 @@ eLinkKVM supports configuration with a text file. Steps:
 
 ![gifConfigureFile](https://drive.google.com/a/elinkgate.com/uc?id=1Bkt9flkzvf36T-5rNGA_HJH9VIdlZom1)
 
-### Upgrade firmware for eLinkKVM
+#### Upgrade firmware for eLinkKVM
 
 ![firmware upgrade](https://drive.google.com/a/elinkgate.com/uc?id=1UH_-a08spJ2ufRyOcmENWefrBHTXXSit)
 
-### Scan eLinkKVM in a local area network
+#### Scan eLinkKVM in a local area network
 
 eLinkViewer can scan for eLinkKVM devices in a local area network (LAN).
 
 ![ScaneLinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1JCnvvzjPa8L-eCFzl6kNBceS22OjBTGq)
 
-#### h. Other configurations
+### h. Other configurations ###
 
-##### Scale in/out/100/auto 
+#### Scale in/out/100/auto ####
 
 Elinkviewer supports screen scaling.
 
 ![scalingwindow](https://drive.google.com/a/elinkgate.com/uc?id=1eH2ngwZ-V6stvPc8yc9P5rEjHpcijvFQ) 
 
-##### Upload file to an eLinkKVM device using File Transfer
+#### Upload file to an eLinkKVM device using File Transfer ####
 
 ![FileTransfering](https://drive.google.com/a/elinkgate.com/uc?id=1GxA_1EL_1K73yQ5nnnYQ6wVgxPXzgb-X)
 
@@ -618,7 +618,7 @@ with `File Transfer`:
   the transfer starts and a progress bar that displays the transfering
   process starts running.
 
-##### Disconnect from an eLinkKVM device
+#### Disconnect from an eLinkKVM device ####
 
 * Click the button ![ExitButton](https://drive.google.com/a/elinkgate.com/uc?id=1y4Ru1fD3a0UXBERF7mDh7IIxqA8cKRuc)
 * The dialog box ![exit inform](https://drive.google.com/a/elinkgate.com/uc?id=1U4jmMjBL-9p-x9IK-kWMX2MVIIoDaqgZ) announces connection successfully terminated. 
@@ -626,12 +626,13 @@ with `File Transfer`:
 ![Exit connection ](https://drive.google.com/a/elinkgate.com/uc?id=1MC_UUz0tERNfc2TGCudEGgF-77M3aKYT)
 
 
-#### i. Switching Mode
-##### Remote control with VGA mode 
+### i. Switching Mode ###
+
+#### Remote control with VGA mode ####
 
 ![RemoteControlVGA](https://drive.google.com/a/elinkgate.com/uc?id=1GWzc9F2mUWN8A-fbLGQ3KqBzPEhhe6D9)
 
-##### Remote control with Booster
+#### Remote control with Booster ####
 
 This will be covered in the next chapter.
 
@@ -674,7 +675,7 @@ Screen quality may improve slightly or significantly compared to VGA
 hardwrae mode, depends on the quality of the VGA cable. Remote
 keyboard and mouse interactions become much more responsive.
 
-#### Customize Booster Mode 
+### Customize Booster Mode ###
 
 To make it convenient to switch between Booster and other modes,
 eLinkViewer allows a user to customize Auto Booster Toggle
