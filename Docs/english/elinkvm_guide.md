@@ -63,8 +63,7 @@ and below are the main feature:
   image recognization, to automate manual operations. See the
   eLinkViewer chapter for more information.
         
-* **Virtual Media support with 8GB Internal Flash or 64GB with SD
-  Card** 
+* **Virtual Media support with 8GB Internal Flash or 64GB with SD Card** 
   
   Instead of using a separate computer as a share network
   storage to emulate the Virtual Media, eLinkKVM itself is a high
@@ -76,7 +75,7 @@ and below are the main feature:
 
 * **RS232 Serial Port**
 
- For Serial Console, Remote Dial In or control external PDU
+  For Serial Console, Remote Dial In or control external PDU
 
 * **Support USB Host Interface** 
 
