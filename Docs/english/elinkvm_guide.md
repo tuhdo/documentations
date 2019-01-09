@@ -21,7 +21,7 @@ like a KVM switch can be used as a replacement for a computer monitor.
 This diagram demonstrates the scope difference between a software and
 a hardware solution:
 
-[](../../Resource/RemoteAccessTechnology.png)
+![](../../Resource/RemoteAccessTechnology.png)
 
 Normal KVM switches attach controlling and controlled devices directly
 to itself. In constrast, KVM over-IP switches, provides
@@ -133,7 +133,7 @@ devices, while delivering higher performance.
 
 The following diagram shows the scope covered by Booster:
 
-[](../../Resource/BoosterDiagram.png)
+![](../../Resource/BoosterDiagram.png)
 
 #### Hardware specification ####
 
