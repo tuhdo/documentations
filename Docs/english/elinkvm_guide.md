@@ -16,6 +16,13 @@ right is currently being controlled by the peripherals.
 
 [TODO] Replace Wikipedia diagram about with our original diagram
 
+Unlike software solutions for remote controlling, a hardware solution
+like a KVM switch can be used as a replacement for a computer monitor.
+This diagram demonstrates the scope difference between a software and
+a hardware solution:
+
+[](../../Resource/RemoteAccessTechnology.png)
+
 Normal KVM switches attach controlling and controlled devices directly
 to itself. In constrast, KVM over-IP switches, provides
 over-the-internet functionality. This means, instead of physically
@@ -110,16 +117,24 @@ and below are the main feature:
 Booster is a patented technology that allows eLinkKVM to utilize
 computing resources from controlled computers to improve remote
 performance. To quickly summarize, Booster includes software agents
-for each major OS platform (Windows, Linux and Mac OS) that are
-installed on controlled computers. These agents utilize the extra
-computing power on the controlled computers to accelerate remote
-performance without affecting . This enables higher quality remote
-screen and more responsive interactions with remotely controlled
-computers.
+that work on major OS platforms (Windows, Linux and Mac OS); however,
+unlike traditional software solutions, Booster agents can also operate
+in BIOS and UEFI environments, indepdent of any operating
+system. 
+
+These software agents are installed on controlled computers to utilize
+the extra computing power on the controlled computers to accelerate
+screen data processing without affecting performance. This enables
+higher quality remote screen and more responsive interactions with
+the remotely controlled computers.
 
 Booster also helps reducing the loads on eLinkKVM devices, making
 eLinkKVM devices run cooler and extend the longevity of eLinkKVM
 devices, while delivering higher performance.
+
+The following diagram shows the scope covered by Booster:
+
+[](../../Resource/BoosterDiagram.png)
 
 #### Hardware specification ####
 
@@ -557,33 +572,35 @@ accompanied software components on an existing operating-system
 installation. For a fresh computer that need a new operating-system
 installation, a tool called `elinkSetuptool` is provided to help
 creating install disk images with embedded Booster from existing
-installation ISO files. These disk images can be loaded on eLinkKVM
-internal storage for remote operating-system installations on new
-computers with Booster enabled through the whole installation
-process. After the installation process is done, the freshly installed
-operating system is also pre-installed with Booster software to allow
-a user to continue using Booster without any interruption.
+installation ISO files, which is covered in the next chapter.
+
+These disk images can be loaded on eLinkKVM internal storage for
+remote operating-system installations on new computers with Booster
+enabled through the whole installation process. After the installation
+process is done, the freshly installed operating system is also
+pre-installed with Booster software to allow a user to continue using
+Booster without any interruption.
 
 [TODO] Add a diagram for Booster mode
 
-### Remote control with Booster mode 
-
-![Booster mode remote control](https://drive.google.com/a/elinkgate.com/uc?id=1yJGy1_O6FCYe0uyvxdja5eGSYl8vvWfC)
-
-
-
-### Remote control with auto Booster mode 
-
-eLinkViewer supports auto Booster mode to switch from the current mode to Booster automatically without configuring.
+Once a Booster agent is installed on a respective operating system,
+simply click the `Booster` icon to start getting remote screen with
+Booster. Depends on the VGA cable, screen quality may improve slightly
+or significantly. Remote keyboard and mouse interactions become much
+more responsive.
 
 ![BoosterToogle](https://drive.google.com/a/elinkgate.com/uc?id=1eICc_jsFSHaxtbGZoFrZM1yNJwmxYS1J)
 
-### Customize auto Booster Mode 
+#### Customize Booster Mode 
 
-To make it convenient to switch between Booster and other modes, eLinkViewer allows a user to customize Auto Booster Toggle button. Pressing this button allows a user to switch between a pre-configured Booster mode and the current mode.                                                                                          ![ToogleButtonConfig](https://drive.google.com/a/elinkgate.com/uc?id=1BtRGCSRGPBNN-vy86_nDGfr4qM823pgH)               
+To make it convenient to switch between Booster and other modes,
+eLinkViewer allows a user to customize Auto Booster Toggle
+button. Pressing this button allows a user to switch between a
+pre-configured Booster mode and the current mode.
 
+![ToogleButtonConfig](https://drive.google.com/a/elinkgate.com/uc?id=1BtRGCSRGPBNN-vy86_nDGfr4qM823pgH)
 
-Steps tto configure Auto Booster mode:
+Steps to configure Booster mode:
 
 1. Click `eLink Configuration`
 
@@ -598,6 +615,11 @@ Steps tto configure Auto Booster mode:
 6. Press OK to save the configuration.
 
 7. Press OK to confirm.
-  * 
+
+![Booster mode remote control](https://drive.google.com/a/elinkgate.com/uc?id=1yJGy1_O6FCYe0uyvxdja5eGSYl8vvWfC)
+
+#### Booster Scope
+
+
 
 ### Chapter 5: elinkSetuptool ###
