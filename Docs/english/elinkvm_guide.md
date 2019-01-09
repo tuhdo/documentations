@@ -5,22 +5,22 @@
     - [Chapter 1: Introduction](#chapter-1-introduction)
         - [a. Overview](#a-overview)
         - [b. Features](#b-features)
-        - [c. Functionality](#c-functionality)
-        - [d. System Configuration & Cables](#d-system-configuration--cables)
-            - [i. eLinkKVM components](#i-elinkkvm-components)
-                - [Front view](#front-view)
-            - [Rear view](#rear-view)
-            - [ii. Different diagram](#ii-different-diagram)
-        - [e. Technical Specifications](#e-technical-specifications)
-            - [Booster technology](#booster-technology)
+            - [Booster](#booster)
+        - [c. Bundled hardware components](#c-bundled-hardware-components)
+        - [d. Technical Specifications](#d-technical-specifications)
+            - [i. Security](#i-security)
+            - [ii. Target Server Requirements](#ii-target-server-requirements)
+                - [Operating Sytems](#operating-sytems)
             - [Hardware specification](#hardware-specification)
+                - [Front view](#front-view)
+                - [Rear view](#rear-view)
+                - [Internal](#internal)
             - [eLinkViewer](#elinkviewer)
     - [Chapter 2: Hardware Setup](#chapter-2-hardware-setup)
         - [a. First Power On](#a-first-power-on)
-            - [Device and cables](#device-and-cables)
+            - [Devices and cables](#devices-and-cables)
             - [Remote computer](#remote-computer)
             - [Local computer](#local-computer)
-            - [Operating Sytems](#operating-sytems)
             - [eLinkKVM configuration](#elinkkvm-configuration)
         - [b. Network configuration](#b-network-configuration)
             - [Windows](#windows)
@@ -119,8 +119,15 @@ and below are the main feature:
   The video capture hardware (Hardware mode) is designed to decode the
   video signal up to 1920x1080 that help to monitor the screen in any
   situation.
+  
+- **Patented Booster technology**
 
-- **Featureful native client software*** 
+  Faster and higher resolution with Booster technology, a patent
+  technolgy allows monitor the screen with faster transfer, any video
+  resolution with just a USB connection for almost any situation. See
+  the **Booster** chapter for more information.
+
+- **Featureful native client software***
 
   Client software is bundled with many unique features: scripting and
   image recognization, to automate manual operations. See the
@@ -128,9 +135,9 @@ and below are the main feature:
         
 * **Virtual Media support with 8GB Internal Flash or 64GB with SD Card** 
   
-  Instead of using a separate computer as a share network
-  storage to emulate the Virtual Media, eLinkKVM itself is a high
-  performance shared netork storage device.
+  Instead of using a separate computer as a share network storage to
+  emulate the Virtual Media, eLinkKVM itself is a high performance
+  shared netork storage device.
         
 * **Server Power Design**
 
@@ -139,8 +146,14 @@ and below are the main feature:
 * **RS232 Serial Port**
 
   For Serial Console, Remote Dial In or control external PDU
+  
+* **Built-in IPMI (Intelligent Platform Management Interface) utility**
 
-* **Support USB Host Interface** 
+  eLinkKVM understands IPMI and allows control the server that support
+  IPMI interface. The user may power on/off/reset or getting IPMI
+  events from server.
+
+* **Support USB Host Interface**
 
   Allow control USB 3G/4G, external USB storage or USB security device
   to add more functionality.
@@ -154,24 +167,71 @@ and below are the main feature:
 
 * **Built-In USB Hub** 
 
-  Physically emulate all USB device (Mouse, Keyboard, Storage)  with just
-  one USB cables
+  Physically emulate all USB device (Mouse, Keyboard, Storage) with
+  just one USB cables
 
 * **Scalability** 
 
   eLinkKVM can scale to control more than one computers by
   connecting the computers to eLinkSwitch.
+  
+* **Compact form factor**
+
+  Small footprint of eLinkKVM making it easy to attach to existing servers
 
 * **Low cost**
 
   Ideal for distributed IT system environments such as small branch
   offices, campuses, test labs, and server hosting environments.
-  
-### c. Functionality
 
-### d. System Configuration & Cables
+#### Booster ####
 
-#### i. eLinkKVM components ###
+**Booster*** is a patented technology that allows eLinkKVM to utilize
+computing resources from controlled computers to improve remote
+performance. To quickly summarize, Booster includes software agents
+that work on major OS platforms (Windows, Linux and Mac OS**; however,
+unlike traditional software solutions, Booster agents can also operate
+in BIOS and UEFI environments, indepdent of any operating
+system. 
+
+These software agents are installed on controlled computers to utilize
+the extra computing power on the controlled computers to accelerate
+screen data processing without affecting performance. This enables
+higher quality remote screen and more responsive interactions with
+the remotely controlled computers.
+
+**Booster** also helps reducing the loads on eLinkKVM devices, making
+eLinkKVM devices run cooler and extend the longevity of eLinkKVM
+devices, while delivering higher performance.
+
+The following diagram shows the scope covered by Booster:
+
+![](../../Resource/BoosterVsNormalDiagram.png)
+
+### c. Bundled hardware components
+
+- 1 eLinkKVM device 
+- 1 Ethernet RJ45 cable
+- 1 USB type B cable
+
+### d. Technical Specifications
+
+#### i. Security
+
+- Secure by SSL
+- Multiple Login Accounts (Up to 8 users)
+
+#### ii. Target Server Requirements
+
+##### Operating Sytems #####
+
+Supported operating systems for a local computer:
+
+- Windows 7, 8, 10.
+- Windows Server 2012.
+
+
+#### Hardware specification ####
 
 ![eLinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1Inpd1l5-inhGNrO2rQHngclQskfswmQ4)
 
@@ -184,81 +244,32 @@ and below are the main feature:
 |    |            | from USB Type B port is insufficient, or keeping the connection to eLinkKVM                      |
 |    |            | alive when the server is power off.                                                              |
 | 3  | VGA        | For capturing and outputting video signal to send and receive over the internet.                 |
-| 4  | RS232      | the serial communication port (COM port). This port will be connected to the server serial port. |
+| 4  | RS232      | the serial communication port (COM port**. This port will be connected to the server serial port. |
 
-#### Rear view #####
+##### Rear view ######
 
-| ID | Component         | Description                                                              |
-|----|-------------------|--------------------------------------------------------------------------|
-| 1  | Ethernet ports    | Master: can be configured as a DHCP server, a DHCP client or a static IP |
-|    |                   | Slave: can be configured as a DHCP Client or a static IP                 |
-|    |                   |                                                                          |
-| 2  | SD card           | allows a user to expand storage capacity with an external micro SD card  |
-| 3  | Status Leds 1,2,3 | signal device statuses through different led colors                      |
-| 4  | USB Type-A        | allow to attach an external peripheral device such as USB 3G/4G,         |
-|    |                   | USB Mass Storage, etc., to extend eLinkKVM functionality.                |
+| ID | Component                   | Description                                                              |
+|----|-----------------------------|--------------------------------------------------------------------------|
+| 1  | Ethernet ports (10/100Mbps) | Master: can be configured as a DHCP server, a DHCP client or a static IP |
+|    |                             | Slave: can be configured as a DHCP Client or a static IP                 |
+|    |                             |                                                                          |
+| 2  | SD card                     | allows a user to expand storage capacity with an external micro SD card  |
+| 3  | Status Leds 1,2,3           | signal device statuses through different led colors                      |
+| 4  | USB Type-A                  | allow to attach an external peripheral device such as USB 3G/4G,         |
+|    |                             | USB Mass Storage, etc., to extend eLinkKVM functionality.                |
 
-#### ii. Different diagram
+##### Internal #####
 
-### e. Technical Specifications
-
-#### Booster technology ####
-
-Booster is a patented technology that allows eLinkKVM to utilize
-computing resources from controlled computers to improve remote
-performance. To quickly summarize, Booster includes software agents
-that work on major OS platforms (Windows, Linux and Mac OS); however,
-unlike traditional software solutions, Booster agents can also operate
-in BIOS and UEFI environments, indepdent of any operating
-system. 
-
-These software agents are installed on controlled computers to utilize
-the extra computing power on the controlled computers to accelerate
-screen data processing without affecting performance. This enables
-higher quality remote screen and more responsive interactions with
-the remotely controlled computers.
-
-Booster also helps reducing the loads on eLinkKVM devices, making
-eLinkKVM devices run cooler and extend the longevity of eLinkKVM
-devices, while delivering higher performance.
-
-The following diagram shows the scope covered by Booster:
-
-![](../../Resource/BoosterVsNormalDiagram.png)
-
-#### Hardware specification ####
-
-| Feature                     | Description                                                                          |
-|-----------------------------|--------------------------------------------------------------------------------------|
-| Networks                    | 2 Ethernet  ports (10/100Mbps)                                                       |
-| Storage                     | Internal Flash Storage (8GB) that can be accessed by eLinkViewer software            |
-| Interfaces                  | Micro SD-CARD (extend up to 64GB)                                                    |
-|                             | RS232 interface                                                                      |
-|                             | USB Host interface to extend to USB 3G/4G, USB Wifi, USB Storage                     |
-| Video                       | VGA Port, Video Full HD Resolution                                                   |
-|                             | VGA Text mode: 640x350, 640x480, 720x400                                             |
-|                             | VGA Graphic mode: 640x480, 800x600, 1024x768, 1152x864, 1280x1024,                   |
-|                             | 1440x900,1680x1050,1600x1200,1920 x1080                                              |
-|                             | Secure, full BIOS-level control of remote servers over an IP network                 |
-| Remote Access Features      | Support  VNC Protocol                                                                |
-|                             | Emulation the USB Relative Mouse and Absolute Mouse                                  |
-|                             | Emulation the USB Keyboard                                                           |
-|                             | Capture Full HD resolution with **Hardware Mode**                                    |
-|                             | Capture all resolutions with 100% screen quality using the patented **Booster Mode** |
-| Connections                 | Direct Connect Through TCP/IP                                                        |
-|                             | Extension through USB 3G/4G                                                          |
-|                             | Coming the Cloud Service to connect behind Firewall                                  |
-| Securities                  | Secure by SSL                                                                        |
-|                             | Multiple Login Accounts (Up to 8 users)                                              |
-| Remote Server Power Control | Remote Reset/On/Off  Server through an IPMI GUI Interface from eLinkViewer           |
-|                             | Control the External PDU through RS232                                               |
-| Virtual Media               | Disk images (.iso, .raw, .hdd, .hdd2** can be mounted as a USB 2.0 devices on        |
-| Server power design         | No external power supply required                                                    |
-|                             | on a remote computer for easy software installation and system updates               |
-| Multi-purpose USB port      | Keyboard, Mouse and Storage functionalities are integrated in a single USB port.     |
-| Compact form factor         | Making it easier to attach to existing servers                                       |
-| Batch setup                 | Multiple eLinkKVM devices can be scripted by the eLinkViewer software to get         |
-|                             | the same configuration.                                                              |
+| Feature                     | Description                                                                   |
+|-----------------------------|-------------------------------------------------------------------------------|
+| Storage                     | Internal Flash Storage (8GB) that can be accessed by eLinkViewer software     |
+| Remote Server Power Control | Remote Reset/On/Off  Server                                                   |
+|                             | Control the External PDU through RS232                                        |
+| Virtual Media               | Disk images (.iso, .raw, .hdd, .hdd2** can be mounted as a USB 2.0 devices on |
+| Server power design         | No external power supply required                                             |
+|                             | on a remote computer for easy software installation and system updates        |
+| Batch setup                 | Multiple eLinkKVM devices can be scripted by the eLinkViewer software to get  |
+|                             | the same configuration.                                                       |
 
 #### eLinkViewer ####
 
@@ -286,7 +297,7 @@ a remote computer.
 
 ### a. First Power On ###
 
-#### Device and cables
+#### Devices and cables
 
 - 1 computer to be controlled
 - 1 eLinkKVM device 
@@ -310,21 +321,9 @@ device. The following equipment must be available a remote computer:
 
 #### Local computer ####
 
-A local computer is a computer that a user physically interact with to
-control a remote computer through an eLinkKVM device connected to the
-remote computer.
-   
-#### Operating Sytems ####
-
-Supported operating systems for a local computer:
-
-- Windows 7, 8, 10.
-- Windows Server 2012.
-
-Supported operating systems for a remote computer:
-
-- Windows 7, 8, 8, 10.
-- Windows Server 2012.
+A local computer is a computer that a user physically interact with,
+e.g. a laptop, to control a remote computer through an eLinkKVM device
+connected to the remote computer.
 
 #### eLinkKVM configuration ####
 
