@@ -46,7 +46,72 @@ equipment directly.
 
 ### Features ###
 
-#### Hardware ####
+The eLinkKVM is designed to help the IT person remotely operate the
+Server in most repsonvive and efficient way. We invent a new
+technology and make some enhance versus the old tradional KVM over IP
+and below are the main feature:
+
+- **Full Bios-level control over an IP Network**
+  The video capture hardware (Hardware mode) is designed to decode the
+  video signal up to 1920x1080 that help to monitor the screen in any
+  situation.
+
+- **Featureful native client software*** 
+  Client software is bundled with many unique features: scripting and
+  image recognization, to automate manual operations. See the
+  eLinkViewer chapter for more information.
+        
+* **Virtual Media support with 8GB Internal Flash or 64GB with SD
+  Card** 
+  Instead of using a separate computer as a share network
+  storage to emulate the Virtual Media, eLinkKVM itself is a high
+  performance shared netork storage device.
+        
+* **Server Power Design**
+  No external power supply required
+
+* Built in RS232 Serial Port that can be configured for Serial
+  Console, Remote Dial In or control external PDU
+
+* **Support USB Host Interface** 
+  Allow control USB 3G/4G, external USB storage or USB security device
+  to add more functionality.
+
+* **Flexible 2 Ethernet Ports** 
+  The Ethernet ports can be configured to work indepently to connect 2
+  different networks with the master port can be configured as a DHCP
+  server. Or 2 ports can be used to connect a server to a router,
+  using a single server Ethernet port.
+
+* **Built-In USB Hub** 
+  Physically emulate all USB device (Mouse, Keyboard, Storage)  with just
+  one USB cables
+
+* **Scalability** 
+  eLinkKVM can scale to control more than one computers by
+  connecting the computers to eLinkSwitch.
+
+* **Low cost**
+  Ideal for distributed IT system environments such as small branch
+  offices, campuses, test labs, and server hosting environments.
+
+#### Booster technology ####
+
+Booster is a patented technology that allows eLinkKVM to utilize
+computing resources from controlled computers to improve remote
+performance. To quickly summarize, Booster includes software agents
+for each major OS platform (Windows, Linux and Mac OS) that are
+installed on controlled computers. These agents utilize the extra
+computing power on the controlled computers to accelerate remote
+performance without affecting . This enables higher quality remote
+screen and more responsive interactions with remotely controlled
+computers.
+
+Booster also helps reducing the loads on eLinkKVM devices, making
+eLinkKVM devices run cooler and extend the longevity of eLinkKVM
+devices, while delivering higher performance.
+
+#### Hardware specification ####
 
 | Feature                     | Description                                                                          |
 |-----------------------------|--------------------------------------------------------------------------------------|
@@ -73,22 +138,12 @@ equipment directly.
 | Remote Server Power Control | Remote Reset/On/Off  Server through an IPMI GUI Interface from eLinkViewer           |
 |                             | Control the External PDU through RS232                                               |
 | Virtual Media               | Disk images (.iso, .raw, .hdd, .hdd2** can be mounted as a USB 2.0 devices on        |
+| Server power design         | No external power supply required                                                    |
 |                             | on a remote computer for easy software installation and system updates               |
 | Multi-purpose USB port      | Keyboard, Mouse and Storage functionalities are integrated in a single USB port.     |
 | Compact form factor         | Making it easier to attach to existing servers                                       |
 | Batch setup                 | Multiple eLinkKVM devices can be scripted by the eLinkViewer software to get         |
-|                             | the same configuration.                                                                                     |
-
-#### Booster technology ####
-
-Booster is a patented technology that allows eLinkKVM to utilize
-computing resources from controlled computers to improve remote
-performance. This enables higher quality remote screen and more
-responsive interactions with remotely controlled computers.
-
-Booster also helps reducing the loads on eLinkKVM devices, making
-eLinkKVM devices run cooler and extend the longevity of eLinkKVM
-devices, while delivering higher performance.
+|                             | the same configuration.                                                              |
 
 #### eLinkViewer ####
 
@@ -111,7 +166,6 @@ a remote computer.
 | Screen scaling         | Viewer screen can be scaled to any resolution independent from remote computer's |
 |                        | resolution or even enter a full-screen mode. In full-screen mode, the viewer     |
 |                        | screen scales according to the remote computer's resolution.                     |
-    
 
 ### eLinkKVM components ###
 
@@ -248,40 +302,30 @@ The default address for Ethernet Master port is `10.0.0.1`. To check if the hard
 2. Type the following command:
 
    `ping 10.0.0.1`
+   
+   If `ping** receives response packets, this means eLinkKVM is connected. To actualy use eLinkKVM, the software eLinkViewer is required. The basic usage is described in the next chapter.
 
 ### Chapter 3: Remote management software for eLinkKVM with eLinkViewer ###
 
-#### Software interface ####
+eLinkViewer is a specialized software for remote control and
+management of an eLinkKVM device. Booster technology is only available
+with eLinkViewr.
+
+#### Basic usage
 
 ##### Login #####
 
-* **Quick Connect** 
+To connect to an eLinkKVM device, fill the configured IP address in the textbox next to the **Server** field and click `Connect` to connect eLinkViewer to the eLinkKVM at the configured IP address:
 
 ![Elink viewer login Quick Connect](https://drive.google.com/a/elinkgate.com/uc?id=1XmJUH4yOOTuo_9ddt71yyWvzMEC1m-85)
 
-**Server**: set IP address for current eLinkKVM unit
-
-**Connect**: request eLinkViewer to eLinkKVM at the IP address entered in **Server** field
-
-**Options**: configure eLinkKVM-VNC connection
+`Options`: configure eLinkKVM-VNC connection
 
 ![Connection option UI](https://drive.google.com/a/elinkgate.com/uc?id=1RqCDvR-cw-CcmGMrVCuZFZn-O6kXr6SJ)
 
 **Scan**: Scan for all eLinkKVM devices in the current local area network (LAN)
 
-* **Local Account** (not yet supported)
-
-![Login UI - Local account ](https://drive.google.com/a/elinkgate.com/uc?id=1TgNk-qYV2ITAd9XqZ6yzV2J3URya3QFL)
-
-A user can create a personal account to store information of many eLinkKVM devices. Account information is securely stored on the PC that runs the eLinkViewer software.
-
-* **Online account** (not yet supported)
-
-![Login UI ](https://drive.google.com/a/elinkgate.com/uc?id=1Is5PUf2P7s50cSrh3iAeDoZ8KzRwqmys)
-
-For **Online Account** (Beta - not support yet), eLinkViewer allows a user store login information and other eLinkKVM devices, similar to a local account. However, the information is stored on a cloud server instead of a local PC.
-
-## Basic usage
+[TODO] Put a scan screenshot as an example
 
 ### Power up an eLinkKVM device
 
