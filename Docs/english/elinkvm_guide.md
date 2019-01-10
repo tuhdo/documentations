@@ -429,7 +429,7 @@ connect eLinkViewer to the eLinkKVM at the configured IP address:
 
 **Scan**: Scan for all eLinkKVM devices in the current local area network (LAN)
 
-[TODO] Put a scan screenshot as an example
+![ScaneLinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1JCnvvzjPa8L-eCFzl6kNBceS22OjBTGq)
 
 After connecting to an eLinkKVM device, the viewer screen switches to
 the `Dummy` screen. The `Dummy` screen displays device status and
@@ -450,6 +450,15 @@ simply switching from `Dummy` video screen to `VGA` video screen:
 
 The default `Dummy` screen should be switched to the actual output
 from the remote controlled computer.
+
+![RemoteControlVGA](https://drive.google.com/a/elinkgate.com/uc?id=1GWzc9F2mUWN8A-fbLGQ3KqBzPEhhe6D9)
+
+#### Disconnect from an eLinkKVM device ####
+
+* Click the button ![ExitButton](https://drive.google.com/a/elinkgate.com/uc?id=1y4Ru1fD3a0UXBERF7mDh7IIxqA8cKRuc)
+* The dialog box ![exit inform](https://drive.google.com/a/elinkgate.com/uc?id=1U4jmMjBL-9p-x9IK-kWMX2MVIIoDaqgZ) announces connection successfully terminated. 
+
+![Exit connection ](https://drive.google.com/a/elinkgate.com/uc?id=1MC_UUz0tERNfc2TGCudEGgF-77M3aKYT)
 
 ### b. Dummy Screen
 
@@ -472,6 +481,7 @@ Display the current network configuration of an eLinkKVM device and
 allows changes accordingly:
 
 ![DummyInfoStatus](../../Resource/DummyNetworks.png)
+
 
 #### iv. COM Port
 
@@ -497,9 +507,153 @@ onto the device using `File Transfer` feature of eLinkViewer.
 
 ![DummyInfoStatus](../../Resource/DummyUpgrade.png)
 
-### b. Network Configuration ###
+### c. eLinkKVM Toolbar ###
 
-#### i. Static IP configuration ####
+Connection user interface:
+
+![eLinkKVMToolBar](https://drive.google.com/a/elinkgate.com/uc?id=1z8x6QtmbukgJQwigmqJuqkVsrzErp6cY)
+
+1. Create a new connect to an eLinkKVM device
+
+![ToolbarNewConnection](../../Resource/ToolbarNewConnection.png)
+
+2. Store current vnc session as a `.vnc` file
+
+3. eLinkKVM connect options
+
+![ToolbarConnectOptions](../../Resource/ToolbarConnectOptions.png)
+
+4. Current connection status
+5. Pause frame transmitting
+6. Request refresh current remote screen
+7. Send `Ctrl + Alt + Delete` key combination
+8. Press/Hold `Ctrl` key
+9. Press/Hold `Alt` key
+10. Open eLinkViewer `File Transfer` window
+
+![FileTransfering](https://drive.google.com/a/elinkgate.com/uc?id=1GxA_1EL_1K73yQ5nnnYQ6wVgxPXzgb-X)
+
+eLinkViewer allows data transfer from a local PC to an eLinkKVM device
+with `File Transfer`:
+
+* Click **`File Transfer`** on eLinkViewer toolbar . `File Transfer`
+  window appears. To the left is a directory tree of the local PC, to
+  the right is the directory tree of the eLinkKVM device.
+
+* Browse the local directory tree and select a file or directory to
+  upload to an eLinkKVM device. Next, on the directory tree of the
+  eLinkKVM device, select a path to store the file or directory.
+
+* Finally, click the button **`>>`** to transfer the selected
+  file/directory. A confirm dialog appears. Click **`Yes`** to confirm
+  or click **`No`** cancel the action. After confirming the transfer,
+  the transfer starts and a progress bar that displays the transfering
+  process starts running.
+
+
+11. Scale in
+12. Scale out
+13. Scale (100%)
+14. Auto zoom 
+15. Full screen (press `Ctrl + Shift + Alt + F` to return to windowed eLinkViewer)
+16. Turn booster mode on/off
+17. eLinkKVM Configuration
+18. Open event log 
+19. Open Python script command prompt
+20. Disconnect
+21. Scan IPMI 
+
+![scalingwindow](https://drive.google.com/a/elinkgate.com/uc?id=1eH2ngwZ-V6stvPc8yc9P5rEjHpcijvFQ) 
+
+
+### d. Keyboard, Video and Mouse Settings
+
+![ElinkKVMConfigurationUi](https://drive.google.com/a/elinkgate.com/uc?id=1ZAKrwEi7X0q1qR8OcmzzJ2qbD2X0WsQd)
+
+The viewer provides a dialog called `Elink Configuration` that includes the following options to configure how an eLinkKVM emulates keyboard, video and mouse.
+
+#### Key: ####
+
+* HID USB : use real keyboard (USB). 
+* HID VNC : use software keyboard (VNC protocol)
+* Serial: use software keyboard (serial protocol)
+
+#### Mouse: ####
+
+* HID USB : use real mouse (USB)
+* HID VNC: use software mouse (VNC protocol)
+* ABS USB: use real mouse, but sync both local and remote mouse as one mouse pointer (USB absolute hid)
+
+#### Video: ####
+
+* Dummy : configure network and serial connections
+* VGA: configure VGA display
+* Booster: enable remote management with Booster. This will be covered in later chapters. 
+* Serial: enable serial display and communication
+* IPMI:  enable Serial Over Lan (SOL) with IPMI 
+
+#### File browsing and disk image mounting: ####
+
+* Path 0/1/2/3: File paths to disk images
+
+* `Browse` button allows navigating to the disk images with a file
+  explorer:
+
+![FilebrowsingELinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1CVYABQC3zRPPt84Bs9G-QeivPD2uh1AR)
+
+* Example: Configure eLinkKVM to use USB Key, Vnc Mouse and Booster
+  mode with `refind.hdd2` disk image:
+
+![](https://drive.google.com/a/elinkgate.com/uc?id=13nAvrjHhx9Y94-ct4pjFXBFSQu75mYSU)
+
+### e. Python Cnsole UI
+
+
+
+### f. Event Log UI
+
+![](../../Resource/EventLog.png)
+
+### g. IPMI Command Center
+
+IPMI Interface:
+
+![](https://drive.google.com/a/elinkgate.com/uc?id=1JZqcasrMUA6Nd1l--fKWEIWDT3r3WtJL)
+
+IPMI command center allows a user to scan servers with IPMI ports in a local area network and connect to these server to run IPMI commands.
+
+* Start IP: start IP to begin scanning
+* Stop IP: End IP to end scanning
+* User Name - Password: user name and password for each IPMI server. For example, default username and passwork are ADMIN/ADMIN for a SuperMicro server.
+* Scan : start scanning for an IPMI server 
+* Stop: End a current scanning process
+* Connect: connects to an IPMI server. When an IPMI server is found, an IP address is display, click on the IP address to select then enter a Username and Password.
+* Power On: Turn a server on with IPMI
+* Reset  with ![option](https://drive.google.com/a/elinkgate.com/uc?id=1sc2g-bPFQP7vRPfZ6SFIddJLa21OkOUn)  
+* Reset : restart a server
+* Reset to Bios Setup: restart a server and enter BIOS
+* Reset to USB: restart a server and boot with a USB device
+* Sol Active: enable IPMI management with Serial Over Lan (SOL)
+* Close : Close IPMI command center
+
+Use IPMI command center to scan and run IPMI commands. 
+
+* Click ![IPMI Scan](https://drive.google.com/a/elinkgate.com/uc?id=1UjcwiThAiZ_XaAnF1zviG2hflCgd4uCJ)
+* Enter Start IP and end IP. Limit the ranger of IP scanning. 
+* Click `Scan` to start scanning. Found IPMI servers are displayed as a list.
+* Click on one of the found IPMI IP addresses, enter `Username` and `Password`, then click **`Connect`** 
+* Click **`Power On`**,  **`Reset`**, etc., to run appropriate IPMI commands.
+
+![IPMI_Scanning](https://drive.google.com/a/elinkgate.com/uc?id=1YlFJlJNrXDe7gTgu0r_rwJqCUgGSRJ1z)
+
+
+## Chapter 4: eLinkKVM Configuration
+
+### a. User Management
+
+### b. Network Configuration
+
+##### Static IP configuration
 
 Steps to configure static IP for an eLinkKVM device:
 
@@ -540,112 +694,15 @@ DNS: 		10.42.0.1
 
 ![eLinkKVMConfig](https://drive.google.com/a/elinkgate.com/uc?id=1H7-BtcI8SNSALvVU2VUl4YM6_94b5jJI)
 
-#### ii. Dynamic IP Configuration ####
+##### Dynamic IP Configuration
 
 Dynamic IP address is acquired automatically, issued by a DHCP server. In this case, the connected eLinkKVM device must be configured as a DHCP client.
 
 [TODO] Put a screenshot showing how to select DHCP Client
 
-### c. Connect to eLinkKVM ###
+### c. IPMI Configuration
 
-Connection user interface:
-
-![eLinkKVMToolBar](https://drive.google.com/a/elinkgate.com/uc?id=1z8x6QtmbukgJQwigmqJuqkVsrzErp6cY)
-
-1. Create a new connect to an eLinkKVM device
-2. Store current vnc session as a `.vnc` file
-3. eLinkKVM connect options
-4. Current connection status
-5. Pause frame transmitting
-6. Request refresh current remote screen
-7. Send `Ctrl + Alt + Delete` key combination
-8. Press/Hold `Ctrl` key
-9. Press/Hold `Alt` key
-10. Open eLinkViewer `File Transfer` window
-11. Scale in
-12. Scale out
-13. Scale (100%)
-14. Auto zoom 
-15. Full screen (press `Ctrl + Shift + Alt + F` to return to windowed eLinkViewer)
-16. Turn booster mode on/off
-17. Configure eLinkKVM 
-18. Open event log 
-19. Open Python script command prompt
-20. Disconnect
-21. Scan IPMI 
-
-### d. Basic Mouse & Keyboard Settings ###
-
-![ElinkKVMConfigurationUi](https://drive.google.com/a/elinkgate.com/uc?id=1ZAKrwEi7X0q1qR8OcmzzJ2qbD2X0WsQd)
-
-The viewer provides a dialog called `Elink Configuration` that includes the following options to configure an eLinkKVM device: 
-
-#### Key: ####
-
-* HID USB : use real keyboard (USB)
-* HID VNC : use software keyboard (VNC protocol)
-* Serial: use software keyboard (serial protocol)
-
-#### Mouse: ####
-
-* HID USB : use real mouse (USB)
-* HID VNC: use software mouse (VNC protocol)
-* ABS USB: use real mouse, but sync both local and remote mouse as one mouse pointer (USB absolute hid)
-
-#### Video: ####
-
-* Dummy : configure network and serial connections
-* VGA: configure VGA display
-* Booster: enable remote management with Booster. This will be covered in later chapters. 
-* Serial: enable serial display and communication
-* IPMI:  enable Serial Over Lan (SOL) with IPMI 
-
-#### File browsing and disk image mounting: ####
-
-* Path 0/1/2/3: File paths to disk images
-
-* `Browse` button allows navigating to the disk images with a file explorer:
-
-![FilebrowsingELinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1CVYABQC3zRPPt84Bs9G-QeivPD2uh1AR)
-
-* Example: Configure eLinkKVM to use USB Key, Vnc Mouse and Booster mode with `refind.hdd2` disk image: 
-
-![](https://drive.google.com/a/elinkgate.com/uc?id=13nAvrjHhx9Y94-ct4pjFXBFSQu75mYSU)
-
-### e. IPMI Command Center ###
-
-IPMI Interface:
-
-![](https://drive.google.com/a/elinkgate.com/uc?id=1JZqcasrMUA6Nd1l--fKWEIWDT3r3WtJL)
-
-IPMI command center allows a user to scan servers with IPMI ports in a local area network and connect to these server to run IPMI commands.
-
-* Start IP: start IP to begin scanning
-* Stop IP: End IP to end scanning
-* User Name - Password: user name and password for each IPMI server. For example, default username and passwork are ADMIN/ADMIN for a SuperMicro server.
-* Scan : start scanning for an IPMI server 
-* Stop: End a current scanning process
-* Connect: connects to an IPMI server. When an IPMI server is found, an IP address is display, click on the IP address to select then enter a Username and Password.
-* Power On: Turn a server on with IPMI
-* Reset  with ![option](https://drive.google.com/a/elinkgate.com/uc?id=1sc2g-bPFQP7vRPfZ6SFIddJLa21OkOUn)  
-* Reset : restart a server
-* Reset to Bios Setup: restart a server and enter BIOS
-* Reset to USB: restart a server and boot with a USB device
-* Sol Active: enable IPMI management with Serial Over Lan (SOL)
-* Close : Close IPMI command center
-
-Use IPMI command center to scan and run IPMI commands. 
-
-* Click ![IPMI Scan](https://drive.google.com/a/elinkgate.com/uc?id=1UjcwiThAiZ_XaAnF1zviG2hflCgd4uCJ)
-* Enter Start IP and end IP. Limit the ranger of IP scanning. 
-* Click `Scan` to start scanning. Found IPMI servers are displayed as a list.
-* Click on one of the found IPMI IP addresses, enter `Username` and `Password`, then click **`Connect`** 
-* Click **`Power On`**,  **`Reset`**, etc., to run appropriate IPMI commands.
-
-![IPMI_Scanning](https://drive.google.com/a/elinkgate.com/uc?id=1YlFJlJNrXDe7gTgu0r_rwJqCUgGSRJ1z)
-
-
-### f. Offline Configuration ###
+### d. Offline Configuration
 
 eLinkKVM supports configuration with a text file. Steps: 
 
@@ -658,64 +715,11 @@ eLinkKVM supports configuration with a text file. Steps:
 
 ![gifConfigureFile](https://drive.google.com/a/elinkgate.com/uc?id=1Bkt9flkzvf36T-5rNGA_HJH9VIdlZom1)
 
-#### Upgrade firmware for eLinkKVM
-
-![firmware upgrade](https://drive.google.com/a/elinkgate.com/uc?id=1UH_-a08spJ2ufRyOcmENWefrBHTXXSit)
-
-#### Scan eLinkKVM in a local area network
-
-eLinkViewer can scan for eLinkKVM devices in a local area network (LAN).
-
-![ScaneLinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1JCnvvzjPa8L-eCFzl6kNBceS22OjBTGq)
-
-### h. Other configurations ###
-
-#### Scale in/out/100/auto ####
-
-Elinkviewer supports screen scaling.
-
-![scalingwindow](https://drive.google.com/a/elinkgate.com/uc?id=1eH2ngwZ-V6stvPc8yc9P5rEjHpcijvFQ) 
-
-#### Upload file to an eLinkKVM device using File Transfer ####
-
-![FileTransfering](https://drive.google.com/a/elinkgate.com/uc?id=1GxA_1EL_1K73yQ5nnnYQ6wVgxPXzgb-X)
-
-eLinkViewer allows data transfer from a local PC to an eLinkKVM device
-with `File Transfer`:
-
-* Click **`File Transfer`** on eLinkViewer toolbar . `File Transfer`
-  window appears. To the left is a directory tree of the local PC, to
-  the right is the directory tree of the eLinkKVM device.
-
-* Browse the local directory tree and select a file or directory to
-  upload to an eLinkKVM device. Next, on the directory tree of the
-  eLinkKVM device, select a path to store the file or directory.
-
-* Finally, click the button **`>>`** to transfer the selected
-  file/directory. A confirm dialog appears. Click **`Yes`** to confirm
-  or click **`No`** cancel the action. After confirming the transfer,
-  the transfer starts and a progress bar that displays the transfering
-  process starts running.
-
-#### Disconnect from an eLinkKVM device ####
-
-* Click the button ![ExitButton](https://drive.google.com/a/elinkgate.com/uc?id=1y4Ru1fD3a0UXBERF7mDh7IIxqA8cKRuc)
-* The dialog box ![exit inform](https://drive.google.com/a/elinkgate.com/uc?id=1U4jmMjBL-9p-x9IK-kWMX2MVIIoDaqgZ) announces connection successfully terminated. 
-
-![Exit connection ](https://drive.google.com/a/elinkgate.com/uc?id=1MC_UUz0tERNfc2TGCudEGgF-77M3aKYT)
+### e. Factory Reset
 
 
-### i. Switching Mode ###
 
-#### Remote control with VGA mode ####
-
-![RemoteControlVGA](https://drive.google.com/a/elinkgate.com/uc?id=1GWzc9F2mUWN8A-fbLGQ3KqBzPEhhe6D9)
-
-#### Remote control with Booster ####
-
-This will be covered in the next chapter.
-
-## Chapter 4: Booster Mode
+## Chapter 5: Booster Mode
 
 Booster is a patented technology for eLinkKVM and related ElinkGate
 products. Booster includes software agents for each major OS platform
@@ -781,7 +785,7 @@ Steps to configure Booster mode:
 
 ![Booster mode remote control](https://drive.google.com/a/elinkgate.com/uc?id=1yJGy1_O6FCYe0uyvxdja5eGSYl8vvWfC)
 
-## Chapter 5: elinkSetuptool ###
+## Chapter 6: elinkSetuptool ###
 
 `elinkSetuptool` is an image creation tool that recreates OS
 installation images into disk images with `Booster` agents installed.
