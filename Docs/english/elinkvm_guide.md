@@ -417,7 +417,9 @@ with eLinkViewr.
 
 #### Login ####
 
-To connect to an eLinkKVM device, fill the configured IP address in the textbox next to the **Server** field and click `Connect` to connect eLinkViewer to the eLinkKVM at the configured IP address:
+To connect to an eLinkKVM device, fill the configured IP address in
+the textbox next to the **Server** field and click `Connect` to
+connect eLinkViewer to the eLinkKVM at the configured IP address:
 
 ![Elink viewer login Quick Connect](https://drive.google.com/a/elinkgate.com/uc?id=1XmJUH4yOOTuo_9ddt71yyWvzMEC1m-85)
 
@@ -428,6 +430,72 @@ To connect to an eLinkKVM device, fill the configured IP address in the textbox 
 **Scan**: Scan for all eLinkKVM devices in the current local area network (LAN)
 
 [TODO] Put a scan screenshot as an example
+
+After connecting to an eLinkKVM device, the viewer screen switches to
+the `Dummy` screen. The `Dummy` screen displays device status and
+configuration settings.
+
+![Dummy Screen](../../Resource/DummyScreen.png)
+
+#### Quick usage ####
+
+`Dummy` screen includes many tabs that displays an appropriate screen
+for the functionality of each tab. Assume the eLinkKVM device is
+properly setup with VGA cable attached, to start remote controlling,
+simply switching from `Dummy` video screen to `VGA` video screen:
+
+1. Click `ELink Configuration`.
+2. Click `VGA`.
+3. Click `OK`.
+
+The default `Dummy` screen should be switched to the actual output
+from the remote controlled computer.
+
+### b. Dummy Screen
+
+#### i. Home
+
+The default screen when successfully connected to an ElinkKVM device.
+
+![Dummy Screen](../../Resource/DummyScreen.png)
+
+#### ii. Info/Status
+
+Display the basic information of an eLinkKVM device. The following
+information is displayed:
+
+![DummyInfoStatus](../../Resource/DummyInfoStatus.png)
+
+#### iii. Networks
+
+Display the current network configuration of an eLinkKVM device and
+allows changes accordingly:
+
+![DummyInfoStatus](../../Resource/DummyNetworks.png)
+
+#### iv. COM Port
+
+Display the current COM port configuration of an eLinkKVM device and
+allows changes accordingly:
+
+![DummyInfoStatus](../../Resource/DummyCOMPort.png)
+
+#### v. IPMI
+
+Display the current IPMI configuration of an eLinkKVM device and
+allows changes accordingly:
+
+![DummyInfoStatus](../../Resource/DummyIPMI.png)
+
+#### vi. Admin
+
+#### vii. Upgrade
+
+Display the current firmware version of an eLinkKVM device and allows
+upgrading to a newer firmware. The firmware must be first uploaded
+onto the device using `File Transfer` feature of eLinkViewer.
+
+![DummyInfoStatus](../../Resource/DummyUpgrade.png)
 
 ### b. Network Configuration ###
 
@@ -649,9 +717,9 @@ This will be covered in the next chapter.
 
 ## Chapter 4: Booster Mode
 
-Booster is a unique patented technology for eLinkKVM and related
-ElinkGate products. Booster includes software agents for each major OS
-platform (Windows, Linux and Mac OS) that are installed on controlled
+Booster is a patented technology for eLinkKVM and related ElinkGate
+products. Booster includes software agents for each major OS platform
+(Windows, Linux and Mac OS) that are installed on controlled
 computers. When an eLinkKVM device is attached to a controlled
 computer, the installed software agent is activated to cooperate with
 a eLinkKVM device using a specialized proprieteray protocol. The
@@ -697,9 +765,9 @@ pre-configured Booster mode and the current mode.
 
 Steps to configure Booster mode:
 
-1. Click `eLink Configuration`
+1. Click `ELink Configuration` button.
 
-2. From `eLink Configuration`, on `Auto Booster Mode Setting`, select a remote display mode.
+2. From `ELink Configuration` select a remote display mode.
 
 3. Similarly, select a Key mode
 
