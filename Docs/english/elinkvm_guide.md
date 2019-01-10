@@ -87,13 +87,25 @@ limited in a room, a floor or a building, the controlling devices can
 be anywhere in the world that can connect to a KVM over-IP switch and
 control the connected computers with a normal Internet connection.
 
-eLinkKVM is one of such KVM over-IP devices. Operators can monitor and
-access their computers from remote locations using a remote control
-software. An eLinkKVM device connects to a local area network or
-directly to a personal computer (PC) using a standard ethernet cable,
-then uses a USB cable and a video display cables to connect to a
-server and complete control it with Keyboard, Video and Mouse
-functionliaty from the eLinkKVM device.
+eLinkKVM is one of such KVM-over-IP devices. However, unlike other
+KVM-over-IP solutions that are solely hardware solutions, eLinkKVM
+takes on a unique hybrid approach that combines both hardware and
+software. While being a hardware solution similar to other KVM-over-IP
+switches, but unlike other KVM-over-IP switches, eLinkKVM takes a step
+further with its patented technology called `Booster`. `Booster` is a
+software solution that works together with eLinkKVM hardware to uplift
+processing performance by utilizing computing resources of the
+controlled computers. `Booster` is not limited to an operating system
+environment, but also in BIOS and UEFI environments.
+
+![](../../Resource/BoosterModeDiagramFlow.svg)
+
+Operators can monitor and access their computers from remote
+locations using a remote control software. An eLinkKVM device connects
+to a local area network or directly to a personal computer (PC) using
+a standard ethernet cable, then uses a USB cable and a video display
+cables to connect to a server and complete control it with Keyboard,
+Video and Mouse functionliaty from the eLinkKVM device.
 
 Because the eLinkKVM uses the Internet as its data communication
 medium, the server it is connected to can be accessed from any
