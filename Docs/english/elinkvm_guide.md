@@ -229,13 +229,25 @@ The following diagram shows the scope covered by Booster:
 
 ### c. Bundled hardware components
 
-**Todo: Change to "System Configuration & Cables here", add below figures**
+### **Todo: Change to "System Configuration & Cables here", add below figures**
 
-- Figure 1: Complete system eLinkKVM connect to Router, connect to IPMI server, USB, RS232, external PDU, USB 3G...
+- Figure 1: Complete system eLinkKVM connect to Router, connect to IPMI server, USB, RS232, external PDU, USB 3G... 
+
+![](..\..\Resource\ElinkGate_full_connection.jpg)
+
 - Figure 2: A minimal connection just USB (to run Booster), eLinkKVM connect to Router, eLinkKVM connect to IPMI -> describe to use eLinkKVM Lite Version
+- ![](..\..\\Resource\Elinkkvm_lite.jpg)
 - Figure 3: using feature network bridge to save network connection (network cable to eLinkKVM to Master Connector & from Slave Connector to Server), eLinkKVM connect USB to server
+
+![](..\..\Resource\elinkkvm_bridge_network.jpg)
+
 - Figure 4: eLinkKVM connect to 2 networks (master connect to Local Network, slave connect to Router), the local network will be controlled by Datacenter, slave network will be controlled by user
-- 
+
+![](..\..\Resource\elinkkvm_multiple_network_layer.jpg)
+
+* Extend function with Usb function
+
+![](..\..\Resource\elinkkvm_multiple_usb_device.jpg)
 
 - 1 eLinkKVM device 
 - 1 Ethernet RJ45 cable
