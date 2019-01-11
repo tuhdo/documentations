@@ -153,19 +153,19 @@ and below are the main feature:
   eLinkViewer chapter for more information.
         
 * **Virtual Media support with 8GB Internal Flash or 64GB with SD Card** 
-  
+
   Instead of using a separate computer as a share network storage to
   emulate the Virtual Media, eLinkKVM itself is a high performance
   shared netork storage device.
-        
-* **Server Power Design**
+
+* **Server-Powered Design**
 
   No external power supply required
 
 * **RS232 Serial Port**
 
   For Serial Console, Remote Dial In or control external PDU
-  
+
 * **Built-in IPMI (Intelligent Platform Management Interface) utility**
 
   eLinkKVM understands IPMI and allows control the server that support
@@ -193,7 +193,7 @@ and below are the main feature:
 
   eLinkKVM can scale to control more than one computers by
   connecting the computers to eLinkSwitch.
-  
+
 * **Compact form factor**
 
   Small footprint of eLinkKVM making it easy to attach to existing servers
@@ -228,6 +228,14 @@ The following diagram shows the scope covered by Booster:
 ![](../../Resource/BoosterVsNormalDiagram.png)
 
 ### c. Bundled hardware components
+
+**Todo: Change to "System Configuration & Cables here", add below figures**
+
+- Figure 1: Complete system eLinkKVM connect to Router, connect to IPMI server, USB, RS232, external PDU, USB 3G...
+- Figure 2: A minimal connection just USB (to run Booster), eLinkKVM connect to Router, eLinkKVM connect to IPMI -> describe to use eLinkKVM Lite Version
+- Figure 3: using feature network bridge to save network connection (network cable to eLinkKVM to Master Connector & from Slave Connector to Server), eLinkKVM connect USB to server
+- Figure 4: eLinkKVM connect to 2 networks (master connect to Local Network, slave connect to Router), the local network will be controlled by Datacenter, slave network will be controlled by user
+- 
 
 - 1 eLinkKVM device 
 - 1 Ethernet RJ45 cable
@@ -330,7 +338,7 @@ Optional:
 - 1 RS232 cable
 
 #### Remote computer ####
-    
+
 A remote computers is a computer connected to the control cables
 (USB for input and VGA for output) that are connected to an eLinkKVM
 device. The following equipment must be available a remote computer:
