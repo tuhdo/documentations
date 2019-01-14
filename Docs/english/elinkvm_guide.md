@@ -69,68 +69,35 @@
 
 ### a. Overview
 
-A KVM switch (an abbreviation stands for **K**eyboard, **V**ideo and
-**M**ouse") is a hardware device that enables a user to control
-multiple computers from one or more sets of keyboards, video monitors,
-and mice. For examle, in the following diagram, the computer on the
-right is currently being controlled by the peripherals.
+A KVM switch (an abbreviation stands for **K**eyboard, **V**ideo and **M**ouse") is a hardware device that enables a user to control multiple computers from one or more sets of keyboards, video monitors, and mice. For example, in the following diagram, the computer on the right is currently being controlled by the peripherals.
 
 ![kvm_diagram](../../Resource/Kvm-switch-diagram.svg)
 
 [TODO] Replace Wikipedia diagram about with our original diagram
 
-Unlike software solutions for remote controlling, a hardware solution
-like a KVM switch can be used as a replacement for a computer monitor.
-This diagram demonstrates the scope difference between a software and
-a hardware solution:
+Unlike software solutions for remote controlling, a hardware solution like a KVM switch can be used as a replacement for a computer monitor. This diagram demonstrates the scope difference between a software and a hardware solution:
 
 ![](../../Resource/RemoteAccessTechnology.png)
 
-Normal KVM switches attach controlling and controlled devices directly
-to itself. In constrast, KVM over-IP switches, provides
-over-the-internet functionality. This means, instead of physically
-connected to a KVM switch through very long cables and are usually
-limited in a room, a floor or a building, the controlling devices can
-be anywhere in the world that can connect to a KVM over-IP switch and
-control the connected computers with a normal Internet connection.
+Normal KVM switches attach controlling and controlled devices directly to itself. In contrast, KVM over-IP switches, provides over-the-internet functionality. This means, instead of physically connected to a KVM switch through very long cables and are usually limited in a room, a floor or a building, the controlling devices can be anywhere in the world that can connect to a KVM over-IP switch and control the connected computers with a normal Internet connection.
 
-eLinkKVM is one of such KVM-over-IP devices. However, unlike other
-KVM-over-IP solutions that are solely hardware solutions, eLinkKVM
-takes on a unique hybrid approach that combines both hardware and
-software. While being a hardware solution similar to other KVM-over-IP
-switches, but unlike other KVM-over-IP switches, eLinkKVM takes a step
-further with its patented technology called `Booster`. `Booster` is a
-software solution that works together with eLinkKVM hardware to uplift
-processing performance by utilizing computing resources of the
-controlled computers. `Booster` is not limited to an operating system
+eLinkKVM is one of such KVM-over-IP devices. However, unlike other KVM-over-IP solutions that are solely hardware solutions, eLinkKVM takes on a unique hybrid approach that combines both hardware and software. While being a hardware solution similar to other KVM-over-IP switches, but unlike other KVM-over-IP switches, eLinkKVM takes a step further with its patented technology called `Booster`. `Booster` is a
+software solution that works together with eLinkKVM hardware to uplift processing performance by utilizing computing resources of the controlled computers. `Booster` is not limited to an operating system
 environment, but also in BIOS and UEFI environments.
 
 ![](../../Resource/BoosterModeDiagramFlow.svg)
 
-Operators can monitor and access their computers from remote
-locations using a remote control software. An eLinkKVM device connects
-to a local area network or directly to a personal computer (PC) using
-a standard ethernet cable, then uses a USB cable and a video display
-cables to connect to a server and complete control it with Keyboard,
-Video and Mouse functionliaty from the eLinkKVM device.
+Operators can monitor and access their computers from remote locations using a remote control software. An eLinkKVM device connects to a local area network or directly to a personal computer (PC) using
+a standard ethernet cable, then uses a USB cable and a video display cables to connect to a server and complete control it with Keyboard, Video and Mouse functionality from the eLinkKVM device.
 
-Because the eLinkKVM uses the Internet as its data communication
-medium, the server it is connected to can be accessed from any
-authorized computer across the Internet, regardless of physical
-location.
+Because the eLinkKVM uses the Internet as its data communication medium, the server it is connected to can be accessed from any authorized computer across the Internet, regardless of physical location.
 
-A user at a remote location connect to the eLinkKVM via its IP
-address. Once a connection has been established and authorization
-granted, the remote computer can exchange keyboard, video and mouse
-signals with the remote server (of which the eLinkKVM is attached
-to**, just as if they were physically present and working on the
-equipment directly.
+A user at a remote location connect to the eLinkKVM via its IP address. Once a connection has been established and authorization granted, the remote computer can exchange keyboard, video and mouse
+signals with the remote server (of which the eLinkKVM is attached to), just as if they were physically present and working on the equipment directly.
 
 ### b. Features ###
 
-The eLinkKVM is designed to help the IT person remotely operate the
-Server in most repsonvive and efficient way. We invent a new
-technology and make some enhance versus the old tradional KVM over IP
+The eLinkKVM is designed to help the IT person remotely operate the Server in most responsive and efficient way. We invent a new technology and make some enhance versus the old traditional KVM over IP
 and below are the main feature:
 
 - **Full Bios-level control over an IP Network**
@@ -162,7 +129,7 @@ and below are the main feature:
 
 * **Support USB Host Interface**
 
-  Allow control USB 3G/4G, external USB storage or USB security device to add more functionality.
+  The USB Host port allow eLinkKVM control the USB 3G/4G, external USB storage or USB security device to add more functionality.
 
 * **Flexible 2 Ethernet Ports** 
 
@@ -186,29 +153,20 @@ and below are the main feature:
 
 #### Booster ####
 
-**Booster*** is a patented technology that allows eLinkKVM to utilize
-computing resources from controlled computers to improve remote
-performance. To quickly summarize, Booster includes software agents
-that work on major OS platforms (Windows, Linux and Mac OS**; however,
-unlike traditional software solutions, Booster agents can also operate
-in BIOS and UEFI environments, indepdent of any operating
+**Booster*** is a patented technology that allows eLinkKVM to utilize computing resources from controlled computers to improve remote performance. To quickly summarize, Booster includes software agents
+that work on major OS platforms (Windows, Linux and Mac OS) however,unlike traditional software solutions, Booster agents can also operate in BIOS and UEFI environments, indepedent of any operating
 system. 
 
-These software agents are installed on controlled computers to utilize
-the extra computing power on the controlled computers to accelerate
-screen data processing without affecting performance. This enables
-higher quality remote screen and more responsive interactions with
-the remotely controlled computers.
+These software agents are installed on controlled computers to utilize the extra computing power on the controlled computers to accelerate screen data processing without affecting performance. This enables
+higher quality remote screen and more responsive interactions with the remotely controlled computers.
 
-**Booster** also helps reducing the loads on eLinkKVM devices, making
-eLinkKVM devices run cooler and extend the longevity of eLinkKVM
-devices, while delivering higher performance.
+**Booster** also helps reducing the loads on eLinkKVM devices, making eLinkKVM devices run cooler and extend the longevity of eLinkKVM devices, while delivering higher performance.
 
 The following diagram shows the scope covered by Booster:
 
 ![](../../Resource/BoosterVsNormalDiagram.png)
 
-### c. Bundled hardware components
+### c. eLinkKVM System Configuration
 
 |      ![](../../Resource/ElinkGate_full_connection.jpg)       |
 | :----------------------------------------------------------: |
