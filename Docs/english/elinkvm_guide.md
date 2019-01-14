@@ -230,9 +230,9 @@ The following diagram shows the scope covered by Booster:
 | :----------------------------------------------------------: |
 |              *Figure 5: Extend function with USB device*              |
 
-|![](..\..\Resource\elinkkvm_configure_router.jpg)|
+|      ![](../../Resource/elinkkvm_configure_router.jpg)       |
 | :----------------------------------------------------------: |
-|              *Figure 6: ELinkKVM configure network through multiple network*              |
+| *Figure 6: ELinkKVM configure network through multiple network* |
 
 - 1 eLinkKVM device 
 - 1 Ethernet RJ45 cable
