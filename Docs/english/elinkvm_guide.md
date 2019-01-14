@@ -302,14 +302,14 @@ Supported operating systems for a local computer:
 
 ## Chapter 2: Installing eLinkKVM ###
 
-This chapter describes how to install the eLinkKVM device. It contains the following sections:
+This chapter describes how to install the eLinkKVM device and necessary software to work with eLinkKVM . It contains the following sections:
 
 - Package contents
 - Power on eLinkKVM
-- Setup eLinkKVM
-- Operate eLinkKVM
+- eLinkKVM in Setup Mode
+- eLinkKVM in Operating Mode
 - Network setup
-- Operate eLinkViewer
+- eLinkViewer setup
 
 ### a. Package Contents
 
@@ -332,36 +332,46 @@ During the bootup process the 3 LEDs will be blink and turn green when the devic
 
 ![Dummy Screen](../../Resource/eLinkKVM_back_led.png)
 
-##### 
 
-| LED ID | Color      | Description                                                  |
-| ------ | ---------- | ------------------------------------------------------------ |
-| 1      | USB Type-B | power the device and acts as a communication channel between eLinkKVM and a server |
-| 2      | Power      | the secondary source is supplied by a micro USB cable. It is necessary when the |
-| 3      |            |                                                              |
+
+| LED ID | Color | Description |
+| ------ | ----- | ----------- |
+| 1      | Green | TBD         |
+| 2      | Green | TBD         |
+| 3      | Green | TBD         |
 
 ### c. Setup eLinkKVM
 
-The eLinkKVM is designed to be just plug and play. User can just install the device in operation mode and start using immediately.  But there are some exception when the auto DHCP IP address may not work the user may have to setup it manually. Below are the connection diagram when setup eLinkKVM
+| ![Multiple network layer](..\..\Resource\eLinkKVM_connection_setup.png) |
+| :----------------------------------------------------------: |
+|              *Figure 4: Multiple network layer*              |
+
+The eLinkKVM is designed to be just plug and play. User can just install the device in operation mode and start using immediately.  But there are some case when the auto DHCP IP address may not work the user may have to setup it manually. Below are the connection diagram when setup eLinkKVM
 
 ![Dummy Screen](../../Resource/eLinkKVM_connection_setup.png)
 
-Perform following steps to start working:
+Perform following steps to configure eLinkKVM:
 
 - (1) Connect Ethernet RJ45 cable between eLinkKVM and local computer
-- (2) Connect USB Type-B cable to Local computer and Type-B port of eLinkKVM device
+- (2) Connect USB Type-B cable to local computer and Type-B port of eLinkKVM device
 
 ![Dummy Screen](../../Resource/eLinkKVM_setup_mode_guide.png)
 
 ### d. Operate eLinkKVM
 
-Connect eLinkKVM and 
+The main usage of eLinkKVM is to remotely monitor a server. The basic connection is  described below where eLinkKVM is connected to Server through USB cable and VGA and connect to local computer through  ethernet.
 
-![Dummy Screen](../../Resource/eLinkKVM_connection.png)
+| ![Multiple network layer](..\..\Resource\eLinkKVM_connection.png) |
+| :----------------------------------------------------------: |
+|          *Figure 5: Basic eLinkKVM Operating Mode*           |
 
 
 
-eLinkKVM in operation
+Perform following steps to configure eLinkKVM:
+
+- (1) Connect Ethernet RJ45 cable between eLinkKVM and local computer
+- (2) Connect VGA cable between Server and VGA port on eLinkKVM
+- (3) Connect USB Type-B cable between Server USB port and Type-B port of eLinkKVM device
 
 ![Dummy Screen](../../Resource/eLinkKVM_operation.png)
 
@@ -374,13 +384,13 @@ eLinkKVM supports two Ethernet ports for network connection:
 
 To connect to an eLinkKVM device, a network connection between a local computer and an eLinkKVM device is required. The connection can either be:
 
-- *Direct connect*: An Ethernet cable connects directly between a local computer and an eLinkKVM device.
+- *Direct connect*: An ethernet cable connects directly between a local computer and an eLinkKVM device.
 
 - *Local Area Network*: Both the local computer and an eLinkKVM device are connected to a local area network (LAN). eLinkKVM is plugged to the router of the network.
 
 - *Over the Internet*: an eLinkKVM device is provided with a static address for a local computer to access it anywhere in the world.
 
-When a connection is established, its network interface must be configured in the operating system of the local computer. Currently,only Windows is supported.
+When a connection is established, its network interface must be configured in the operating system of the local computer. Currently, only Windows is supported.
 
 #### Windows ####
 
@@ -573,7 +583,7 @@ with `File Transfer`:
 20. Disconnect
 21. Scan IPMI 
 
-![scalingwindow](https://drive.google.com/a/elinkgate.com/uc?id=1eH2ngwZ-V6stvPc8yc9P5rEjHpcijvFQ) 
+![figscalingwindow](https://drive.google.com/a/elinkgate.com/uc?id=1eH2ngwZ-V6stvPc8yc9P5rEjHpcijvFQ) 
 
 
 ### d. Keyboard, Video and Mouse Settings
@@ -616,7 +626,7 @@ The viewer provides a dialog called `Elink Configuration` that includes the foll
 
 ![](https://drive.google.com/a/elinkgate.com/uc?id=13nAvrjHhx9Y94-ct4pjFXBFSQu75mYSU)
 
-### e. Python Cnsole UI
+### e. Python Console UI
 
 
 
@@ -634,7 +644,7 @@ IPMI command center allows a user to scan servers with IPMI ports in a local are
 
 * Start IP: start IP to begin scanning
 * Stop IP: End IP to end scanning
-* User Name - Password: user name and password for each IPMI server. For example, default username and passwork are ADMIN/ADMIN for a SuperMicro server.
+* User Name - Password: user name and password for each IPMI server. For example, default username and password are ADMIN/ADMIN for a Super Micro server.
 * Scan : start scanning for an IPMI server 
 * Stop: End a current scanning process
 * Connect: connects to an IPMI server. When an IPMI server is found, an IP address is display, click on the IP address to select then enter a Username and Password.
