@@ -342,7 +342,7 @@ During the bootup process the 3 LEDs will be blink and turn green when the devic
 
 ### c. Setup eLinkKVM
 
-| ![Multiple network layer](..\..\Resource\eLinkKVM_connection_setup.png) |
+| ![Multiple network layer](../../Resource/eLinkKVM_connection_setup.png) |
 | :----------------------------------------------------------: |
 |              *Figure 4: Multiple network layer*              |
 
