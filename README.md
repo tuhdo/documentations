@@ -1,6 +1,6 @@
-[eLink Script API](docs/elink_script_API.md)
+[eLink Script API](docs/vietnamese/elink_script_API.md)
 
-[eLinkKVM Quick Guide](docs/elinkkvm_quickguide.md)
+[eLinkKVM Quick Guide](docs/vietnamese//elinkkvm_quickguide.md)
 
-[eLinkKVM User Guide](docs/elinkvm_guide.md)
+[eLinkKVM User Guide](docs/vietnames/elinkvm_guide.md)
 
