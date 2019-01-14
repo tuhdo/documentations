@@ -1,3 +1,5 @@
+
+
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
@@ -75,6 +77,8 @@ A KVM switch (an abbreviation stands for **K**eyboard, **V**ideo and **M**ouse")
 
 [TODO] Replace Wikipedia diagram about with our original diagram
 
+**[TODO] -> Để nội dung liên tục thì sau phần KVM nên là KVM over IP...sau đó thực hiện so sánh giải pháp phần cứng với phần mềm, từ đó giới thiệu eLinkKVM là một giải pháp lai tận dụng thế mạnh của cả 2 giải pháp (Tú)**
+
 Unlike software solutions for remote controlling, a hardware solution like a KVM switch can be used as a replacement for a computer monitor. This diagram demonstrates the scope difference between a software and a hardware solution:
 
 ![](../../Resource/RemoteAccessTechnology.png)
@@ -97,8 +101,7 @@ signals with the remote server (of which the eLinkKVM is attached to), just as i
 
 ### b. Features ###
 
-The eLinkKVM is designed to help the IT person remotely operate the Server in most responsive and efficient way. We invent a new technology and make some enhance versus the old traditional KVM over IP
-and below are the main feature:
+The eLinkKVM is designed to help the IT person remotely operate the Server in most responsive and efficient way. The device is not only allowing remotely access at Bios Level which is similar traditional KVM over IP but also adding more features:
 
 - **Full Bios-level control over an IP Network**
 
@@ -108,7 +111,7 @@ and below are the main feature:
 
   Faster and higher resolution with Booster technology, a patent technology allows monitor the screen with faster transfer, any video resolution with just a USB connection for almost any situation. See the **Booster** chapter for more information.
 
-- **Featureful native client software***
+- **Featureful native client software**
 
   Client software is bundled with many unique features: scripting and image recognition, to automate manual operations. See the eLinkViewer chapter for more information.      
 * **Virtual Media support with 8GB Internal Flash or 64GB with SD Card** 
@@ -125,13 +128,13 @@ and below are the main feature:
 
 * **Built-in IPMI (Intelligent Platform Management Interface) utility**
 
-  eLinkKVM understands IPMI and allows control the server that support IPMI interface. The user may power on/off/reset or getting IPMI events from server.
+  eLinkKVM understands IPMI and allows control the server that support IPMI interface. The user may power on/off/reset server without using an external PDU
 
 * **Support USB Host Interface**
 
   The USB Host port allow eLinkKVM control the USB 3G/4G, external USB storage or USB security device to add more functionality.
 
-* **Flexible 2 Ethernet Ports** 
+* **Flexible Two Ethernet Ports** 
 
   The Ethernet ports can be configured to work independently to connect 2 different networks with the master port can be configured as a DHCP server. Or 2 ports can be used to connect a server to a router, using a single server Ethernet port.
 
@@ -151,10 +154,14 @@ and below are the main feature:
 
   Ideal for distributed IT system environments such as small branch offices, campuses, test labs, and server hosting environments.
 
-#### Booster ####
+**Todo: add firmware upgrade feature (Tú)**
 
-**Booster*** is a patented technology that allows eLinkKVM to utilize computing resources from controlled computers to improve remote performance. To quickly summarize, Booster includes software agents
-that work on major OS platforms (Windows, Linux and Mac OS) however,unlike traditional software solutions, Booster agents can also operate in BIOS and UEFI environments, indepedent of any operating
+### c. Introduce about Booster ###
+
+**Todo: move it up before b. Feature (Tú)**
+
+**Booster** is a patented technology that allows eLinkKVM to utilize computing resources from controlled computers to improve remote performance. To quickly summarize, Booster includes software agents
+that work on major OS platforms (Windows, Linux and Mac OS) however,unlike traditional software solutions, Booster agents can also operate in BIOS and UEFI environments, independent of any operating
 system. 
 
 These software agents are installed on controlled computers to utilize the extra computing power on the controlled computers to accelerate screen data processing without affecting performance. This enables
@@ -166,11 +173,15 @@ The following diagram shows the scope covered by Booster:
 
 ![](../../Resource/BoosterVsNormalDiagram.png)
 
-### c. eLinkKVM System Configuration
+### c. eLinkKVM Connection
+
+**[TODO] add text to introduce the  diagram (Tú)**
 
 |      ![](../../Resource/ElinkGate_full_connection.jpg)       |
 | :----------------------------------------------------------: |
 | *Figure 1: Complete system eLinkKVM connect to Router, connect to IPMI server, USB, RS232, external PDU, USB 3G...* |
+
+Todo: Bỏ kết nối RS232 trong hình vẽ tới PDU vì IPMI có thể dùng để power/on/off (Kevin)
 
 |![](../../Resource/Elinkkvm_lite.jpg)|
 | :----------------------------------------------------------: |
@@ -192,11 +203,11 @@ The following diagram shows the scope covered by Booster:
 | :----------------------------------------------------------: |
 | *Figure 6: ELinkKVM configure network through multiple network* |
 
-- 1 eLinkKVM device 
-- 1 Ethernet RJ45 cable
-- 1 USB type B cable
+
 
 ### d. Technical Specifications
+
+**Todo: remove Security, Target Server Requirements, Move the Front & Rear view to new section ("Component"), update the specification as table in Elinkgate_Factsheet_EN_A4.pdf (Tú)**
 
 #### i. Security
 
@@ -314,7 +325,7 @@ During the bootup process the 3 LEDs will be blink and turn green when the devic
 | 2      | Green | TBD         |
 | 3      | Green | TBD         |
 
-### c. Setup eLinkKVM
+### c. eLinkKVM in Setup Mode
 
 | ![Multiple network layer](../../Resource/eLinkKVM_connection_setup.png) |
 | :----------------------------------------------------------: |
@@ -331,7 +342,7 @@ Perform following steps to configure eLinkKVM:
 
 ![Dummy Screen](../../Resource/eLinkKVM_setup_mode_guide.png)
 
-### d. Operate eLinkKVM
+### d. eLinkKVM in Operation Modes
 
 The main usage of eLinkKVM is to remotely monitor a server. The basic connection is  described below where eLinkKVM is connected to Server through USB cable and VGA and connect to local computer through  ethernet.
 
@@ -350,6 +361,8 @@ Perform following steps to configure eLinkKVM:
 ![Dummy Screen](../../Resource/eLinkKVM_operation.png)
 
 ### e. Network configuration ###
+
+**Todo (Tú): explain this eLinkKVM support multiple way to detect or setup IP address for device. (1) Ethernet Slave as DHCP client -> but in case the router policy does not allow transfer discovery package, it can not work (2) The work as DHCP server so PC can get IP from device, it may not work if the PC does not have Ethernet port (3) configure as mass storage disk  -> compare with using RS232 method, or OSD on CN8000A **. We may not need to explain in detail how to config Window to get IP address as other manual don't explain that
 
 eLinkKVM supports two Ethernet ports for network connection:
 
@@ -397,7 +410,7 @@ When a connection is established, its network interface must be configured in th
 
       If `ping** receives response packets, this means eLinkKVM is connected. To actually use eLinkKVM, the software eLinkViewer is required. The basic usage is described in the next chapter.
 
-### c. Operate eLinkViewer
+### c. Setup eLinkViewer
 
 Download the eLinkViewer setup package from www.elinkgate.com/support/download.html just run setup.exe and following the instructions.
 
@@ -406,6 +419,19 @@ Go to chapter 3 (Basic usage) to see how to run and using eLinkViewer.
 
 
 ## Chapter 3: Remote management software for eLinkKVM with eLinkViewer ###
+
+**Todo (Tú): refer the setup eLinkViewer above, explain how to get IP address of eLinkKVM, the viewer can connect to VNC compatible server and eLinkKVM...explain about 3 VNC mode: dummy, vga, booster. List down the feature of eLinkViewer here...Rearrange content as below**
+
+1. Login
+2. Basic Remote Control: Sending      Key, Mouse, Video Setting, scalling, send special keys...
+3. eLinkKVM Mode Setting UI
+4. Python Console UI
+5. Event Log UI
+6. File Transfer UI
+7. IPMI Command Center
+8. Serial Console (TBD)
+9. eLinkViewer Image Capture
+10. Operation Recording (TBD)
 
 eLinkViewer is a specialized software for remote control and management of an eLinkKVM device. Booster technology is only available with eLinkViewer.
 
