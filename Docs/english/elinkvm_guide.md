@@ -220,6 +220,7 @@ After phsyical connections on both ends are done, a remote connection is up and 
 ### e. Technical Specifications
 
 #### Hardware specification
+
 | Feature                     | Description                                                                          |
 |-----------------------------|--------------------------------------------------------------------------------------|
 | Networks                    | 2 Ethernet  ports (10/100Mbps)                                                       |
@@ -234,9 +235,9 @@ After phsyical connections on both ends are done, a remote connection is up and 
 |                             | Secure, full BIOS-level control of remote servers over an IP network                 |
 
 #### Software Specification
+
 | Feature                     | Description                                                                          |
 |-----------------------------|--------------------------------------------------------------------------------------|
-
 | Remote Access Features      | Support  VNC Protocol                                                                |
 |                             | Emulation the USB Relative Mouse and Absolute Mouse                                  |
 |                             | Emulation the USB Keyboard                                                           |
@@ -262,7 +263,6 @@ After phsyical connections on both ends are done, a remote connection is up and 
 **eLinkViewer** is an application specifically made to view remote screen content captured by an eLinkKVM device as well as interact with a remote computer. 
 
 **eLinkViewer** also provides functionalities to manage an eLinkKVM device.
-
 
 | Feature                | Description                                                  |
 | ---------------------- | ------------------------------------------------------------ |
