@@ -377,7 +377,7 @@ Perform following steps to configure eLinkKVM:
 
 The main usage of eLinkKVM is to remotely monitor a server. The basic connection is  described below where eLinkKVM is connected to Server through USB cable and VGA and connect to local computer through  ethernet.
 
-| ![Multiple network layer](..\..\Resource\eLinkKVM_connection.png) |
+| ![Multiple network layer](../../Resource/eLinkKVM_connection.png) |
 | :----------------------------------------------------------: |
 |          *Figure 5: Basic eLinkKVM Operating Mode*           |
 
