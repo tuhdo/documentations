@@ -79,10 +79,9 @@ A KVM switch (an abbreviation stands for **K**eyboard, **V**ideo and **M**ouse")
 
 Normal KVM switches attach controlling and controlled devices directly to itself. In contrast, KVM over-IP switches, provides over-the-internet functionality. This means, instead of physically connected to a KVM switch through very long cables and are usually limited in a room, a floor or a building, the controlling devices can be anywhere in the world that can connect to a KVM over-IP switch and control the connected computers with a normal Internet connection.
 
-Unlike software solutions for remote controlling, a hardware solution like a KVM switch can be used as a replacement for a computer monitor. This diagram demonstrates the scope difference between a software and a hardware solution:
+Another approach for remote controlling is using pure software. However, as a pure software solution is usually limited only in an operating system environment. Without an operating system, a software solution is infeasible. Unlike software solutions for remote controlling, a hardware solution like a KVM switch can be used as a replacement for a computer monitor. This diagram demonstrates the scope difference between a software and a hardware solution:
 
 ![](../../Resource/RemoteAccessTechnology.png)
-
 
 eLinkKVM is one of such KVM-over-IP devices. However, unlike other KVM-over-IP solutions that are solely hardware solutions, eLinkKVM takes on a unique hybrid approach that combines both hardware and software. While being a hardware solution similar to other KVM-over-IP switches, but unlike other KVM-over-IP switches, eLinkKVM takes a step further with its patented technology called `Booster`. `Booster` is a
 software solution that works together with eLinkKVM hardware to uplift processing performance by utilizing computing resources of the remote hosts. `Booster` is not limited to an operating system
@@ -221,6 +220,7 @@ After phsyical connections on both ends are done, a remote connection is up and 
 ### e. Technical Specifications
 
 #### Hardware specification
+
 | Feature                     | Description                                                                          |
 |-----------------------------|--------------------------------------------------------------------------------------|
 | Networks                    | 2 Ethernet  ports (10/100Mbps)                                                       |
@@ -235,9 +235,9 @@ After phsyical connections on both ends are done, a remote connection is up and 
 |                             | Secure, full BIOS-level control of remote servers over an IP network                 |
 
 #### Software Specification
+
 | Feature                     | Description                                                                          |
 |-----------------------------|--------------------------------------------------------------------------------------|
-
 | Remote Access Features      | Support  VNC Protocol                                                                |
 |                             | Emulation the USB Relative Mouse and Absolute Mouse                                  |
 |                             | Emulation the USB Keyboard                                                           |
@@ -263,7 +263,6 @@ After phsyical connections on both ends are done, a remote connection is up and 
 **eLinkViewer** is an application specifically made to view remote screen content captured by an eLinkKVM device as well as interact with a remote computer. 
 
 **eLinkViewer** also provides functionalities to manage an eLinkKVM device.
-
 
 | Feature                | Description                                                  |
 | ---------------------- | ------------------------------------------------------------ |
