@@ -135,32 +135,22 @@ and below are the main feature:
 
 - **Full Bios-level control over an IP Network**
 
-  The video capture hardware (Hardware mode) is designed to decode the
-  video signal up to 1920x1080 that help to monitor the screen in any
-  situation.
-  
+  The video capture hardware (Hardware mode) is designed to decode the video signal up to 1920x1080 that help to monitor the screen in any situation.
+
 - **Patented Booster technology**
 
-  Faster and higher resolution with Booster technology, a patent
-  technolgy allows monitor the screen with faster transfer, any video
-  resolution with just a USB connection for almost any situation. See
-  the **Booster** chapter for more information.
+  Faster and higher resolution with Booster technology, a patent technology allows monitor the screen with faster transfer, any video resolution with just a USB connection for almost any situation. See the **Booster** chapter for more information.
 
 - **Featureful native client software***
 
-  Client software is bundled with many unique features: scripting and
-  image recognization, to automate manual operations. See the
-  eLinkViewer chapter for more information.
-        
+  Client software is bundled with many unique features: scripting and image recognition, to automate manual operations. See the eLinkViewer chapter for more information.      
 * **Virtual Media support with 8GB Internal Flash or 64GB with SD Card** 
 
-  Instead of using a separate computer as a share network storage to
-  emulate the Virtual Media, eLinkKVM itself is a high performance
-  shared netork storage device.
+  Instead of using a separate computer as a share network storage to emulate the Virtual Media, eLinkKVM itself is a high performance shared network storage device.
 
-* **Server-Powered Design**
+* **USB-Powered Design**
 
-  No external power supply required
+  The power is getting from USB port of Server, no external power supply required
 
 * **RS232 Serial Port**
 
@@ -168,31 +158,23 @@ and below are the main feature:
 
 * **Built-in IPMI (Intelligent Platform Management Interface) utility**
 
-  eLinkKVM understands IPMI and allows control the server that support
-  IPMI interface. The user may power on/off/reset or getting IPMI
-  events from server.
+  eLinkKVM understands IPMI and allows control the server that support IPMI interface. The user may power on/off/reset or getting IPMI events from server.
 
 * **Support USB Host Interface**
 
-  Allow control USB 3G/4G, external USB storage or USB security device
-  to add more functionality.
+  Allow control USB 3G/4G, external USB storage or USB security device to add more functionality.
 
 * **Flexible 2 Ethernet Ports** 
 
-  The Ethernet ports can be configured to work indepently to connect 2
-  different networks with the master port can be configured as a DHCP
-  server. Or 2 ports can be used to connect a server to a router,
-  using a single server Ethernet port.
+  The Ethernet ports can be configured to work independently to connect 2 different networks with the master port can be configured as a DHCP server. Or 2 ports can be used to connect a server to a router, using a single server Ethernet port.
 
 * **Built-In USB Hub** 
 
-  Physically emulate all USB device (Mouse, Keyboard, Storage) with
-  just one USB cables
+  Physically emulate all USB device (Mouse, Keyboard, Storage) with just one USB cables
 
 * **Scalability** 
 
-  eLinkKVM can scale to control more than one computers by
-  connecting the computers to eLinkSwitch.
+  eLinkKVM can scale to control more than one computers by connecting the computers to eLinkSwitch.
 
 * **Compact form factor**
 
@@ -200,8 +182,7 @@ and below are the main feature:
 
 * **Low cost**
 
-  Ideal for distributed IT system environments such as small branch
-  offices, campuses, test labs, and server hosting environments.
+  Ideal for distributed IT system environments such as small branch offices, campuses, test labs, and server hosting environments.
 
 #### Booster ####
 
@@ -298,98 +279,108 @@ Supported operating systems for a local computer:
 | Batch setup                 | Multiple eLinkKVM devices can be scripted by the eLinkViewer software to get  |
 |                             | the same configuration.                                                       |
 
-#### eLinkViewer ####
+#### eLinkViewer Specification ####
 
-**eLinkViewer*** is an application specifically made to view remote
-screen content captured by an eLinkKVM device as well as interact with
-a remote computer. 
+**eLinkViewer** is an application specifically made to view remote screen content captured by an eLinkKVM device as well as interact with a remote computer. 
 
 **eLinkViewer** also provides functionalities to manage an eLinkKVM device.
     
-| Feature                | Description                                                                      |
-|------------------------|----------------------------------------------------------------------------------|
-| General                | Support multiple VNC Server and eLinkKVM                                         |
-|                        | Remote protocol using VNC and extension commands for eLinkKVM                    |
-|                        | Support video scaling and full screen                                            |
+
+| Feature                | Description                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| General                | Support multiple VNC Server and eLinkKVM                     |
+|                        | Remote protocol using VNC and extension commands for eLinkKVM |
+|                        | Support video scaling and full screen                        |
 | Automation             | Support image recognization and Python scripting allow automation the activities |
-| IPMI                   | Support IPMI protocol to control server with GUI                                 |
-| Platform               | Currently support Windows                                                        |
-| Bandwidth Optimization | Provide video quality settings to maximze remote performance for the available   |
-|                        | network bandwith                                                                 |
+| IPMI                   | Support IPMI protocol to control server with GUI             |
+| Platform               | Currently support Windows                                    |
+| Bandwidth Optimization | Provide video quality settings to maximize remote performance for the available |
+|                        | network bandwith                                             |
 | Screen scaling         | Viewer screen can be scaled to any resolution independent from remote computer's |
-|                        | resolution or even enter a full-screen mode. In full-screen mode, the viewer     |
-|                        | screen scales according to the remote computer's resolution.                     |
+|                        | resolution or even enter a full-screen mode. In full-screen mode, the viewer |
+|                        | screen scales according to the remote computer's resolution. |
 
-## Chapter 2: Hardware Setup ###
+## Chapter 2: Installing eLinkKVM ###
 
-### a. First Power On ###
+This chapter describes how to install the eLinkKVM device. It contains the following sections:
 
-#### Devices and cables
+- Package contents
+- Power on eLinkKVM
+- Setup eLinkKVM
+- Operate eLinkKVM
+- Network setup
+- Operate eLinkViewer
 
-- 1 computer to be controlled
-- 1 eLinkKVM device 
-- 1 Ethernet RJ45 cable
-- 1 USB type B cable
+### a. Package Contents
 
-Optional:
+In addition to the **eLinkKVM** device, the package contains the following items:
 
-- 1 Micro USB cable connected to a 5v power source
+- 1 USB 2.0 Type-B Cable
 - 1 VGA cable
-- 1 RS232 cable
+- 1 RS232 cable (optional)
+- 1 USB Power Adapter (5V - 2A) and Micro USB cable
+- Mounting kit (see Chapter 4: Mounting Bracket Kit)
+- Quick Start Guide
 
-#### Remote computer ####
+### b. Power On eLinkKVM
 
-A remote computers is a computer connected to the control cables
-(USB for input and VGA for output) that are connected to an eLinkKVM
-device. The following equipment must be available a remote computer:
+The USB-Powered design allow eLinkKVM power directly from server USB port (1) without an external power. But in some cases, it is necessary to keep the device active while the server can be turned off or eLinkKVM need to provide the power to external USB 3G. This can be done by supplying another 5V power source to the micro USB port (2) on an eLinkKVM device.
 
- - 1 VGA port
- - 1 USB Type-A port at the minimum.
+![Dummy Screen](../../Resource/eLinkKVM_front_power.png)
 
-#### Local computer ####
+During the bootup process the 3 LEDs will be blink and turn green when the device is ready. User can start using the device.
 
-A local computer is a computer that a user physically interact with,
-e.g. a laptop, to control a remote computer through an eLinkKVM device
-connected to the remote computer.
+![Dummy Screen](../../Resource/eLinkKVM_back_led.png)
 
-#### eLinkKVM configuration ####
+##### 
 
-![PoweringDevice](https://drive.google.com/a/elinkgate.com/uc?id=1OAJvfReUiWDwjh7OlbuqVG67y7u4K5KJ) 
+| LED ID | Color      | Description                                                  |
+| ------ | ---------- | ------------------------------------------------------------ |
+| 1      | USB Type-B | power the device and acts as a communication channel between eLinkKVM and a server |
+| 2      | Power      | the secondary source is supplied by a micro USB cable. It is necessary when the |
+| 3      |            |                                                              |
 
-1. Use a USB Type-B cable to connect a remote computer and the Type-B port of an eLinkKVM device.
-2. Use a Micro USB cable to connect to a 5v power supply.
+### c. Setup eLinkKVM
 
-A user can use one of the two methods or both to power up a device.  A
-USB Type-B connector from the server to an eLinkKVM device suffices to
-power up the device. But in some cases, it is necessary to keep the
-device active, while the server can be turned off. This can be done by
-supplying another 5V power source to the micro USB port on an eLinkKVM
-device.
+The eLinkKVM is designed to be just plug and play. User can just install the device in operation mode and start using immediately.  But there are some exception when the auto DHCP IP address may not work the user may have to setup it manually. Below are the connection diagram when setup eLinkKVM
 
-### b. Network configuration ###
+![Dummy Screen](../../Resource/eLinkKVM_connection_setup.png)
+
+Perform following steps to start working:
+
+- (1) Connect Ethernet RJ45 cable between eLinkKVM and local computer
+- (2) Connect USB Type-B cable to Local computer and Type-B port of eLinkKVM device
+
+![Dummy Screen](../../Resource/eLinkKVM_setup_mode_guide.png)
+
+### d. Operate eLinkKVM
+
+Connect eLinkKVM and 
+
+![Dummy Screen](../../Resource/eLinkKVM_connection.png)
+
+
+
+eLinkKVM in operation
+
+![Dummy Screen](../../Resource/eLinkKVM_operation.png)
+
+### e. Network configuration ###
 
 eLinkKVM supports two Ethernet ports for network connection:
 
 - Ethernet Master: by default, configured as a DHCP server.
 - Ethernet Slave: by default, configured as a DHCP client.
 
-To connect to an eLinkKVM device, a network connection between a local
-computer and an eLinkKVM device is required. The connection can either
-be:
+To connect to an eLinkKVM device, a network connection between a local computer and an eLinkKVM device is required. The connection can either be:
 
-- *Direct connect*: An Ethernet cable connects directly between a
-  local computer and an eLinkKVM device.
-  
-- *Local Area Network*: Both the local computer and an eLinkKVM device
-  are connected to a local area network (LAN). eLinkKVM is plugged to
-  the router of the network.
-  
-- *Over the Internet*: an eLinkKVM device is provided with a static
-  address for a local computer to access it anywhere in the world.
+- *Direct connect*: An Ethernet cable connects directly between a local computer and an eLinkKVM device.
 
-When a connection is established, its network interface must be
-configured in the operating system of the local computer. Currently,
-only Windows is supported.
+- *Local Area Network*: Both the local computer and an eLinkKVM device are connected to a local area network (LAN). eLinkKVM is plugged to the router of the network.
+
+- *Over the Internet*: an eLinkKVM device is provided with a static address for a local computer to access it anywhere in the world.
+
+When a connection is established, its network interface must be configured in the operating system of the local computer. Currently,only Windows is supported.
 
 #### Windows ####
 
@@ -410,31 +401,35 @@ only Windows is supported.
 - Ontain an IP Address automatically
 - Obtain DNS server address automatically
 
-### c. Setup verification
+5. Verify the Setting
 
-The default address for Ethernet Master port is `10.0.0.1`. To check if the hardware is setup correctly:
+   The default address for Ethernet Master port is `10.0.0.1`. To check if the hardware is setup correctly:
 
-1. On Windows, open `cmd.exe`. On Linux and Mac OS, open a terminal emulator.
+   1. On Windows, open `cmd.exe`. On Linux and Mac OS, open a terminal emulator.
 
-2. Type the following command:
+   2. Type the following command:
 
-   `ping 10.0.0.1`
-   
-   If `ping** receives response packets, this means eLinkKVM is connected. To actualy use eLinkKVM, the software eLinkViewer is required. The basic usage is described in the next chapter.
+      `ping 10.0.0.1`
+
+      If `ping** receives response packets, this means eLinkKVM is connected. To actually use eLinkKVM, the software eLinkViewer is required. The basic usage is described in the next chapter.
+
+### c. Operate eLinkViewer
+
+Download the eLinkViewer setup package from www.elinkgate.com/support/download.html just run setup.exe and following the instructions.
+
+Go to chapter 3 (Basic usage) to see how to run and using eLinkViewer.
+
+
 
 ## Chapter 3: Remote management software for eLinkKVM with eLinkViewer ###
 
-eLinkViewer is a specialized software for remote control and
-management of an eLinkKVM device. Booster technology is only available
-with eLinkViewr.
+eLinkViewer is a specialized software for remote control and management of an eLinkKVM device. Booster technology is only available with eLinkViewer.
 
 ### a. Basic usage ###
 
 #### Login ####
 
-To connect to an eLinkKVM device, fill the configured IP address in
-the textbox next to the **Server** field and click `Connect` to
-connect eLinkViewer to the eLinkKVM at the configured IP address:
+To connect to an eLinkKVM device, fill the configured IP address in the textbox next to the **Server** field and click `Connect` to connect eLinkViewer to the eLinkKVM at the configured IP address:
 
 ![Elink viewer login Quick Connect](https://drive.google.com/a/elinkgate.com/uc?id=1XmJUH4yOOTuo_9ddt71yyWvzMEC1m-85)
 
