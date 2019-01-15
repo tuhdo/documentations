@@ -471,11 +471,11 @@ To connect to an eLinkKVM device, fill the configured IP address in the textbox 
 
 ![ScaneLinkKVM](https://drive.google.com/a/elinkgate.com/uc?id=1JCnvvzjPa8L-eCFzl6kNBceS22OjBTGq)
 
-After connecting to an eLinkKVM device, the viewer screen switches to
-the `Dummy` screen. The `Dummy` screen displays device status and
-configuration settings.
+After connecting to an eLinkKVM device, the viewer screen switches to `Dummy` screen. The `Dummy` screen displays device status and settings.
 
-![Dummy Screen](../../Resource/DummyScreen.png)
+![Dummy Screen](https://lh3.googleusercontent.com/-k1OlzAGTAV4/XD1OfGcsRSI/AAAAAAAARDI/wBXQ4kye0Nk9B6CJZrmWXbEEwAWx1bxbACHMYCw/s0/elinkviewer_2019-01-15_10-07-38.png)
+
+![](../../Resource/elinkview_dummy_screen.webp)
 
 #### Quick usage ####
 
@@ -502,25 +502,24 @@ from the remote remote host.
 
 ### b. Dummy Screen
 
-#### i. Home
+#### i. Device Status
 
 The default screen when successfully connected to an ElinkKVM device.
 
-![Dummy Screen](../../Resource/DummyScreen.png)
+![Dummy Screen](../../Resource/elinkviewer_dummy_screen_deviceinfo.png)
 
-#### ii. Info/Status
+#### ii. External Dock
 
-Display the basic information of an eLinkKVM device. The following
-information is displayed:
+Display basic info of Dock if current eLinkKVM connected to a eLink Dock
 
-![DummyInfoStatus](../../Resource/DummyInfoStatus.png)
+![DummyInfoStatus](../../Resource/elinkviewer_dummy_screen_dockinfo.png)
 
 #### iii. Networks
 
 Display the current network configuration of an eLinkKVM device and
 allows changes accordingly:
 
-![DummyInfoStatus](../../Resource/DummyNetworks.png)
+![DummyInfoStatus](../../Resource/elinkviewer_dummy_network.png)
 
 
 #### iv. COM Port
@@ -528,14 +527,22 @@ allows changes accordingly:
 Display the current COM port configuration of an eLinkKVM device and
 allows changes accordingly:
 
+### TODO need to add comport here 
+
 ![DummyInfoStatus](../../Resource/DummyCOMPort.png)
+
+#### DHCP 
+
+Display all IP address already allocated by DHCP server of eLinkKVM
+
+![](../../Resource/elinkviewer_dummy_DHCP_Client.png)
 
 #### v. IPMI
 
 Display the current IPMI configuration of an eLinkKVM device and
 allows changes accordingly:
 
-![DummyInfoStatus](../../Resource/DummyIPMI.png)
+![DummyInfoStatus](../../Resource/elinkview_dummy_IPMI.png)
 
 #### vi. Admin
 
