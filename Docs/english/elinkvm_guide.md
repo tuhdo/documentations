@@ -76,8 +76,7 @@ A KVM switch (an abbreviation stands for **K**eyboard, **V**ideo and **M**ouse")
 |          *Figure 5: Account login UI*           |
 
 
-
-###[TODO] Replace Wikipedia diagram about with our original diagram
+###### [TODO] Replace Wikipedia diagram about with our original diagram
 
 Normal KVM switches attach controlling and controlled devices directly to itself. In contrast, KVM over-IP switches, provides over-the-internet functionality. This means, instead of physically connected to a KVM switch through very long cables and are usually limited in a room, a floor or a building, the controlling devices can be anywhere in the world that can connect to a KVM over-IP switch and control the connected computers with a normal Internet connection.
 
@@ -415,7 +414,7 @@ Perform following steps to configure eLinkKVM:
 
 ### e. Network configuration ###
 
-**Todo (Tú): explain this eLinkKVM support multiple way to detect or setup IP address for device. (1) Ethernet Slave as DHCP client -> but in case the router policy does not allow transfer discovery package, it can not work (2) The work as DHCP server so PC can get IP from device, it may not work if the PC does not have Ethernet port (3) configure as mass storage disk  -> compare with using RS232 method, or OSD on CN8000A **. We may not need to explain in detail how to config Window to get IP address as other manual don't explain that
+We may not need to explain in detail how to config Window to get IP address as other manual don't explain that
 
 eLinkKVM supports two Ethernet ports for network connection:
 
@@ -436,15 +435,15 @@ When a connection is established, its network interface must be configured in th
 
 1. Open `Control Panel` -> `All Control Panel Items` -> `Network Connections`.
 
-[TODO] Add an demo picture
+##### [TODO] Add an demo picture`
 
 2. Right click on Ethernet Device of the eLinkKVM connection, select `Properties.
 
-[TODO] Add an demo picture
+###### [TODO] Add an demo picture
 
 3. Double click `Internet Protocol version 4 (TCP/IPv4)`
 
-[TODO] Add an demo picture
+##### [TODO] Add an demo picture
 
 4. Check the following options:
 
@@ -864,7 +863,7 @@ DNS: 		10.42.0.1
 
 Dynamic IP address is acquired automatically, issued by a DHCP server. In this case, the connected eLinkKVM device must be configured as a DHCP client.
 
-[TODO] Put a screenshot showing how to select DHCP Client
+###### [TODO] Put a screenshot showing how to select DHCP Client
 
 ### c. IPMI Configuration
 
