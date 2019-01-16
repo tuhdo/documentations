@@ -951,7 +951,7 @@ Screen quality may improve slightly or significantly compared to VGA
 hardwrae mode, depends on the quality of the VGA cable. Remote
 keyboard and mouse interactions become much more responsive.
 
-### Customize Booster Mode ###
+### b. Booster Configuration ###
 
 To make it convenient to switch between Booster and other modes,
 eLinkViewer allows a user to customize Auto Booster Toggle
@@ -979,6 +979,129 @@ Steps to configure Booster mode:
 | :----------------------------------------------------------: |
 |          *Figure 5: Account login UI*           |
 
+### c. Booster for Windows
+    Follow these steps to install and use Booster on Windows:
+    
+    - Logged into the computer to be a remote host.
+    - Download `setup_elinkagent.exe` on the website.
+    - Click the exe file, follow the installer instructions to install the agent.
+    - After the installation, run `elinkserver.exe` to enable `Booster` on the remote host.
+    - On the remote terminal, connect the remmote host with `eLinkViewer`.
+    - Click `Elink Configuration` -> `Browse` then select  `A:\floppy.hdd2`.
+    - Clicking `Booster` to activate remote with Booster.
+
+### d. Booster for Linux
+    Follow these steps to install and use Booster on Linu:
+    
+    - Logged into the computer to be a remote host.
+    - Download setup package for a distro, .e.g. `.deb` for Ubuntu, `.rpm` for Fedora.
+    - Install the packages. 
+      - On Ubuntu: `sudo apt-get install elinkagent.deb`
+      - On Feodra: `sudo apt-get install elinkagent.rpm`
+      
+    - After the installation, run `elinkserver` to enable `Booster` on the remote host.
+    - On the remote terminal, connect the remmote host with `eLinkViewer`.
+    - Click `Elink Configuration` -> `Browse` then select  `A:\floppy.hdd2`.
+    - Clicking `Booster` to activate remote with Booster.
+    
+### e. Booster for UEFI
+    By default, when installing the setup packages for an appropriate
+    operating system, Booster is also installed for UEFI
+    boltloader. Whenever an operating system enters a non-graphical
+    environment in UEFI, Booster can be used without any restriction.
+    
+### f. Embbed Booster into operating system setup images with eLinkSetupTool
+    `Booster` can run in a setup environment of an operating system
+    when it is being installed on a computer. To use this feature, the
+    setup disk images must be recreated with an appropriate `Booster`
+    agent embedded, using `eLinkSetupTool`, a disk creation image
+    tool. `Booster` is enabled as soon as the setup image is loaded by
+    the remote host computer.
+    
+#### eLinkSetupTool instalation
+    On Windows:
+    
+    - Download `setuptool.exe`.
+    - Click the installer and follows the instructions.
+    
+    On Ubuntu:
+    
+    - Download `setuptool.deb`.
+    - Install it:
+    
+    ```
+    sudo apt-get install setuptool.deb
+    ```
+    
+    On Fedora:
+    
+    - Download `setuptool.rpm`:
+    
+    ```
+    sudo dnf install setuptool.rpm
+    ```
+    
+    After the installation, `vfimg` command should be available globally to be used in a terminal program, e.g. `cmd.exe` on Windows.
+    
+##### TODO: the setup files is above, e.g. `setuptool.exe` should be clickable to download
+
+#### eLinkSetupTool usage
+
+##### Create OS setup image
+
+    To create a new disk image, simply run the following command:
+    
+    ```
+    vfimg /create-image Win2012.hdd2 /iso Win2012.iso
+    ```
+    
+    The command produces the following output:
+    
+    ```
+    Initializing environment...Done.
+    Start Analyzing image...Found a Windows 2012 ISO. Done
+    Format HDD image to FAT32...Done.
+    Generate elinkme_dummy.dat...Done.
+    Copy files from ISO to HDD...Done.
+    Installing vfservice to boot.wim...Done.
+    Installing vfservice to UEFI...Done.
+    Generate Embedded Hddx at the end of HDD file...Done
+
+    ```
+    
+    The above command creates a new image `Win2012.hdd2` with Booster agent embedded from the original Windows setup image `Win2012.iso`. 
+    Once the new image is created, upload it to eLinkKVM with `File Transfer`. To use the new image:
+    
+    - Click `Elink Configuration` -> `Browse`.
+    - Browse to the uploaded `Win2012.hdd2` and select it.
+    - `Win2012.hdd2` is now exposed to the remote host computer as a USB drive and is selectable as a boot device in the BIOS.
+    
+##### Create a minimal floppy image
+
+    eLinkKVM is already bundled with the minimal image `floppy.hdd2` in its interal storage that can be mounted as a floppy disk drive.
+    For some reason, if the disk is deleted, a user can recreate and reupload the image. To create the floppy image, run the following command:
+    
+    ```
+    vfimg /make-floppy floppy.hdd2
+    ```
+
+##### Install UEFI Booster agent to an existing disk image
+    Aside from OS setup images, there are disk images that contain
+    troubleshooting tools running in the UEFI environment. To create
+    new images with UEFI Booster agent, run the following command:
+    
+    ```
+    vfimg /install-uefi img.hdd2
+    ```
+
+    To install UEFI agent to `img.hdd2`.
+
+##### Display version information:
+    To show the current setuptool version, run the following command:
+    
+    ```
+    vfimg /version
+    ```
 
 ## Chapter 6: Multi user manager 
 #### Multiple User 
