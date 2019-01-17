@@ -1059,13 +1059,17 @@ Steps to configure Booster mode:
     
     ```
     Initializing environment...Done.
-    Start Analyzing image...Found a Windows 2012 ISO. Done
-    Format HDD image to FAT32...Done.
-    Generate elinkme_dummy.dat...Done.
-    Copy files from ISO to HDD...Done.
-    Installing vfservice to boot.wim...Done.
-    Installing vfservice to UEFI...Done.
-    Generate Embedded Hddx at the end of HDD file...Done
+Start Analyzing image...Found a Windows 10 ISO. Done. 
+Format HDD image to FAT32...Done formatting.
+Generate elinkme_dummy.dat...
+- Start sector: 16472, end sector: 17500.
+Copy files from ISO to HDD...Done copying.
+Installing vfservice to boot.wim...Done coyping.
+Installing UEFI vfservice...
+- Copy vfUEFI bootloader
+- Copy vfUEFI driver
+- Done copying.
+Generate Embedded Hddx at the end of HDD file...Done.
 
     ```
     
@@ -1082,19 +1086,9 @@ Steps to configure Booster mode:
     For some reason, if the disk is deleted, a user can recreate and reupload the image. To create the floppy image, run the following command:
     
     ```
-    vfimg /make-floppy floppy.hdd2
+    vfimg /create-floppy floppy.hdd2
     ```
 
-##### Install UEFI Booster agent to an existing disk image
-    Aside from OS setup images, there are disk images that contain
-    troubleshooting tools running in the UEFI environment. To create
-    new images with UEFI Booster agent, run the following command:
-    
-    ```
-    vfimg /install-uefi img.hdd2
-    ```
-
-    To install UEFI agent to `img.hdd2`.
 
 ##### Display version information:
     To show the current setuptool version, run the following command:
